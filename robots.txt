@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://ZhangShuTHU.github.ioblank/sitemap.xml
+Sitemap: https://zhangshuthu.github.io/sitemap.xml
