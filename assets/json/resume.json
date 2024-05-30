@@ -1,18 +1,19 @@
 {
-  "basics": [{
-    "name": "Shu Zhang",
-    "image": "",
-    "email": "zhangshu.thu@gmail.com",
-    "phone": "(+86) 13717599330",
-    "url": "https://zhang-shu.top",
-  }
+  "basics": [
+    {
+      "name": "Shu Zhang",
+      "image": "",
+      "email": "zhangshu.thu@gmail.com",
+      "phone": "(+86) 13717599330",
+      "url": "https://zhang-shu.top"
+    }
   ],
   "work": [
     {
       "name": "Institute of Energy, Environment and Economy, Tsinghua University",
       "position": "Asistant Professor",
       "url": "https://example.com",
-      "startDate": "2024-07-01",
+      "startDate": "2024-07-01"
     }
   ],
 
@@ -24,7 +25,7 @@
       "area": "Management Science and engineering",
       "studyType": "PhD",
       "startDate": "2019-09",
-      "endDate": "2024-06",
+      "endDate": "2024-06"
     },
 
     {
@@ -34,7 +35,7 @@
       "area": "Economics",
       "studyType": "Bachelor (Second degree)",
       "startDate": "2017-09",
-      "endDate": "2019-06",
+      "endDate": "2019-06"
     },
 
     {
@@ -44,7 +45,7 @@
       "area": "Finance",
       "studyType": "Bachelor (Minor)",
       "startDate": "2016-09",
-      "endDate": "2019-06",
+      "endDate": "2019-06"
     },
 
     {
@@ -70,5 +71,5 @@
       "fluency": "Fluent",
       "icon": ""
     }
-  ],
+  ]
 }
