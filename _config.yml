@@ -299,7 +299,7 @@ scholar:
   last_name: [Zhang]
   first_name: [Shu]
 
-  style: china-national-standard-gb-t-7714-2015-numeric
+  style: nature-no-et-al
   locale: en
 
   source: /_bibliography/
@@ -327,23 +327,8 @@ enable_publication_badges:
   google_scholar: true # Google Scholar badge (https://scholar.google.com/intl/en/scholar/citations.html)
 
 # Filter out certain bibtex entry keywords used internally from the bib output
-filtered_bibtex_keywords:
-  [
-    abbr,
-    abstract,
-    additional_info,
-    blog,
-    code,
-    html,
-    pdf,
-    poster,
-    preview,
-    selected,
-    slides,
-    supp,
-    video,
-    website,
-  ]
+filtered_bibtex_keywords: [abbr, abstract, additional_info, blog, code, html, pdf, poster, preview, selected, slides, supp, video, website]
+
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
 max_author_limit: # leave blank to always show all authors
