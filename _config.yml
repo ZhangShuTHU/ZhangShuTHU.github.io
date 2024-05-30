@@ -9,13 +9,13 @@ last_name: Zhang
 email: zhangshu.thu@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Shu Zhang's academic webpage.
-footer_text: 
+footer_text:
 keywords: Shu Zhang, Shu, ShuZhang, Shu Zhang Tsinghua, Net-zero, China TIMES, Climate-land-energy-water Nexusy # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 3e.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://zhang-shu.top # the base hostname & protocol for your site
-baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
+baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: true # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
@@ -108,7 +108,6 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 
 contact_note: >
-  
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
