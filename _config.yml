@@ -299,7 +299,7 @@ scholar:
   last_name: [Zhang]
   first_name: [Shu]
 
-  style: apa
+  style: china-national-standard-gb-t-7714-2015-numeric
   locale: en
 
   source: /_bibliography/
@@ -317,7 +317,7 @@ scholar:
   details_link: Details
 
   query: "@*"
-  group_by: year
+  group_by: type, year
   group_order: descending
 
 # Display different badges withs stats for your publications
@@ -332,11 +332,6 @@ filtered_bibtex_keywords:
     abbr,
     abstract,
     additional_info,
-    altmetric,
-    arxiv,
-    award,
-    award_name,
-    bibtex_show,
     blog,
     code,
     html,
@@ -351,11 +346,11 @@ filtered_bibtex_keywords:
   ]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
-max_author_limit: 3 # leave blank to always show all authors
+max_author_limit: # leave blank to always show all authors
 more_authors_animation_delay: 10 # more authors are revealed on click using animation; smaller delay means faster animation
 
 # Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
-enable_publication_thumbnails: true
+enable_publication_thumbnails: false
 
 # -----------------------------------------------------------------------------
 # Jekyll Link Attributes
