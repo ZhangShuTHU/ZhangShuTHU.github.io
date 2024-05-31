@@ -1,13 +1,11 @@
 {
-  "basics": [
-    {
+  "basics": {
       "name": "Shu Zhang",
       "image": "",
       "email": "zhangshu.thu@gmail.com",
       "phone": "(+86) 13717599330",
       "url": "https://zhang-shu.top"
-    }
-  ],
+    },
   "work": [
     {
       "name": "Institute of Energy, Environment and Economy, Tsinghua University",
