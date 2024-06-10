@@ -15,6 +15,7 @@
   </footer>
 {% else %}
   <footer class="sticky-bottom mt-5" role="contentinfo">
+    <div class="navbar-brand social">{% include social.liquid %}</div>   
     <div class="container">
       &copy; Copyright {{ site.time | date: '%Y' }}
       {{ site.first_name }}
@@ -25,7 +26,8 @@
       {% endif %}
       {% if site.last_updated %}
         Last updated: {{ 'now' | date: '%B %d, %Y' }}.
-      {% endif %}
+      {% endif %}    
     </div>
+    
   </footer>
 {% endif %}
