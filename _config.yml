@@ -9,7 +9,7 @@ last_name: Zhang
 email: zhangshu.thu@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Shu Zhang's academic webpage.
-footer_text:
+footer_text: 
 keywords: Shu Zhang, Shu, ShuZhang, Shu Zhang Tsinghua, Net-zero, China TIMES, Climate-land-energy-water Nexusy # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 3e.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -32,13 +32,6 @@ repo_trophies:
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
   theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
 
-# -----------------------------------------------------------------------------
-# RSS Feed
-# -----------------------------------------------------------------------------
-# will use title and url fields
-# Take a look to https://github.com/jekyll/jekyll-feed for more customization
-
-rss_icon: false
 
 # -----------------------------------------------------------------------------
 # Layout
@@ -50,18 +43,8 @@ search_enabled: true
 socials_in_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 1000px
 
-# TODO: add layout settings (single page vs. multi-page)
-
-# -----------------------------------------------------------------------------
-# Open Graph & Schema.org
-# -----------------------------------------------------------------------------
-# Display links to the page with a preview object on social media.
-# see https://schema.org/docs/faq.html for more information
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Social integration
@@ -122,52 +105,6 @@ cronitor_analytics: # cronitor RUM analytics site ID (format: XXXXXXXXX)
 google_site_verification: u5QOImuaSC-U7QS6j9J5YSKXzS055xdDHcLGDSSd_SI # your google-site-verification ID (Google Search Console)
 bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
-# -----------------------------------------------------------------------------
-# Blog
-# -----------------------------------------------------------------------------
-
-# blog_name: al-folio # blog_name will be displayed in your blog page
-# blog_description: a simple whitespace theme for academics
-# permalink: /blog/:year/:title/
-# lsi: false # produce an index for related posts
-
-# # Pagination
-# pagination:
-#   enabled: true
-
-# related_blog_posts:
-#   enabled: true
-#   max_related: 5
-
-# Giscus comments (RECOMMENDED)
-# Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
-giscus:
-  repo: # <your-github-user-name>/<your-github-repo-name>
-  repo_id: # leave empty or specify your repo_id (see https://giscus.app/)
-  category: Comments # name of the category under which discussions will be created
-  category_id: # leave empty or specify your category_id (see https://giscus.app/)
-  mapping: title # identify discussions by post title
-  strict: 1 # use strict identification mode
-  reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
-  input_position: bottom # whether to display input form below (bottom) or above (top) the comments
-  theme: preferred_color_scheme # name of the color scheme (preferred works well with al-folio light/dark mode)
-  emit_metadata: 0
-  lang: en
-
-# Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
-# https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-
-# External sources.
-# If you have blog posts published on medium.com or other external sources,
-# you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
-  - name: Google Blog
-    posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-        published_date: 2024-05-14
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -189,7 +126,7 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 
