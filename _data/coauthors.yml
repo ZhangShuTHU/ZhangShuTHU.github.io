@@ -1,11 +1,23 @@
-"volker":
+"krey":
   - firstname: ["Volker"]
     url: https://iiasa.ac.at/staff/volker-krey
 
-"keywan":
+"riahi":
   - firstname: ["Keywan"]
     url: https://iiasa.ac.at/staff/keywan-riahi
 
-"bas":
+"van ruijven":
   - firstname: ["Bas"]
     url: https://iiasa.ac.at/staff/bas-van-ruijven
+
+ "Byers":
+  - firstname: ["Edward"]
+    url: https://iiasa.ac.at/staff/edward-byers
+
+ "Guo":
+  - firstname: ["Fei"]
+    url: https://iiasa.ac.at/staff/fei-guo
+
+ "Rafaj":
+  - firstname: ["Peter"]
+    url: https://iiasa.ac.at/staff/peter-rafaj
