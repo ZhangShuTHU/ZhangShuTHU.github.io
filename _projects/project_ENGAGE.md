@@ -4,7 +4,7 @@ title: ENGAGE
 description: Exploring National and Global Actions to reduce Greenhouse gas Emissions
 img: assets/img/ENGAGE.jpg
 date: 20190901
-category: International
+category: Corporate-sponsored researches
 related_publications: False
 ---
 ENGAGE is a consortium of international and multidisciplinary leading research groups that aims to co-produce knowledge for designing cost-effective, technologically sound, socially and politically feasible pathways that can meet the objectives of the Paris Agreement. ENGAGE will also quantify avoided climate change impacts at the regional and national levels and identify concrete policy portfolios that maximise co-benefits and minimise trade-offs.
