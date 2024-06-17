@@ -18,9 +18,9 @@ news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
-Shu ZHANG is an assistant professor at the Institute of Energy, Environment and Economy, Tsinghua University. He completed his undergraduate studies at Tsinghua with a B.Eng. and B. Econ. and earned his Ph.D. in Management at Tsinghua University. He was a visiting scholar at the International Institute for Applied Systems Analysis (IIASA) between 2022 and 2023.
+I completed my undergraduate studies at Tsinghua with a B.Eng. (supervised by Prof. <a href='https://www.eea.tsinghua.edu.cn/en/faculties/cqkang.htm'>Chongqing Kang</a>) and B. Econ. and earned my Ph.D. in Management (supervised by Prof. <a href='http://www.3e.tsinghua.edu.cn/en/article/158'>Wenying Chen</a>) at Tsinghua University. From March 2022 to April 2023, I was a visiting research scholar at the International Institute for Applied Systems Analysis (IIASA) (supervised by Prof. <a href='https://iiasa.ac.at/staff/volker-krey'>Volker Krey).
 
-He has published several research papers in academic journals such as Nature Sustainability, Nature Communications, and Engineering. 
+I have published several research papers in academic journals such as Nature Sustainability, Nature Communications, and Engineering. 
 
-His main research areas include energy system modeling, water-energy-food nexus as well as energy and climate policy analysis.
+My research interests include energy system modeling, water-energy-food nexus as well as energy and climate policy analysis.
 
