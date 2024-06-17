@@ -4,7 +4,7 @@ title: COMMITTED
 description: Climate pOlicy assessment and Mitigation Modeling to Integrate national and global TransiTion pathways for Environmental-friendly Development
 img: assets/img/COMMITTED.jpg
 date: 20230101
-category: International
+category: Corporate-sponsored researches
 related_publications: False
 ---
 COMMITTED is an international project funded by the European Commission’s Directorate on Climate (DG CLIMA). The project aims to enhance sharing of good practices on greenhouse gas emissions modelling between EU and Asian countries. The Consortium comprises major global integrated assessment modelling teams as well as institutions from major Asian economies.
