@@ -5,7 +5,7 @@ permalink: /projects/
 description: 
 nav: true
 nav_order: 3
-display_categories: [National, International, Corporate]
+display_categories: [Government-sponsored researches, Corporate-sponsored researches, Community activities]
 horizontal: true
 ---
 <!-- pages/projects.md -->
