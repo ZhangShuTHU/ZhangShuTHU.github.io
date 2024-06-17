@@ -1,3 +1,11 @@
+"zhou":
+  - firstname: ["Sheng"]
+    url: http://www.3e.tsinghua.edu.cn/cn/article/54
+
+"chen":
+  - firstname: ["Wenying"]
+    url: http://www.3e.tsinghua.edu.cn/en/article/158
+
 "krey":
   - firstname: ["Volker"]
     url: https://iiasa.ac.at/staff/volker-krey
@@ -10,14 +18,38 @@
   - firstname: ["Bas"]
     url: https://iiasa.ac.at/staff/bas-van-ruijven
 
-"Byers":
+"byers":
   - firstname: ["Edward"]
     url: https://iiasa.ac.at/staff/edward-byers
 
-"Guo":
+"guo":
   - firstname: ["Fei"]
     url: https://iiasa.ac.at/staff/fei-guo
 
-"Rafaj":
+"rafaj":
   - firstname: ["Peter"]
     url: https://iiasa.ac.at/staff/peter-rafaj
+
+"awais":
+  - firstname: ["Muhammad"]
+    url: https://iiasa.ac.at/staff/muhammad-awais
+
+"nguyen":
+  - firstname: ["Binh"]
+    url: https://iiasa.ac.at/staff/binh-nguyen
+
+"pan":
+  - firstname: ["Xunzhang"]
+    url: https://see.ruc.edu.cn/en/Faculty/DepartmentofEcologicalEnvironmentManagement/34f2d5afc58d499284ac8a24c67610b7.htm
+
+"wang":
+  - firstname: ["Yi"]
+    url: http://www.eeyiwang.com/
+
+"zhang":
+  - firstname: ["Ning"]
+    url: https://www.eea.tsinghua.edu.cn/en/faculties/ningzhang.htm
+    
+"wu":
+  - firstname: ["Yazhen"]
+    url: https://iiasa.ac.at/staff/yazhen-wu
