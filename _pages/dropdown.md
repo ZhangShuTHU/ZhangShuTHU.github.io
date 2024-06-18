@@ -6,7 +6,7 @@ nav_order: 3
 dropdown: true
 children:
   - title: Summary
-    permalink: /projectsSumm/
+    permalink: /Summary/
   - title: divider
   - title: Feature
     permalink: /projects/

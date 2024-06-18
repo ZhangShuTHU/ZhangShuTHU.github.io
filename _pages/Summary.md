@@ -1,6 +1,6 @@
 ---
 layout: distill
-permalink: /projectsSumm/
+permalink: /projectssummary/
 title: Summary
 description: Projects I've worked on.
 nav: false
