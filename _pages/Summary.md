@@ -6,7 +6,7 @@ description: Projects I've worked on.
 nav: false
 nav_order: 6
 ---
-Goverment-sponsored researches:
+#### Goverment-sponsored researches:
 
 {% details 5.教育部人文社会科学重点研究基地重大项目，2060年碳中和愿景下的电力转型路径与政策研究，主研 %}
 项目负责人：陈文颖教授
@@ -56,7 +56,7 @@ Goverment-sponsored researches:
 项目期：2017/01-2021/12
 {% enddetails %}
 
-Corporate-sponsored researches:
+#### Corporate-sponsored researches:
 
 {% details 5.欧盟Horizon Europe项目，根据《巴黎协定》和可持续发展采取公平气候行动的新途径（NEWPATHWAYS），主研 %}
 Original name: New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development (NEWPATHWAYS)
