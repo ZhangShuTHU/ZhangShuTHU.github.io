@@ -3,9 +3,9 @@ layout: page
 title: Projects
 permalink: /projects/
 description: 
-nav: true
+nav: false
 nav_order: 3
-display_categories: [Government-sponsored researches, Corporate-sponsored researches, Community activities]
+display_categories: [Government-sponsored researches, Corporate-sponsored researches]
 horizontal: false
 ---
 <!-- pages/projects.md -->
