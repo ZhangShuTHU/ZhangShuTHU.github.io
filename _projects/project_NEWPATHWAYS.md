@@ -3,7 +3,7 @@ layout: page
 title: NEWPATHWAYS
 description: New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development
 img: assets/img/3.jpg
-date: 20250101
+date: 20240701
 category: Corporate-sponsored researches
 related_publications: False
 ---
