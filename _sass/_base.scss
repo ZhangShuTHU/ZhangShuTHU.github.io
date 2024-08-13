@@ -630,12 +630,12 @@ footer.sticky-bottom {
 
   .grid-sizer,
   .grid-item {
-    width: 250px;
+    width: 400px;
     margin-bottom: 10px;
   }
 
   h2.category {
-    color: var(--global-divider-color);
+    color: var(--global-text-color);
     border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
     margin-top: 2rem;
@@ -673,13 +673,17 @@ footer.sticky-bottom {
     text-align: right;
   }
 
+  h2.bibtypetitle {
+    text-align: right;
+    }
+
   ol.bibliography {
     list-style: none;
     padding: 0;
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
 
       .preview {
       }
@@ -722,8 +726,10 @@ footer.sticky-bottom {
         }
 
         > em {
-          border-bottom: 1px solid;
+          border-bottom: none;
+          color: var(--global-theme-color);
           font-style: normal;
+          font-weight: bold;
         }
 
         > span.more-authors {
