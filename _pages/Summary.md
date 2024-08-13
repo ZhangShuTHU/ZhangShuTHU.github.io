@@ -6,7 +6,7 @@ description: Projects I've worked on.
 nav: false
 nav_order: 6
 ---
-#### Goverment-sponsored researches:
+### Goverment-sponsored researches:
 
 {% details 5.教育部人文社会科学重点研究基地重大项目，2060年碳中和愿景下的电力转型路径与政策研究，主研 %}
 项目负责人：陈文颖教授
@@ -56,14 +56,20 @@ nav_order: 6
 项目期：2017/01-2021/12
 {% enddetails %}
 
-#### Corporate-sponsored researches:
+### Corporate-sponsored researches:
 
-{% details 5.欧盟Horizon Europe项目，根据《巴黎协定》和可持续发展采取公平气候行动的新途径（NEWPATHWAYS），主研 %}
+{% details 6.欧盟Horizon Europe项目，根据《巴黎协定》和可持续发展采取公平气候行动的新途径（NEWPATHWAYS），主研 %}
 Original name: New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development (NEWPATHWAYS)
 
 项目负责人：陈文颖教授
 
 项目期：2025/01-2028/06
+{% enddetails %}
+
+{% details 5.中核集团项目，核能产业链碳排放核算方法学研究，主研 %}
+项目负责人：陈文颖教授
+
+项目期：2024/08-2025/05
 {% enddetails %}
 
 {% details 4.欧盟委员会气候理事会项目，加强欧盟和亚洲国家在温室气体排放模型方面的良好实践分享（COMMITTED），主研 %}
