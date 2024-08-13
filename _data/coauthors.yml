@@ -1,10 +1,6 @@
 "zhou":
   - firstname: ["Sheng"]
-    url: http://www.3e.tsinghua.edu.cn/cn/article/54
-
-"chen":
-  - firstname: ["Wenying"]
-    url: http://www.3e.tsinghua.edu.cn/en/article/158
+    url: http://www.3e.tsinghua.edu.cn/en/article/173
 
 "chai":
   - firstname: ["Qimin"]
@@ -121,3 +117,7 @@
 "yang":
   - firstname: ["Zhuoxiang"]
     url: https://www.efchina.org/About-Us-en/Staff-en/ZhuoxiangYANG-en
+
+"chen":
+  - firstname: ["Wenying"]
+    url: http://www.3e.tsinghua.edu.cn/en/article/158
