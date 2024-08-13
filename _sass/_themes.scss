@@ -4,7 +4,7 @@
 
 :root {
   --global-bg-color: #{$white-color};
-  --global-code-bg-color: #{$rgba($green-color, 0.05)};
+  --global-code-bg-color: #{rgba($green-color, 0.05)};
   --global-text-color: #{$black-color};
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #{$green-color};
