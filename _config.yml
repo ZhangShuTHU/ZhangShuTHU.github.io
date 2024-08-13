@@ -257,6 +257,11 @@ scholar:
   group_by: type, year
   group_order: descending
 
+  sort_by: year, month
+  order: descending, descending
+  type_order: [unpublished, article, inbook, book,conference, incollections, inproceedings, proceedings,  misc, techreport, phdthesis]
+  type_names: {unpublished: unpublished: Working papers, report: Reports, article: Journal articles, inproceedings: Conference articles & others}
+
 # Display different badges withs stats for your publications
 enable_publication_badges:
   altmetric: true # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)

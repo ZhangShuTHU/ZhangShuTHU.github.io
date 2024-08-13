@@ -2,14 +2,13 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: publications by categories in reversed chronological order.
+description: An up-to-date list is available on my [Google scholar profile](https://scholar.google.com/citations?user=3dCECpgAAAAJ).
 nav: true
 nav_order: 1
 ---
 
 <!-- _pages/publications.md -->
 <div class="publications">
-
-{% bibliography %}
+ {% bibliography -f papers --group_by type %}
 
 </div>
