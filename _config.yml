@@ -10,7 +10,7 @@ email: zhang-s@mail.tsinghua.edu.cn
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Shu Zhang's academic webpage.
 footer_text: 
-keywords: Shu Zhang, Shu, ShuZhang, Shu Zhang Tsinghua, Net-zero, China TIMES, Climate-land-energy-water Nexusy # add your own keywords or leave empty
+keywords: Shu Zhang, Shu, ShuZhang, Shu Zhang Tsinghua, Net-zero, China TIMES, Climate-land-energy-water Nexus # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 3e.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -43,7 +43,7 @@ search_enabled: true
 socials_in_search: true
 
 # Dimensions
-max_width: 950px
+max_width: 1000px
 
 
 # -----------------------------------------------------------------------------
