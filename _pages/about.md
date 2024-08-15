@@ -7,7 +7,7 @@ subtitle: Assistant Professor | <a href='http://www.3e.tsinghua.edu.cn/en/'>Inst
 profile:
   align: right
   image: zhangshu.jpg
-  image_circular: true # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
   more_info: >
     <p>(+86)13717599330</p>
     <p>C400 Energy Sciences Buildings</p>
