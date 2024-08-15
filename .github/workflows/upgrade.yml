@@ -15,7 +15,6 @@ jobs:
       deployments: write
       discussions: write
       issues: write
-      metadata: write
       pages: write
       packages: write
       pull-requests: write
@@ -25,7 +24,7 @@ jobs:
     steps:
       # To use this repository's private action, you must check out the repository
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.1
       - name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v2.2.3
         with:
