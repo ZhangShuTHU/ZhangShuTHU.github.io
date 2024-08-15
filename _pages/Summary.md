@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: page
 permalink: /Summary/
 title: Project summary
 description: Projects I've worked on.
