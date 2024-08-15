@@ -44,7 +44,7 @@ bib_search: true
 socials_in_search: true
 
 # Dimensions
-max_width: 900px
+max_width: 930px
 
 
 # -----------------------------------------------------------------------------
@@ -301,9 +301,9 @@ external_links:
 imagemagick:
   enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
   widths:
-    - 600
-    - 1200
-    - 2000
+    - 540
+    - 960
+    - 1600
   input_directories:
     - assets/img/
   input_formats:
@@ -313,7 +313,7 @@ imagemagick:
     - ".tiff"
     - ".gif"
   output_formats:
-    webp: "-quality 85"
+    webp: "-quality 100"
 
 # Lazy loading images
 #   If you enable lazy loading, all images will add the loading="lazy" attribute.
