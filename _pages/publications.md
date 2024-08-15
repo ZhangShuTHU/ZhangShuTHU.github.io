@@ -10,6 +10,10 @@ An up-to-date list is available on my [Google scholar profile](https://scholar.g
 
 <!-- _pages/publications.md -->
 
+<!-- Bibsearch Feature -->
+
+{% include bib_search.liquid %}
+
 <div class="publications">
  {% bibliography -f papers --group_by type --group_order ascending %}
 
