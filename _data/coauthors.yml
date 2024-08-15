@@ -98,10 +98,6 @@
   - firstname: ["Sha"]
     url: https://www.efchina.org/About-Us-en/Staff-en/ShaFU-en
 
-"chen":
-  - firstname: ["Lingyan"]
-    url: https://www.efchina.org/About-Us-en/Staff-en/LingyanCHEN-en 
-
 "du":
   - firstname: ["Xuan"]
     url: https://www.efchina.org/About-Us-en/Staff-en/XuanDU-en
@@ -121,3 +117,6 @@
 "chen":
   - firstname: ["Wenying"]
     url: http://www.3e.tsinghua.edu.cn/en/article/158
+
+  - firstname: ["Lingyan"]
+    url: https://www.efchina.org/About-Us-en/Staff-en/LingyanCHEN-en
