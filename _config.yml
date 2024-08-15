@@ -44,7 +44,7 @@ bib_search: true
 socials_in_search: true
 
 # Dimensions
-max_width: 800px
+max_width: 900px
 
 
 # -----------------------------------------------------------------------------
