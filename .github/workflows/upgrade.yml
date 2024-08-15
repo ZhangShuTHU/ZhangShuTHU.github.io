@@ -25,9 +25,11 @@ jobs:
       # To use this repository's private action, you must check out the repository
       - name: Checkout
         uses: actions/checkout@v4.1.1
+        with:
+          token: ${{ secrets.PAT }}
       - name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v2.2.3
         with:
-          token: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ github.token }}
           source_repo_path: alshedivat/al-folio
           upstream_branch: master
