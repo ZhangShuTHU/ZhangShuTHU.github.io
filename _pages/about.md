@@ -9,8 +9,8 @@ profile:
   image: zhangshu.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>(+86)13717599330</p>
-    <p>C400 Energy Sciences Buildings</p>
+    <p>+86-10-62772759</p>
+    <p>Room C400, Energy Sciences Buildings</p>
     <p>Tsinghua University</p>
     <p>Beijing 100084, P.R.China</p>
 
@@ -18,7 +18,6 @@ news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
-I completed my undergraduate studies at Tsinghua University with a B.Eng. in Electrical Engineering (supervised by Prof. <a href='https://www.eea.tsinghua.edu.cn/en/faculties/cqkang.htm'>Chongqing Kang</a>) and a B. Econ. in Economics. I earned my Ph.D. in Management (supervised by Prof. <a href='http://www.3e.tsinghua.edu.cn/en/article/158'>Wenying Chen</a>) at Tsinghua University. From March 2022 to April 2023, I was a visiting research scholar at the International Institute for Applied Systems Analysis (IIASA) (supervised by Prof. <a href='https://iiasa.ac.at/staff/volker-krey'>Volker Krey</a>).
+I completed my undergraduate studies at Tsinghua University with a B.Eng. in Electrical Engineering (supervised by Prof. `<a href='https://www.eea.tsinghua.edu.cn/en/faculties/cqkang.htm'>`Chongqing Kang`</a>`) and a B. Econ. in Economics. I earned my Ph.D. in Management (supervised by Prof. `<a href='http://www.3e.tsinghua.edu.cn/en/article/158'>`Wenying Chen`</a>`) at Tsinghua University. From March 2022 to April 2023, I was a visiting research scholar at the International Institute for Applied Systems Analysis (IIASA) (supervised by Prof. `<a href='https://iiasa.ac.at/staff/volker-krey'>`Volker Krey`</a>`).
 
 My research interests include energy system modeling, water-energy-food nexus as well as energy and climate policy analysis.
-
