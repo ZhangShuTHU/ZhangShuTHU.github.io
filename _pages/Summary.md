@@ -6,7 +6,7 @@ description:
 nav: false
 nav_order: 6
 ---
-## 纵向项目Goverment-sponsored researches:
+## Goverment-sponsored researches:
 
 {% details 5.ME Key Research Base for Humanities and Social Sciences Major Project，Research on Electricity Transition Pathways and Policies under the Carbon Neutral Vision 2060，Member %}
     Original granter name：教育部人文社会科学重点研究基地重大项目
@@ -54,7 +54,7 @@ nav_order: 6
     Period：2017/01-2021/12
 {% enddetails %}
 
-## 横向项目Corporate-sponsored researches:
+## Corporate-sponsored researches:
 
 {% details 6.EU Horizon Europe，New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development （NEWPATHWAYS），Member %}
     Project PI：Wenying Chen（陈文颖教授）
