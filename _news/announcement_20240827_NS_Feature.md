@@ -1,7 +1,8 @@
 ---
 layout: post
+title: Nature Sustainability paper was featured.
 date: 2024-8-27 8:00:00+0800
-inline: true
+inline: false
 related_posts: false
 ---
 Our article in Nature Sustainability was selected as a featured article.
