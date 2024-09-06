@@ -7,6 +7,7 @@ date: 20190901
 category: Corporate-sponsored researches
 related_publications: False
 ---
+
 ENGAGE is a consortium of international and multidisciplinary leading research groups that aims to co-produce knowledge for designing cost-effective, technologically sound, socially and politically feasible pathways that can meet the objectives of the Paris Agreement. ENGAGE will also quantify avoided climate change impacts at the regional and national levels and identify concrete policy portfolios that maximise co-benefits and minimise trade-offs.
 
 Knowledge co-production will be achieved through an iterative stakeholder dialogue process that will include workshops, surveys and frequent interactions and feedback among scientists, policy makers, civil society, the private sector, and other key stakeholders. ENGAGE will be inclusive of major emitters and selected developing countries which will ensure the credibility and legitimacy of the scientific and policy insights.

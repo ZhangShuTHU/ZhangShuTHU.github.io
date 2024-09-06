@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 绿色低碳发展转型中的关键管理科学问题与政策研究
-description: 
+description:
 img: assets/img/2016国自然.png
 date: 20160101
 category: Government-sponsored researches

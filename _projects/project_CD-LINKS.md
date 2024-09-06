@@ -7,6 +7,7 @@ date: 20190901
 category: Corporate-sponsored researches
 related_publications: False
 ---
+
 The CD-LINKS project brings together a consortium of seventeen leading international research organizations from around the globe to explore national and global transformation strategies for climate change and their linkages to a range of sustainable development objectives.
 
 An important question for policy makers, in the G20 and beyond, is how to bring climate action into the broader sustainable development agenda. Objectives like energy poverty eradication, increased well-being and welfare, air quality improvement, energy security enhancement, and food and water availability will continue to remain important over the next several decades. There have been relatively few scientific analyses, however, that have explored the complex interplay between climate action and development while simultaneously taking both global and national perspectives.
