@@ -1,6 +1,8 @@
 "zhou":
   - firstname: ["Sheng"]
     url: http://www.3e.tsinghua.edu.cn/en/article/173
+  - firstname: ["Nan"]
+    url: https://profiles.lbl.gov/20338-Nan-Zhou
 
 "chai":
   - firstname: ["Qimin"]
@@ -53,10 +55,6 @@
 "wu":
   - firstname: ["Yazhen"]
     url: https://iiasa.ac.at/staff/yazhen-wu
-
-"zhou":
-  - firstname: ["Nan"]
-    url: https://profiles.lbl.gov/20338-Nan-Zhou
 
 "khanna":
   - firstname: ["Nina"]
