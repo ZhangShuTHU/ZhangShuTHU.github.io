@@ -27,6 +27,7 @@ table {
   td,
   th {
     font-size: 1rem;
+    padding: 1px 1rem 1px 0;
   }
 
   th {
@@ -71,7 +72,10 @@ blockquote {
     border-color: var(--global-tip-block);
     background-color: var(--global-tip-block-bg);
 
-    p {
+    em,
+    li,
+    p,
+    strong {
       color: var(--global-tip-block-text);
     }
 
@@ -89,7 +93,10 @@ blockquote {
     border-color: var(--global-warning-block);
     background-color: var(--global-warning-block-bg);
 
-    p {
+    em,
+    li,
+    p,
+    strong {
       color: var(--global-warning-block-text);
     }
 
@@ -107,7 +114,10 @@ blockquote {
     border-color: var(--global-danger-block);
     background-color: var(--global-danger-block-bg);
 
-    p {
+    em,
+    li,
+    p,
+    strong {
       color: var(--global-danger-block-text);
     }
 
@@ -630,7 +640,7 @@ footer.sticky-bottom {
 
   .grid-sizer,
   .grid-item {
-    width: 500px;
+    width: 250px;
     margin-bottom: 10px;
   }
 
@@ -1139,9 +1149,11 @@ ninja-keys {
   --ninja-modal-background: var(--global-bg-color);
   --ninja-z-index: 1031;
 }
+
 ninja-keys::part(ninja-input) {
   color: var(--ninja-selected-text-color);
 }
+
 ninja-keys::part(ninja-input-wrapper) {
   background: var(--global-bg-color);
 }
@@ -1150,6 +1162,7 @@ ninja-keys::part(ninja-input-wrapper) {
 .newsletter-form-container {
   margin-bottom: 20px;
 }
+
 .newsletter-form {
   display: flex;
   flex-direction: row;
@@ -1157,7 +1170,7 @@ ninja-keys::part(ninja-input-wrapper) {
   width: 100%;
 }
 
-.newsletter-form-input {
+
 .newsletter-form-input,
 .bibsearch-form-input {
   color: var(--global-newsletter-text-color);
@@ -1166,16 +1179,18 @@ ninja-keys::part(ninja-input-wrapper) {
   outline: none;
   margin: 0px 10px 0px 0px;
   width: 100%;
-  max-width: 500px;
+  max-width: 350px;
   min-width: 100px;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 8px 12px;
 }
+
 .newsletter-form-input:focus {
   border-color: var(--global-theme-color) !important;
 }
+
 .newsletter-form-button {
   background: var(--global-theme-color);
   color: var(--global-bg-color);
@@ -1196,6 +1211,7 @@ ninja-keys::part(ninja-input-wrapper) {
   border: none;
   cursor: pointer;
 }
+
 .newsletter-loading-button {
   background: var(--global-theme-color);
   color: var(--global-bg-color);
@@ -1217,18 +1233,21 @@ ninja-keys::part(ninja-input-wrapper) {
   cursor: pointer;
   margin-right: 20px;
 }
+
 .newsletter-success {
   color: var(--global-text-color);
   display: none;
   align-items: center;
   width: 100%;
 }
+
 .newsletter-error {
   color: var(--global-theme-color);
   display: none;
   align-items: center;
   width: 100%;
 }
+
 .newsletter-back-button {
   color: var(--global-theme-color);
   margin: 10px auto;
@@ -1238,6 +1257,7 @@ ninja-keys::part(ninja-input-wrapper) {
   border: none;
   cursor: pointer;
 }
+
 @media (max-width: 575px) {
   .newsletter-form-input,
   .newsletter-form-button,
@@ -1290,7 +1310,7 @@ ninja-keys::part(ninja-input-wrapper) {
     border-bottom-color: var(--global-divider-color);
   }
 }
-}
+
 
 // highlight-search-term
 ::highlight(search) {
