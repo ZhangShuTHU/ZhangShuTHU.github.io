@@ -202,21 +202,31 @@
         {% if entry.html contains '://' %}
           <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" title="HTML" role="button"><i class="fa-solid fa-globe"></i></a>
         {% else %}
-          <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}"  title="HTML" role="button"><i class="fa-solid fa-globe"></i></a>
+          <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}" title="HTML" role="button"><i class="fa-solid fa-globe"></i></a>
         {% endif %}
       {% endif %}
       {% if entry.pdf %}
         {% if entry.pdf contains '://' %}
           <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" title="PDF" role="button"><i class="fa-solid fa-file-pdf"></i></a>
         {% else %}
-          <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" title="PDF" role="button"><i class="fa-solid fa-file-pdf"></i></a>
+          <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" title="PDF" role="button"
+            ><i class="fa-solid fa-file-pdf"></i
+          ></a>
         {% endif %}
       {% endif %}
       {% if entry.supp %}
         {% if entry.supp contains '://' %}
-          <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" title="Supplementary Documentation" role="button"><i class="fa-solid fa-file"></i></a>
+          <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" title="Supplementary Documentation" role="button"
+            ><i class="fa-solid fa-file"></i
+          ></a>
         {% else %}
-          <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" title="Supplementary Documentation" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-file"></i></a>
+          <a
+            href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}"
+            title="Supplementary Documentation"
+            class="btn btn-sm z-depth-0"
+            role="button"
+            ><i class="fa-solid fa-file"></i
+          ></a>
         {% endif %}
       {% endif %}
       {% if entry.video and site.enable_video_embedding %}
@@ -241,7 +251,9 @@
         {% if entry.slides contains '://' %}
           <a href="{{ entry.slides }}" class="btn btn-sm z-depth-0" role="button">Slides</a>
         {% else %}
-          <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" title="Slides" class="btn btn-sm z-depth-0" role="button"><i class="fa-brands fa-slideshare"></i></a>
+          <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" title="Slides" class="btn btn-sm z-depth-0" role="button"
+            ><i class="fa-brands fa-slideshare"></i
+          ></a>
         {% endif %}
       {% endif %}
       {% if entry.website %}
@@ -270,7 +282,7 @@
       {% endif %}
       {% if entry_has_altmetric_badge or entry_has_dimensions_badge or entry_has_google_scholar_badge or entry_has_inspirehep_badge %}
         <div class="badges">
-        {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
+          {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
             <a
               href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.scholar_userid }}&citation_for_view={{ site.scholar_userid }}:{{ entry.google_scholar_id }}"
               aria-label="Google Scholar link"

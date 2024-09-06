@@ -48,14 +48,14 @@
 "wang":
   - firstname: ["Yi"]
     url: http://www.eeyiwang.com/
-    
+
   - firstname: ["Ke"]
     url: https://see.ruc.edu.cn/en/Faculty/DepartmentofEcologicalandEnvironmentalEconomics/ee3a6c8fcaf8404ca5dc2d8aa0720fde.htm
 
 "zhang":
   - firstname: ["Ning"]
     url: https://www.eea.tsinghua.edu.cn/en/faculties/ningzhang.htm
-    
+
 "wu":
   - firstname: ["Yazhen"]
     url: https://iiasa.ac.at/staff/yazhen-wu
@@ -82,7 +82,7 @@
 
 "behrendt":
   - firstname: ["Jenna"]
-    url: https://cgs.umd.edu/our-community/faculty-staff/jenna-behrendt   
+    url: https://cgs.umd.edu/our-community/faculty-staff/jenna-behrendt
 
 "yu":
   - firstname: ["Sha"]

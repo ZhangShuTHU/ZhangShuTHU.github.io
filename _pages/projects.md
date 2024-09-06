@@ -2,12 +2,13 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: 
+description:
 nav: false
 nav_order: 3
 display_categories: [Government-sponsored researches, Corporate-sponsored researches]
 horizontal: false
 ---
+
 <!-- pages/projects.md -->
 
 <div class="projects">
