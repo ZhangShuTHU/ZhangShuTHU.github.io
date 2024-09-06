@@ -1,6 +1,7 @@
 "zhou":
   - firstname: ["Sheng"]
     url: http://www.3e.tsinghua.edu.cn/en/article/173
+
   - firstname: ["Nan"]
     url: https://profiles.lbl.gov/20338-Nan-Zhou
 
@@ -47,6 +48,9 @@
 "wang":
   - firstname: ["Yi"]
     url: http://www.eeyiwang.com/
+    
+  - firstname: ["Ke"]
+    url: https://see.ruc.edu.cn/en/Faculty/DepartmentofEcologicalandEnvironmentalEconomics/ee3a6c8fcaf8404ca5dc2d8aa0720fde.htm
 
 "zhang":
   - firstname: ["Ning"]
@@ -83,10 +87,6 @@
 "yu":
   - firstname: ["Sha"]
     url: https://cgs.umd.edu/our-community/faculty-staff/sha-yu
-
-"wang":
-  - firstname: ["Ke"]
-    url: https://see.ruc.edu.cn/en/Faculty/DepartmentofEcologicalandEnvironmentalEconomics/ee3a6c8fcaf8404ca5dc2d8aa0720fde.htm
 
 "liu":
   - firstname: ["Junling"]
