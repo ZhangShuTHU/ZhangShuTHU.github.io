@@ -645,7 +645,7 @@ footer.sticky-bottom {
   }
 
   h2.category {
-    color: var(--global-text-color);
+    color: var(--global-divider-color);
     border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
     margin-top: 2rem;
@@ -676,19 +676,10 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-text-color);
-    border-top: 1px solid var(--global-divider-color);
-    padding-top: 1rem;
-    margin-top: 2rem;
-    text-align: right;
-  }
-
-  h2.year {
     color: var(--global-divider-color);
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
-    margin-bottom: -2rem;
     text-align: right;
   }
 
@@ -698,7 +689,7 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin-bottom: 0.9rem;
+      margin-bottom: 1rem;
 
       .preview {
       }
@@ -741,10 +732,8 @@ footer.sticky-bottom {
         }
 
         > em {
-          border-bottom: none;
-          color: var(--global-theme-color);
+          border-bottom: 1px solid;
           font-style: normal;
-          font-weight: bold;
         }
 
         > span.more-authors {
@@ -1170,7 +1159,6 @@ ninja-keys::part(ninja-input-wrapper) {
   width: 100%;
 }
 
-
 .newsletter-form-input,
 .bibsearch-form-input {
   color: var(--global-newsletter-text-color);
@@ -1310,7 +1298,6 @@ ninja-keys::part(ninja-input-wrapper) {
     border-bottom-color: var(--global-divider-color);
   }
 }
-
 
 // highlight-search-term
 ::highlight(search) {
