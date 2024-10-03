@@ -71,7 +71,7 @@ nav_order: 6
 
 {% details 4.EU DG-CLIMA，Climate pOlicy assessment and Mitigation Modeling to Integrate national and global TransiTion pathways for Environmental-friendly Development（COMMITTED），Member %}
     Progject PI：Wenying Chen（陈文颖教授）
-    Grant No.：CLIMA/2022/EA-RP-0007
+    Grant No.：14020241/2022/884157/SER/CLIMA.A.2
     Period：2023/03-2026/06
 {% enddetails %}
 
