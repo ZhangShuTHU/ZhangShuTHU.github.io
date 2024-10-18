@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>+86-10-62772759</p>
-    <p>Room C400, Energy Sciences Buildings</p>
+    <p>Room C203, Energy Sciences Buildings</p>
     <p>Tsinghua University</p>
     <p>Beijing 100084, P.R.China</p>
 
