@@ -1,10 +1,18 @@
 {
   "basics": {
     "name": "Shu Zhang",
+    "label": "Assistant Professor",
     "image": "",
     "email": "zhang-s@mail.tsinghua.edu.cn",
     "phone": "+86-10-62772759",
-    "url": "http://www.3e.tsinghua.edu.cn/en/article/467"
+    "url": "http://www.3e.tsinghua.edu.cn/en/article/467",
+    "location": {
+      "address": "Room C203, Energy Sciences Building, Tsinghua University",
+      "postalCode": "100084",
+      "city": "Beijing",
+      "countryCode": "CN",
+      "region": "Haidian District"
+    }
   },
   "work": [
     {
