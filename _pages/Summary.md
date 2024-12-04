@@ -15,7 +15,7 @@ nav_order: 6
     Original project name：CO2驱油与封存发展战略规划研究
     Grant No.：SQ2024AAA120012
     Period：2024/11-2030/12
-{% enddetails %
+{% enddetails %}
 
 {% details 5.ME Key Research Base for Humanities and Social Sciences Major Project，Research on Electricity Transition Pathways and Policies under the Carbon Neutral Vision 2060，Member %}
     Original granter name：教育部人文社会科学重点研究基地重大项目
