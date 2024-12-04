@@ -8,6 +8,14 @@ nav_order: 6
 ---
 
 ## Goverment-sponsored researches:
+{% details 6.National Science and Technology Major Project，CO2 driven technology for significant enhanced oil recovery and long term sequestration，Member %}
+    Original granter name：科技创新——2030国家科技重大专项
+    Original program name：CO2驱大幅度提高采收率与长期封存技术
+    Project name：Strategic Planning Study for CO2 Oil Diversion and Sequestration Development
+    Original project name：CO2驱油与封存发展战略规划研究
+    Grant No.：SQ2024AAA120012
+    Period：2024/11-2030/12
+{% enddetails %
 
 {% details 5.ME Key Research Base for Humanities and Social Sciences Major Project，Research on Electricity Transition Pathways and Policies under the Carbon Neutral Vision 2060，Member %}
     Original granter name：教育部人文社会科学重点研究基地重大项目
