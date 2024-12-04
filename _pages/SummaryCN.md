@@ -2,12 +2,12 @@
 layout: page
 permalink: /SummaryCN/
 title: 项目列表
-description: 转到英文版项目列表，请[点击](https://zhang-shu.top/Summary/)
+description: 
 nav: false
 nav_order: 6
 ---
-
 ## 纵向科研项目:
+
 {% details 6.科技创新2030国家科技重大专项，CO2驱大幅度提高采收率与长期封存技术，项目骨干 %}
     课题名称：CO2驱油与封存发展战略规划研究
     课题号：SQ2024AAA120012

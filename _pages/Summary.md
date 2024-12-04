@@ -2,7 +2,7 @@
 layout: page
 permalink: /Summary/
 title: Project summary
-description: For project summary in Chinese, please [click](https://zhang-shu.top/SummaryCN/)
+description: 
 nav: false
 nav_order: 6
 ---
