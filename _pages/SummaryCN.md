@@ -26,7 +26,7 @@ nav_order: 6
     项目周期：2019/03-2022/02
 {% enddetails %}
 
-{% details 3.国家自然科学基金国际合作项目，可持续能源环境转型之路：全球和中爱能源-经济-环境-气候多模型创新集成模拟，项目骨干 %}
+{% details 3.国家自然科学基金国际合作项目，可持续能源环境转型之路：全球和中爱能源经济环境气候多模型创新集成模拟，项目骨干 %}
     项目负责人：陈文颖教授
     项目号：51861135102
     项目周期：2018/01-2021/12
@@ -51,7 +51,7 @@ nav_order: 6
 
 ## 横向科研项目:
 
-{% details 6.欧盟科研框架计划“欧洲地平线”，根据《巴黎协定》和可持续发展采取公平气候行动的新路径（NEWPATHWAYS），项目骨干 %}
+{% details 6.欧盟“欧洲地平线”，根据《巴黎协定》和可持续发展采取公平气候行动的新路径（NEWPATHWAYS），项目骨干 %}
     英文项目来源：EU Horizon Europe
     英文项目名称：New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development （NEWPATHWAYS）
     项目负责人：陈文颖教授
@@ -78,7 +78,7 @@ nav_order: 6
     项目周期：2021/06-2023/06
 {% enddetails %}
 
-{% details 2.欧盟科研框架计划“地平线2020”，探索减少温室气体排放的国家和全球行动（ENGAGE），项目骨干 %}
+{% details 2.欧盟“地平线2020”，探索减少温室气体排放的国家和全球行动（ENGAGE），项目骨干 %}
     英文项目来源：EU Horizon 2020
     英文项目名称：Exploring National and Global Actions to reduce Greenhouse gas Emissions（ENGAGE）
     项目负责人：陈文颖教授
@@ -86,7 +86,7 @@ nav_order: 6
     项目周期：2019/01-2023/12
 {% enddetails %}
 
-{% details 1.欧盟科研框架计划“地平线2020”，利用国际网络和知识共享以连接气候与发展政策（CD-LINKS），项目骨干 %}
+{% details 1.欧盟“地平线2020”，利用国际网络和知识共享以连接气候与发展政策（CD-LINKS），项目骨干 %}
     英文项目来源：EU Horizon 2020
     英文项目名称：Linking Climate and Development Policies-Leveraging International Networks and Knowledge Sharing（CD-LINKS）
     项目负责人：陈文颖教授
