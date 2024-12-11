@@ -19,11 +19,7 @@ news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
-
-
 清华大学能源环境经济研究所助理研究员，清华大学工学学士（电气工程及其自动化专业）、经济学学士（经济学专业）、管理学博士（管理科学与工程专业），曾作为访问学者在奥地利国际应用系统分析研究所（IIASA）开展合作研究。
-
-在Nature Sustainability、Nature Communications等期刊发表多篇研究论文。
 
 主要研究方向为能源-环境-经济模型，水-能-粮关联建模，能源和气候政策分析等。
 
