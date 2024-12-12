@@ -55,6 +55,7 @@ nav_order: 6
     英文项目来源：EU Horizon Europe
     英文项目名称：New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development （NEWPATHWAYS）
     项目负责人：陈文颖教授
+    项目号：101183367
     项目周期：2025/01-2028/06
 {% enddetails %}
 

@@ -67,6 +67,7 @@ nav_order: 6
 
 {% details 6.EU Horizon Europe，New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development （NEWPATHWAYS），Member %}
     Project PI：Wenying Chen
+    Grant No.:101183367
     Period：2025/01-2028/06
 {% enddetails %}
 
@@ -78,7 +79,7 @@ nav_order: 6
 {% enddetails %}
 
 {% details 4.EU DG-CLIMA，Climate pOlicy assessment and Mitigation Modeling to Integrate national and global TransiTion pathways for Environmental-friendly Development（COMMITTED），Member %}
-    Progject PI：Wenying Chen
+    Project PI：Wenying Chen
     Grant No.：14020241/2022/884157/SER/CLIMA.A.2
     Period：2023/03-2026/06
 {% enddetails %}
