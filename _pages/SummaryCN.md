@@ -64,7 +64,7 @@ nav_order: 6
     项目周期：2024/08-2025/05
 {% enddetails %}
 
-{% details 4.欧盟委员会气候行动总司，气候政策评估和减缓建模以整合国家和全球转型路径实现环境友好型发展（COMMITTED），项目骨干 %}
+{% details 4.欧盟委员会气候司，气候政策评估和减缓建模以整合国家和全球转型路径实现环境友好发展（COMMITTED），项目骨干 %}
     英文项目来源：EU DG-CLIMA
     英文项目名称：Climate pOlicy assessment and Mitigation Modeling to Integrate national and global TransiTion pathways for Environmental-friendly Development（COMMITTED）
     项目号：14020241/2022/884157/SER/CLIMA.A.2
