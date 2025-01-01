@@ -1,16 +1,16 @@
 ---
 layout: page
-title: 项目/Projects
+title: submenus
 nav: true
-nav_order: 3
+nav_order: 8
 dropdown: true
 children:
-  - title: 项目列表
-    permalink: /SummaryCN/
+  - title: publications
+    permalink: /publications/
   - title: divider
-  - title: Summary
-    permalink: /Summary/
-  - title: divider
-  - title: Feature
+  - title: projects
     permalink: /projects/
+  - title: divider
+  - title: blog
+    permalink: /blog/
 ---
