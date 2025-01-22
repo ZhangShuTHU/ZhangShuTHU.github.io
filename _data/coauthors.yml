@@ -52,6 +52,9 @@
   - firstname: ["Ke"]
     url: https://see.ruc.edu.cn/en/Faculty/DepartmentofEcologicalandEnvironmentalEconomics/ee3a6c8fcaf8404ca5dc2d8aa0720fde.htm
 
+  - firstname: ["Peng"]
+    url: https://giec.cas.cn/sourcedb/zw/zjrck/yjy/201804/t20180426_5003742.html
+
 "zhang":
   - firstname: ["Ning"]
     url: https://www.eea.tsinghua.edu.cn/en/faculties/ningzhang.htm
@@ -111,6 +114,18 @@
 "yang":
   - firstname: ["Zhuoxiang"]
     url: https://www.efchina.org/About-Us-en/Staff-en/ZhuoxiangYANG-en
+
+"dong":
+  - firstname: ["Huijuan"]
+    url: https://sese.sjtu.edu.cn/en/faculty/view/33
+
+"geng":
+  - firstname: ["Yong"]
+    url: https://sese.sjtu.edu.cn/en/faculty/view/2
+
+"Sarkis":
+  - firstname: ["Joseph"]
+    url: https://www.wpi.edu/people/faculty/jsarkis
 
 "chen":
   - firstname: ["Wenying"]
