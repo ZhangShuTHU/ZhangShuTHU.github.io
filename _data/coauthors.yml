@@ -1,135 +1,34 @@
-"zhou":
-  - firstname: ["Sheng"]
-    url: http://www.3e.tsinghua.edu.cn/en/article/173
+"adams":
+  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
+    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
 
-  - firstname: ["Nan"]
-    url: https://profiles.lbl.gov/20338-Nan-Zhou
+"podolsky":
+  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
+    url: https://en.wikipedia.org/wiki/Boris_Podolsky
 
-"chai":
-  - firstname: ["Qimin"]
-    url: http://www.rccm.tsinghua.edu.cn/kxdw/kcxfzyjfx.htm
+"rosen":
+  - firstname: ["Nathan", "N."]
+    url: https://en.wikipedia.org/wiki/Nathan_Rosen
 
-"krey":
-  - firstname: ["Volker"]
-    url: https://iiasa.ac.at/staff/volker-krey
+"bach":
+  - firstname: ["Johann Sebastian", "J. S."]
+    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
 
-"riahi":
-  - firstname: ["Keywan"]
-    url: https://iiasa.ac.at/staff/keywan-riahi
+  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
+    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
 
-"van ruijven":
-  - firstname: ["Bas"]
-    url: https://iiasa.ac.at/staff/bas-van-ruijven
+"przibram":
+  - firstname: ["Karl"]
+    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
 
-"byers":
-  - firstname: ["Edward"]
-    url: https://iiasa.ac.at/staff/edward-byers
+"schrodinger":
+  - firstname: ["Erwin"]
+    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
 
-"guo":
-  - firstname: ["Fei"]
-    url: https://iiasa.ac.at/staff/fei-guo
+"lorentz":
+  - firstname: ["Hendrik Antoon"]
+    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
 
-"rafaj":
-  - firstname: ["Peter"]
-    url: https://iiasa.ac.at/staff/peter-rafaj
-
-"awais":
-  - firstname: ["Muhammad"]
-    url: https://iiasa.ac.at/staff/muhammad-awais
-
-"nguyen":
-  - firstname: ["Binh"]
-    url: https://iiasa.ac.at/staff/binh-nguyen
-
-"pan":
-  - firstname: ["Xunzhang"]
-    url: https://see.ruc.edu.cn/jszy/pxz/
-
-"wang":
-  - firstname: ["Yi"]
-    url: http://www.eeyiwang.com/
-
-  - firstname: ["Ke"]
-    url: https://see.ruc.edu.cn/en/Faculty/DepartmentofEcologicalandEnvironmentalEconomics/ee3a6c8fcaf8404ca5dc2d8aa0720fde.htm
-
-  - firstname: ["Peng"]
-    url: https://giec.cas.cn/sourcedb/zw/zjrck/yjy/201804/t20180426_5003742.html
-
-"zhang":
-  - firstname: ["Ning"]
-    url: https://www.eea.tsinghua.edu.cn/en/faculties/ningzhang.htm
-
-"wu":
-  - firstname: ["Yazhen"]
-    url: https://iiasa.ac.at/staff/yazhen-wu
-
-"khanna":
-  - firstname: ["Nina"]
-    url: https://profiles.lbl.gov/24575-nina-khanna
-
-"lu":
-  - firstname: ["Hongyou"]
-    url: https://profiles.lbl.gov/20914-hongyou-lu
-
-"clarke":
-  - firstname: ["Leon"]
-    url: https://www.bezosearthfund.org/who-we-are/our-people/leon-clarke
-
-"hultman":
-  - firstname: ["Nathan"]
-    url: https://cgs.umd.edu/our-community/faculty-staff/nathan-hultman
-
-"lou":
-  - firstname: ["Jiehong"]
-    url: https://cgs.umd.edu/our-community/faculty-staff/jiehong-lou
-
-"behrendt":
-  - firstname: ["Jenna"]
-    url: https://cgs.umd.edu/our-community/faculty-staff/jenna-behrendt
-
-"yu":
-  - firstname: ["Sha"]
-    url: https://cgs.umd.edu/our-community/faculty-staff/sha-yu
-
-"liu":
-  - firstname: ["Junling"]
-    url: http://faculty.hitsz.edu.cn/liujunling
-
-"fu":
-  - firstname: ["Sha"]
-    url: https://www.efchina.org/About-Us-en/Staff-en/ShaFU-en
-
-"du":
-  - firstname: ["Xuan"]
-    url: https://www.efchina.org/About-Us-en/Staff-en/XuanDU-en
-
-"li":
-  - firstname: ["Manqi"]
-    url: https://www.efchina.org/About-Us-en/Staff-en/ManqiLI-en
-
-"mei":
-  - firstname: ["Chengcheng"]
-    url: https://www.efchina.org/About-Us-en/Staff-en/ChengchengMEI-en
-
-"yang":
-  - firstname: ["Zhuoxiang"]
-    url: https://www.efchina.org/About-Us-en/Staff-en/ZhuoxiangYANG-en
-
-"dong":
-  - firstname: ["Huijuan"]
-    url: https://sese.sjtu.edu.cn/en/faculty/view/33
-
-"geng":
-  - firstname: ["Yong"]
-    url: https://sese.sjtu.edu.cn/en/faculty/view/2
-
-"Sarkis":
-  - firstname: ["Joseph"]
-    url: https://www.wpi.edu/people/faculty/jsarkis
-
-"chen":
-  - firstname: ["Wenying"]
-    url: http://www.3e.tsinghua.edu.cn/en/article/158
-
-  - firstname: ["Lingyan"]
-    url: https://www.efchina.org/About-Us-en/Staff-en/LingyanCHEN-en
+"planck":
+  - firstname: ["Max"]
+    url: https://en.wikipedia.org/wiki/Max_Planck
