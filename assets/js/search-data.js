@@ -150,6 +150,13 @@ ninja.data = [{
           window.open("https://scholar.google.com/citations?user=3dCECpgAAAAJ", "_blank");
         },
       },{
+        id: 'social-scopus',
+        title: 'Scopus',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.scopus.com/authid/detail.uri?authorId=57196101151", "_blank");
+        },
+      },{
         id: 'social-wechat_qr',
         title: 'Wechat_qr',
         section: 'Socials',
