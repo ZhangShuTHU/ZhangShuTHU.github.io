@@ -51,62 +51,62 @@ ninja.data = [{
           title: 'Nature Sustainability paper was featured.',
           description: "",
           section: "News",handler: () => {
-              window.location.href = "/news/announcement_20240827_NS_Feature/";
+              window.location.href = "/news/announcement_20240827_NS_Feature.html";
             },},{id: "news-we-got-a-project-of-national-s-amp-t-major-program",
           title: 'We got a project of national S&amp;amp;T major program.',
           description: "",
           section: "News",handler: () => {
-              window.location.href = "/news/announcement_20241201_majorP/";
+              window.location.href = "/news/announcement_20241201_majorP.html";
             },},{id: "projects-绿色低碳发展转型中的关键管理科学问题与政策研究",
           title: '绿色低碳发展转型中的关键管理科学问题与政策研究',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/project_2016%E5%9B%BD%E8%87%AA%E7%84%B6%E9%87%8D%E5%A4%A7/";
+              window.location.href = "/projects/project_2016%E5%9B%BD%E8%87%AA%E7%84%B6%E9%87%8D%E5%A4%A7.html";
             },},{id: "projects-可持续能源转型之路-全球和中爱能源-经济-环境-气候多模型创新集成模拟",
           title: '可持续能源转型之路：全球和中爱能源-经济-环境-气候多模型创新集成模拟',
           description: "CHIMERA – Multi-model innovations in Integrated Assessment Modelling of Global, Chinese, and Irish energy-economy-environment-climate systems investigating deep decarbonisation pathways from the Paris Agreement to the United Nations sustainable development goals",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/project_2018%E5%9B%BD%E8%87%AA%E7%84%B6%E4%B8%AD%E7%88%B1/";
+              window.location.href = "/projects/project_2018%E5%9B%BD%E8%87%AA%E7%84%B6%E4%B8%AD%E7%88%B1.html";
             },},{id: "projects-气候变化风险的全球治理与国内应对关键问题研究",
           title: '气候变化风险的全球治理与国内应对关键问题研究',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/project_2018%E7%A7%91%E6%8A%80%E9%83%A8/";
+              window.location.href = "/projects/project_2018%E7%A7%91%E6%8A%80%E9%83%A8.html";
             },},{id: "projects-城市能源系统可持续发展-政策设计-运营优化与市场协调",
           title: '城市能源系统可持续发展：政策设计、运营优化与市场协调',
           description: "STEP-UP - Socio-Techno-Economic Pathways for sustainable Urban energy develoPment",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/project_2019%E5%9B%BD%E8%87%AA%E7%84%B6%E4%B8%AD%E6%AC%A7/";
+              window.location.href = "/projects/project_2019%E5%9B%BD%E8%87%AA%E7%84%B6%E4%B8%AD%E6%AC%A7.html";
             },},{id: "projects-cd-links",
           title: 'CD-LINKS',
           description: "Linking Climate and Development Policies – Leveraging International Networks and Knowledge Sharing",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/project_CD-LINKS/";
+              window.location.href = "/projects/project_CD-LINKS.html";
             },},{id: "projects-engage",
           title: 'ENGAGE',
           description: "Exploring National and Global Actions to reduce Greenhouse gas Emissions",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/project_ENGAGE/";
+              window.location.href = "/projects/project_ENGAGE.html";
             },},{id: "projects-green-china",
           title: 'GREEN CHINA',
           description: "Towards Cleaner and More Sustainable Growth",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/project_2021%E4%B8%96%E7%95%8C%E9%93%B6%E8%A1%8C/";
+              window.location.href = "/projects/project_2021%E4%B8%96%E7%95%8C%E9%93%B6%E8%A1%8C.html";
             },},{id: "projects-committed",
           title: 'COMMITTED',
           description: "Climate pOlicy assessment and Mitigation Modeling to Integrate national and global TransiTion pathways for Environmental-friendly Development",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/project_COMMITTED/";
+              window.location.href = "/projects/project_COMMITTED.html";
             },},{id: "projects-2060年碳中和愿景下的电力转型路径与政策研究",
           title: '2060年碳中和愿景下的电力转型路径与政策研究',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/project_2023%E6%95%99%E8%82%B2%E9%83%A8/";
+              window.location.href = "/projects/project_2023%E6%95%99%E8%82%B2%E9%83%A8.html";
             },},{id: "projects-newpathways",
           title: 'NEWPATHWAYS',
           description: "New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/project_NEWPATHWAYS/";
+              window.location.href = "/projects/project_NEWPATHWAYS.html";
             },},{
         id: 'social-email',
         title: 'email',
