@@ -28,21 +28,21 @@ ninja.data = [{
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "";
+                window.location.href = "/SummaryCN/";
               },
             },{id: "dropdown-summary",
               title: "Summary",
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "";
+                window.location.href = "/Summary/";
               },
             },{id: "dropdown-feature",
               title: "Feature",
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "";
+                window.location.href = "/projects/";
               },
             },{id: "news-today-i-am-being-awarded-my-doctorate",
           title: 'Today I am being awarded my doctorate.',
