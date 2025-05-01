@@ -736,7 +736,7 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin-bottom: 0.9rem;
+      margin-bottom: 1rem;
 
       .preview {
       }
@@ -748,6 +748,7 @@ footer.sticky-bottom {
           display: inline-block;
           background-color: var(--global-theme-color);
           margin-bottom: 0.5rem;
+          color: var(--global-card-bg-color) !important;
 
           a {
             color: white;
