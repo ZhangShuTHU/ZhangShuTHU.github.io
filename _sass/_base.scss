@@ -644,6 +644,12 @@ footer.sticky-bottom {
   }
 }
 
+// diff2html - Fix for diff2html line number overflow
+
+.d2h-diff-table {
+  position: relative;
+}
+
 // Distill
 
 .distill {
@@ -683,7 +689,7 @@ footer.sticky-bottom {
   }
 
   h2.category {
-    color: var(--global-text-color);
+    color: var(--global-divider-color);
     border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
     margin-top: 2rem;
@@ -714,19 +720,10 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-text-color);
-    border-top: 1px solid var(--global-divider-color);
-    padding-top: 1rem;
-    margin-top: 2rem;
-    text-align: right;
-  }
-
-  h2.year {
     color: var(--global-divider-color);
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
-    margin-bottom: -2rem;
     text-align: right;
   }
 
@@ -780,10 +777,8 @@ footer.sticky-bottom {
         }
 
         > em {
-          border-bottom: none;
-          color: var(--global-theme-color);
+          border-bottom: 1px solid;
           font-style: normal;
-          font-weight: bold;
         }
 
         > span.more-authors {
