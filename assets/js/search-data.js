@@ -57,6 +57,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_20241201_majorP.html";
+            },},{id: "news-",
+          title: '',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_20250827_NSFCProj.html";
             },},{id: "projects-绿色低碳发展转型中的关键管理科学问题与政策研究",
           title: '绿色低碳发展转型中的关键管理科学问题与政策研究',
           description: "",
