@@ -7,6 +7,12 @@ nav: false
 nav_order: 6
 ---
 ## Goverment-sponsored researches:
+{% details 7.NSFC Young Scientists Fund (C)，Hydrogen Energy and Hydrogen-based Fuel Supply Potential and Development Pathway in China under the Carbon Neutrality Target，PI %}
+    Original granter name：国家自然科学基金青年科学基金项目（C类）
+    Original program name：碳中和目标下中国氢能及氢基燃料供应潜力和发展路径研究
+    Grant No.：72504162
+    Period：2026/01-2028/12
+{% enddetails %}
 
 {% details 6.National Science and Technology Major Project，CO2 driven technology for significant enhanced oil recovery and long term sequestration，Member %}
     Original granter name：科技创新2030国家科技重大专项
