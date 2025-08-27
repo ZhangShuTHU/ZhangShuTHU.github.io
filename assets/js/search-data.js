@@ -52,13 +52,13 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_20240827_NS_Feature.html";
-            },},{id: "news-we-got-a-project-of-national-s-amp-t-major-program",
-          title: 'We got a project of national S&amp;amp;T major program.',
+            },},{id: "news-we-got-a-project-of-national-science-and-technology-major-program",
+          title: 'We got a project of National Science and Technology Major Program.',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_20241201_majorP.html";
-            },},{id: "news-",
-          title: '',
+            },},{id: "news-i-have-been-granted-the-nsfc-young-scientists-fund-c",
+          title: 'I have been granted the NSFC Young Scientists Fund (C).',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_20250827_NSFCProj.html";
