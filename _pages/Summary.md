@@ -7,6 +7,7 @@ nav: false
 nav_order: 6
 ---
 ## Goverment-sponsored researches:
+
 {% details 7.NSFC Young Scientists Fund (C)，Hydrogen Energy and Hydrogen-based Fuel Supply Potential and Development Pathway in China under the Carbon Neutrality Target，PI %}
     Original granter name：国家自然科学基金青年科学基金项目（C类）
     Original program name：碳中和目标下中国氢能及氢基燃料供应潜力和发展路径研究
@@ -14,7 +15,7 @@ nav_order: 6
     Period：2026/01-2028/12
 {% enddetails %}
 
-{% details 6.National Science and Technology Major Project，CO2 driven technology for significant enhanced oil recovery and long term sequestration，Member %}
+{% details 6.MOST National Science and Technology Major Project，CO2 driven technology for significant enhanced oil recovery and long term sequestration，Member %}
     Original granter name：科技创新2030国家科技重大专项
     Original program name：CO2驱大幅度提高采收率与长期封存技术
     Project name：Strategic Planning Study for CO2 Oil Diversion and Sequestration Development
@@ -23,7 +24,7 @@ nav_order: 6
     Period：2024/11-2030/12
 {% enddetails %}
 
-{% details 5.ME Key Research Base for Humanities and Social Sciences Major Project，Research on Electricity Transition Pathways and Policies under the Carbon Neutral Vision 2060，Member %}
+{% details 5.MOE Key Research Base for Humanities and Social Sciences Major Project，Research on Electricity Transition Pathways and Policies under the Carbon Neutral Vision 2060，Member %}
     Original granter name：教育部人文社会科学重点研究基地重大项目
     Original project name：2060年碳中和愿景下的电力转型路径与政策研究
     Project PI：Wenying Chen
@@ -39,15 +40,7 @@ nav_order: 6
     Period：2019/03-2022/02
 {% enddetails %}
 
-{% details 3.NSFC International Cooperation and Exchange Project，Multi-model innovations in Integrated Assessment Modelling of Global, Chinese, and Irish energy-economy-environment-climate systems investigating deep decarbonisation pathways from the Paris Agreement to the United Nations sustainable development goals (CHIMERA)，Member %}
-    Original granter name：国家自然科学基金国际合作项目
-    Original project name：可持续能源环境转型之路：全球和中爱能源-经济-环境-气候多模型创新集成模拟
-    Project PI：Wenying Chen
-    Grant No.：51861135102
-    Period：2018/01-2021/12
-{% enddetails %}
-
-{% details 2.MST National Key Research and Development Program，Research on Global Governance and Domestic Responses to Climate Change Risks，Member %}
+{% details 3.MOST National Key Research and Development Program，Research on Global Governance and Domestic Responses to Climate Change Risks，Member %}
     Original granter name：科技部重点研发计划重点专项
     Original program name：气候变化风险的全球治理与国内应对关键问题研究
     Program PI：Qingchen Chao
@@ -58,7 +51,15 @@ nav_order: 6
     Period：2019/01-2021/12
 {% enddetails %}
 
-{% details 1.MSFC Major Program，Research on Green and Low-carbon Eeconomy Transformation Management and Policy，Member %}
+{% details 2.NSFC International Cooperation and Exchange Project，Multi-model innovations in Integrated Assessment Modelling of Global, Chinese, and Irish energy-economy-environment-climate systems investigating deep decarbonization pathways from the Paris Agreement to the United Nations sustainable development goals (CHIMERA)，Member %}
+    Original granter name：国家自然科学基金国际合作项目
+    Original project name：可持续能源环境转型之路：全球和中爱能源-经济-环境-气候多模型创新集成模拟
+    Project PI：Wenying Chen
+    Grant No.：51861135102
+    Period：2018/01-2021/12
+{% enddetails %}
+
+{% details 1.NSFC Major Program，Research on Green and Low-carbon Economy Transformation Management and Policy，Member %}
     Original granter name：国家自然科学基金重大项目
     Original program name：绿色低碳发展转型中的关键管理科学问题与政策研究
     Program PI：Xiliang Zhang
@@ -71,7 +72,7 @@ nav_order: 6
 
 ## Corporate-sponsored researches:
 
-{% details 6.EU Horizon Europe，New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development （NEWPATHWAYS），Member %}
+{% details 6.EU Horizon Europe，New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development (NEWPATHWAYS)，Member %}
     Project PI：Wenying Chen
     Grant No.:101183367
     Period：2025/01-2028/06
@@ -84,7 +85,7 @@ nav_order: 6
     Period：2024/08-2025/05
 {% enddetails %}
 
-{% details 4.EU DG-CLIMA，Climate pOlicy assessment and Mitigation Modeling to Integrate national and global TransiTion pathways for Environmental-friendly Development（COMMITTED），Member %}
+{% details 4.EU DG-CLIMA，Climate pOlicy assessment and Mitigation Modeling to Integrate national and global TransiTion pathways for Environmental-friendly Development (COMMITTED)，Member %}
     Project PI：Wenying Chen
     Grant No.：14020241/2022/884157/SER/CLIMA.A.2
     Period：2023/03-2026/06
@@ -96,13 +97,13 @@ nav_order: 6
     Period：2021/06-2023/06
 {% enddetails %}
 
-{% details 2.EU Horizon 2020，Exploring National and Global Actions to reduce Greenhouse gas Emissions（ENGAGE），Member %}
+{% details 2.EU Horizon 2020，Exploring National and Global Actions to reduce Greenhouse gas Emissions (ENGAGE)，Member %}
     Project PI：Wenying Chen
     Grant No.：821471
     Period：2019/01-2023/12
 {% enddetails %}
 
-{% details 1.EU Horizon 2020，Linking Climate and Development Policies-Leveraging International Networks and Knowledge Sharing（CD-LINKS），Member %}
+{% details 1.EU Horizon 2020，Linking Climate and Development Policies-Leveraging International Networks and Knowledge Sharing (CD-LINKS)，Member %}
     Project PI：Wenying Chen
     Grant No.：642147
     Period：2015/09-2019/09

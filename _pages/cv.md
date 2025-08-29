@@ -4,7 +4,7 @@ permalink: /cv/
 title: 履历/CV
 nav: true
 nav_order: 2
-cv_pdf:
+cv_pdf: ZhangShu_CV_EN.pdf
 description:
 toc:
   sidebar: left
