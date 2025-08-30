@@ -19,15 +19,6 @@ layout: default
     {% assign t_pdf_fallback_2 = '。' %}
     {% assign t_mobile_hint = '当前设备可能不支持内嵌 PDF 浏览，请使用以下方式查看：' %}
     {% assign t_download = '下载 PDF' %}
-    {% assign t_loading = '正在加载…' %}
-    {% assign t_page = '第' %}
-    {% assign t_page_of = '共' %}
-    {% assign t_page_suffix = '页' %}
-    {% assign t_prev = '上一页' %}
-    {% assign t_next = '下一页' %}
-    {% assign t_zoom_in = '放大' %}
-    {% assign t_zoom_out = '缩小' %}
-    {% assign t_fit_width = '适宽' %}
     {% assign t_en = 'English' %}
     {% assign t_cn = '中文' %}
     {% assign default_lang = 'cn' %}
@@ -38,15 +29,6 @@ layout: default
     {% assign t_pdf_fallback_2 = '.' %}
     {% assign t_mobile_hint = 'Your device may not support inline PDF. Use options below:' %}
     {% assign t_download = 'Download PDF' %}
-    {% assign t_loading = 'Loading…' %}
-    {% assign t_page = 'Page' %}
-    {% assign t_page_of = 'of' %}
-    {% assign t_page_suffix = '' %}
-    {% assign t_prev = 'Prev' %}
-    {% assign t_next = 'Next' %}
-    {% assign t_zoom_in = 'Zoom In' %}
-    {% assign t_zoom_out = 'Zoom Out' %}
-    {% assign t_fit_width = 'Fit Width' %}
     {% assign t_en = 'English' %}
     {% assign t_cn = '中文' %}
     {% assign default_lang = 'en' %}
@@ -68,23 +50,35 @@ layout: default
     {% assign cn_url = cn_file | prepend: 'assets/pdf/' | relative_url %}
   {% endif %}
 
+  {%- comment -%} absolute URLs for Google Docs Viewer {%- endcomment -%}
+  {% assign en_abs_url = en_url | absolute_url %}
+  {% assign cn_abs_url = cn_url | absolute_url %}
+
   <style>
     .cv-pdf-controls { display: flex; gap: .5rem; align-items: center; }
     .cv-pdf-controls .spacer { flex: 1 1 auto; }
     .cv-pdf-controls .btn { white-space: nowrap; }
-    .lang-ico { margin-right: .25rem; }
+    /* Modern segmented control for language toggle */
+    .segmented-control { display: inline-flex; align-items: center; gap: .25rem; padding: .2rem; border-radius: 999px; border: 1px solid rgba(0,0,0,.12); background: rgba(0,0,0,.04); }
+    .segment { appearance: none; border: 0; background: transparent; border-radius: 999px; padding: .35rem .75rem; font-size: .875rem; font-weight: 600; color: #334155; cursor: pointer; transition: background-color .2s ease, color .2s ease, box-shadow .2s ease; }
+    .segment:hover { background: rgba(0,0,0,.06); }
+    .segment.is-active { background: #0d6efd; color: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 0 0 1px rgba(13,110,253,.2) inset; }
+    @media (prefers-color-scheme: dark) {
+      .segmented-control { border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.06); }
+      .segment { color: #e5e7eb; }
+      .segment:hover { background: rgba(255,255,255,.08); }
+      .segment.is-active { background: #3b82f6; box-shadow: 0 1px 2px rgba(0,0,0,.3), 0 0 0 1px rgba(59,130,246,.25) inset; }
+    }
     .pdf-viewer object#cv-pdf { width: 100%; height: 78vh; max-height: 1000px; }
     @media (max-width: 576px) {
       .pdf-viewer object#cv-pdf { height: 65vh; }
     }
   </style>
   <div class="cv-pdf-controls mt-3">
-    <button id="btn-cv-en" class="btn btn-sm btn-primary" aria-pressed="true" aria-label="{{ t_en }}" title="{{ t_en }}">
-      <span class="lang-ico" aria-hidden="true">🇬🇧</span>{{ t_en }}
-    </button>
-    <button id="btn-cv-cn" class="btn btn-sm btn-primary" aria-pressed="false" aria-label="{{ t_cn }}" title="{{ t_cn }}">
-      <span class="lang-ico" aria-hidden="true">🇨🇳</span>{{ t_cn }}
-    </button>
+    <div class="segmented-control" role="group" aria-label="Language toggle">
+      <button id="btn-cv-en" class="segment is-active" aria-pressed="true" aria-label="{{ t_en }}" title="{{ t_en }}">EN</button>
+      <button id="btn-cv-cn" class="segment" aria-pressed="false" aria-label="{{ t_cn }}" title="{{ t_cn }}">中文</button>
+    </div>
     <span class="spacer"></span>
     <a href="{{ en_url }}" id="cv-download-link" class="btn btn-sm btn-link" target="_blank" rel="noopener noreferrer">{{ t_open_new }}</a>
   </div>
@@ -97,30 +91,16 @@ layout: default
     </object>
   </div>
 
-  <!-- PDF.js lightweight viewer (hidden by default; enabled on unsupported browsers/mobile) -->
+  <!-- Google Docs Viewer fallback (enabled on unsupported browsers/mobile) -->
   <style>
-    #pdfjs-viewer-wrap { display: none; }
-    #pdfjs-toolbar { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
-    #pdfjs-toolbar .spacer { flex: 1 1 auto; }
-    #pdfjs-canvas-wrap { width: 100%; overflow: auto; background: #f8f9fa; border: 1px solid rgba(0,0,0,.1); border-radius: .25rem; }
-    #pdfjs-canvas { display: block; margin: 0 auto; width: 100%; height: auto; }
-    #pdfjs-status { font-size: .9rem; color: #6c757d; }
+    #gdoc-view-wrap { display: none; }
+    #gdoc-view { width: 100%; height: 78vh; border: 1px solid rgba(0,0,0,.1); border-radius: .25rem; }
+    @media (max-width: 576px) { #gdoc-view { height: 65vh; } }
   </style>
-  <div id="pdfjs-viewer-wrap" class="mt-2">
-    <div id="pdfjs-toolbar" class="mb-2">
-      <button id="pdfjs-prev" class="btn btn-sm btn-outline-primary" title="{{ t_prev }}">◀ {{ t_prev }}</button>
-      <button id="pdfjs-next" class="btn btn-sm btn-outline-primary" title="{{ t_next }}">{{ t_next }} ▶</button>
-      <span id="pdfjs-page-info" class="mx-2">{{ t_page }} <span id="pdfjs-page-num">1</span> {{ t_page_of }} <span id="pdfjs-page-count">1</span> {{ t_page_suffix }}</span>
-      <span class="spacer"></span>
-      <button id="pdfjs-zoom-out" class="btn btn-sm btn-outline-secondary" title="{{ t_zoom_out }}">- {{ t_zoom_out }}</button>
-      <button id="pdfjs-zoom-in" class="btn btn-sm btn-outline-secondary" title="{{ t_zoom_in }}">+ {{ t_zoom_in }}</button>
-      <button id="pdfjs-fit" class="btn btn-sm btn-outline-secondary" title="{{ t_fit_width }}">{{ t_fit_width }}</button>
-    </div>
-    <div id="pdfjs-status" class="mb-2">{{ t_loading }}</div>
-    <div id="pdfjs-canvas-wrap">
-      <canvas id="pdfjs-canvas"></canvas>
-    </div>
+  <div id="gdoc-view-wrap" class="mt-2">
+    <iframe id="gdoc-view" allow="fullscreen" referrerpolicy="no-referrer"></iframe>
   </div>
+
 
   <div id="cv-mobile-fallback" class="alert alert-info d-none mt-3" role="alert">
     <div class="mb-2">{{ t_mobile_hint }}</div>
@@ -134,6 +114,8 @@ layout: default
     (function () {
       var en = "{{ en_url }}";
       var cn = "{{ cn_url }}";
+      var enAbs = "{{ en_abs_url }}";
+      var cnAbs = "{{ cn_abs_url }}";
       var viewer = document.getElementById('cv-pdf');
       var btnEn = document.getElementById('btn-cv-en');
       var btnCn = document.getElementById('btn-cv-cn');
@@ -142,82 +124,10 @@ layout: default
       var mobileFallback = document.getElementById('cv-mobile-fallback');
       var mobileOpen = document.getElementById('cv-mobile-open');
       var mobileDownload = document.getElementById('cv-mobile-download');
+      var gdocWrap = document.getElementById('gdoc-view-wrap');
+      var gdocFrame = document.getElementById('gdoc-view');
+      var usingGdoc = false;
 
-      // PDF.js elements
-      var pdfWrap = document.getElementById('pdfjs-viewer-wrap');
-      var pdfCanvas = document.getElementById('pdfjs-canvas');
-      var pdfCanvasWrap = document.getElementById('pdfjs-canvas-wrap');
-      var pdfStatus = document.getElementById('pdfjs-status');
-      var btnPrev = document.getElementById('pdfjs-prev');
-      var btnNext = document.getElementById('pdfjs-next');
-      var btnZoomIn = document.getElementById('pdfjs-zoom-in');
-      var btnZoomOut = document.getElementById('pdfjs-zoom-out');
-      var btnFit = document.getElementById('pdfjs-fit');
-      var pageNumEl = document.getElementById('pdfjs-page-num');
-      var pageCountEl = document.getElementById('pdfjs-page-count');
-      var pdfDoc = null, pageNum = 1, scale = 1.0, fitToWidth = true, rendering = false, pendingPage = null;
-
-      function loadScript(src, cb) {
-        var s = document.createElement('script');
-        s.src = src; s.async = true; s.onload = cb; s.onerror = function(){ if (pdfStatus) pdfStatus.textContent = 'Failed to load pdf.js'; };
-        document.head.appendChild(s);
-      }
-
-      function ensurePdfJs(cb) {
-        if (window.pdfjsLib) return cb();
-        loadScript('https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js', function(){
-          try { window['pdfjsLib'].GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js'; } catch(e){}
-          cb();
-        });
-      }
-
-      function setStatus(msg) { if (pdfStatus) pdfStatus.textContent = msg || ''; }
-
-      function computeFitScale(page) {
-        try {
-          var viewport = page.getViewport({ scale: 1 });
-          var containerWidth = pdfCanvasWrap ? pdfCanvasWrap.clientWidth : viewport.width;
-          var s = Math.max(containerWidth / viewport.width, 0.1);
-          return s;
-        } catch (e) { return 1; }
-      }
-
-      function renderPage(num) {
-        rendering = true;
-        pdfDoc.getPage(num).then(function(page){
-          if (fitToWidth) { scale = computeFitScale(page); }
-          var viewport = page.getViewport({ scale: scale });
-          var ctx = pdfCanvas.getContext('2d');
-          pdfCanvas.height = viewport.height; pdfCanvas.width = viewport.width;
-          var renderTask = page.render({ canvasContext: ctx, viewport: viewport });
-          return renderTask.promise;
-        }).then(function(){
-          rendering = false;
-          if (pendingPage !== null) { var p = pendingPage; pendingPage = null; renderPage(p); }
-        }).catch(function(){ rendering = false; });
-        if (pageNumEl) pageNumEl.textContent = String(num);
-      }
-
-      function queueRenderPage(num) { if (rendering) { pendingPage = num; } else { renderPage(num); } }
-
-      function showPdfViewer(show) {
-        if (!pdfWrap) return;
-        if (show) { pdfWrap.style.display = 'block'; } else { pdfWrap.style.display = 'none'; }
-      }
-
-      function openWithPdfJs(url) {
-        ensurePdfJs(function(){
-          showPdfViewer(true);
-          if (viewer && viewer.parentElement) viewer.parentElement.classList.add('d-none');
-          if (mobileFallback) mobileFallback.classList.add('d-none');
-          try { setStatus("{{ t_loading }}"); } catch(e){}
-          window.pdfjsLib.getDocument({ url: url }).promise.then(function(doc){
-            pdfDoc = doc; pageNum = 1; if (pageCountEl) pageCountEl.textContent = String(doc.numPages);
-            setStatus('');
-            renderPage(pageNum);
-          }).catch(function(){ setStatus(''); if (mobileFallback) mobileFallback.classList.remove('d-none'); });
-        });
-      }
 
       function isIOS() {
         var ua = window.navigator.userAgent || '';
@@ -235,6 +145,7 @@ layout: default
 
       function setLang(lang) {
         var url = (lang === 'cn') ? cn : en;
+        var abs = (lang === 'cn') ? cnAbs : enAbs;
         if (viewer) viewer.setAttribute('data', url);
         if (download) download.setAttribute('href', url);
         if (fallback) fallback.setAttribute('href', url);
@@ -244,19 +155,17 @@ layout: default
           mobileDownload.setAttribute('download', (lang === 'cn') ? 'CV_CN.pdf' : 'CV_EN.pdf');
         }
 
-        // If PDF.js viewer is visible, reload with new URL
-        if (pdfWrap && pdfWrap.style.display !== 'none' && window.pdfjsLib) {
-          openWithPdfJs(url);
+        if (usingGdoc && gdocFrame) {
+          var gdoc = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(abs);
+          gdocFrame.setAttribute('src', gdoc);
         }
+
 
         if (btnEn && btnCn) {
           var enActive = (lang !== 'cn');
-          btnEn.classList.toggle('btn-primary', enActive);
-          btnEn.classList.toggle('btn-outline-primary', !enActive);
+          btnEn.classList.toggle('is-active', enActive);
           btnEn.setAttribute('aria-pressed', enActive);
-
-          btnCn.classList.toggle('btn-primary', !enActive);
-          btnCn.classList.toggle('btn-outline-primary', enActive);
+          btnCn.classList.toggle('is-active', !enActive);
           btnCn.setAttribute('aria-pressed', !enActive);
         }
 
@@ -271,21 +180,29 @@ layout: default
       var defaultLang = "{{ default_lang }}";
       setLang(saved === 'cn' ? 'cn' : (saved === 'en' ? 'en' : defaultLang));
 
-      // Use PDF.js on devices likely lacking inline PDF support
+      // Use Google Docs Viewer on devices likely lacking inline PDF support; fallback to open/download on failure
       try {
         if (likelyNoInlinePDFSupport()) {
-          var initialUrl = (saved === 'cn' ? cn : (saved === 'en' ? en : ("{{ default_lang }}" === 'cn' ? cn : en)));
-          openWithPdfJs(initialUrl);
+          var saved = null; try { saved = localStorage.getItem('cv_lang'); } catch (e) {}
+          var useCn = saved === 'cn' ? true : (saved === 'en' ? false : ("{{ default_lang }}" === 'cn'));
+          var absUrl = useCn ? cnAbs : enAbs;
+          var gdoc = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absUrl);
+          if (gdocWrap) gdocWrap.style.display = 'block';
+          if (viewer && viewer.parentElement) viewer.parentElement.classList.add('d-none');
+          usingGdoc = true;
+          var timer = null;
+          if (gdocFrame) {
+            gdocFrame.removeAttribute('src');
+            // show fallback buttons if viewer doesn't load in time
+            timer = setTimeout(function(){ if (mobileFallback) mobileFallback.classList.remove('d-none'); }, 4000);
+            gdocFrame.onload = function(){ if (timer) { clearTimeout(timer); timer = null; } };
+            gdocFrame.onerror = function(){ if (timer) { clearTimeout(timer); timer = null; } if (mobileFallback) mobileFallback.classList.remove('d-none'); };
+            gdocFrame.setAttribute('src', gdoc);
+          } else if (mobileFallback) {
+            mobileFallback.classList.remove('d-none');
+          }
         }
       } catch (e) {}
-
-      // Controls
-      if (btnPrev) btnPrev.addEventListener('click', function(){ if (pdfDoc && pageNum > 1) { pageNum--; queueRenderPage(pageNum); } });
-      if (btnNext) btnNext.addEventListener('click', function(){ if (pdfDoc && pageNum < pdfDoc.numPages) { pageNum++; queueRenderPage(pageNum); } });
-      if (btnZoomIn) btnZoomIn.addEventListener('click', function(){ fitToWidth = false; scale = Math.min(scale * 1.2, 5); if (pdfDoc) queueRenderPage(pageNum); });
-      if (btnZoomOut) btnZoomOut.addEventListener('click', function(){ fitToWidth = false; scale = Math.max(scale / 1.2, 0.2); if (pdfDoc) queueRenderPage(pageNum); });
-      if (btnFit) btnFit.addEventListener('click', function(){ fitToWidth = true; if (pdfDoc) queueRenderPage(pageNum); });
-      window.addEventListener('resize', function(){ if (pdfWrap && pdfWrap.style.display !== 'none' && pdfDoc && fitToWidth) { queueRenderPage(pageNum); } });
     })();
   </script>
 </div>
