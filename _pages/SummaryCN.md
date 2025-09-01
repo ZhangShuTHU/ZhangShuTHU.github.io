@@ -56,6 +56,10 @@ nav_order: 6
 
 ## 横向科研项目:
 
+{% details 7.气候变化与碳中和国际合作联合行动，碳中和目标下中国绿氢和氨醇燃料发展路径，项目负责人 %}
+    项目周期：2025/06-2026/09
+{% enddetails %}
+
 {% details 6.欧盟“欧洲地平线”，根据《巴黎协定》和可持续发展采取公平气候行动的新路径（NEWPATHWAYS），项目骨干 %}
     英文项目来源：EU Horizon Europe
     英文项目名称：New Pathways for Equitable Climate Action in Line with the Paris Agreement and Sustainable Development （NEWPATHWAYS）
