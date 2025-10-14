@@ -79,8 +79,6 @@ http://14.204.32.182:6610/00000002/2/G_ANHUI-HD/index.m3u8?AuthInfo=%2Flu3M2hgmv
 http://14.204.32.194:6410/00000003/2/H_AHWS?virtualDomain=00000003.live_hls.zte.com
 #EXTINF:-1,tvg-id="北京纪实" tvg-name="北京纪实" tvg-logo="https://epg.v1.mk/logo/北京纪实.png" group-title="卫视",北京纪实
 http://14.204.32.183:6610/00000002/2/G_BEIJINGJS-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VLlF5S3cb21KYjoehDYb3xqj1442Ebq3FzW38H7%2Bmb6pyLdMZmwkza8VklLalEZ9wQ%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=G_BEIJINGJS-HD&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3865020250611042645772833&amp;ispcode=27
-#EXTINF:-1,tvg-id="北京卫视4K" tvg-name="北京卫视4K" tvg-logo="https://epg.v1.mk/logo/北京卫视.png" group-title="4K频道",北京卫视4K
-http://14.204.32.182:6610/00000002/2/G_BJWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;
 #EXTINF:-1,tvg-id="北京卫视" tvg-name="北京卫视" tvg-logo="https://epg.v1.mk/logo/北京卫视.png" group-title="卫视",北京卫视
 http://14.204.32.182:6610/00000002/2/BTV-1/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;
 #EXTINF:-1,tvg-id="北京卫视" tvg-name="北京卫视" tvg-logo="https://epg.v1.mk/logo/北京卫视.png" group-title="卫视",北京卫视
@@ -167,14 +165,10 @@ http://14.204.32.182:6610/00000002/2/G_SXWS-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQ
 http://14.204.32.197:6610/00000003/2/H_SXWS?virtualDomain=00000003.live_hls.zte.com
 #EXTINF:-1,tvg-id="陕西卫视" tvg-name="陕西卫视" tvg-logo="https://epg.v1.mk/logo/陕西卫视.png" group-title="卫视",陕西卫视
 http://14.204.32.183:6610/00000002/2/G_SHANXI-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VLcMypzk2%2BPSy%2FnKB%2FPER%2BgPtnbhl3%2Byb6g8rYtCJYsIbNXDuOkoRsEscX8hwbd%2FGA%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=G_SHANXI-HD&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3878920250611042549780291&amp;ispcode=27
-#EXTINF:-1,tvg-id="少儿" tvg-name="少儿" tvg-logo="https://epg.v1.mk/logo/少儿.png" group-title="卫视",少儿频道
-http://14.204.32.182:6610/00000002/2/G_YNTVSE-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VJiS1d9jBxv3lP8newFplD%2FvR9Bw39%2BYmpSWXgDE%2FYFRf7Ct53kcqyuch5gaVO3ZBg%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=G_YNTVSE-HD&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3871720250611041458779737&amp;ispcode=27&amp;
 #EXTINF:-1,tvg-id="深圳卫视" tvg-name="深圳卫视" tvg-logo="https://epg.v1.mk/logo/深圳卫视.png" group-title="卫视",深圳卫视
 http://14.204.32.183:6610/00000002/2/SZWS-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VN6fjdZozS4Nb2Gy9Bk8bkQU22vKJ8puYMj%2Bd7YptwEpJIDSVGuVOhJJloPR%2Bt74GQ%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=SZWS-HD&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3862920250611042012774135&amp;ispcode=27
 #EXTINF:-1,tvg-id="深圳卫视" tvg-name="深圳卫视" tvg-logo="https://epg.v1.mk/logo/深圳卫视.png" group-title="卫视",深圳卫视
 http://14.204.32.194:6410/00000003/2/H_SZWS?virtualDomain=00000003.live_hls.zte.com
-#EXTINF:-1,tvg-id="深圳卫视4K" tvg-name="深圳卫视4K" tvg-logo="https://epg.v1.mk/logo/深圳卫视.png" group-title="4K频道",深圳卫视4K
-http://14.204.32.182:6610/00000002/2/G_SZWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;#EXTINF:-1,tvg-id="四川卫视" tvg-name="四川卫视" tvg-logo="https://epg.v1.mk/logo/四川卫视.png" group-title="四川",四川卫视
 #EXTINF:-1,tvg-id="四川卫视" tvg-name="四川卫视" tvg-logo="https://epg.v1.mk/logo/四川卫视.png" group-title="卫视",四川卫视
 http://14.204.32.194:6410/00000003/2/H_SCWS?virtualDomain=00000003.live_hls.zte.com
 #EXTINF:-1,tvg-id="天津卫视" tvg-name="天津卫视" tvg-logo="https://epg.v1.mk/logo/天津卫视.png" group-title="卫视",天津卫视
@@ -193,14 +187,34 @@ http://14.204.32.194:6410/00000003/2/H_YNWS?virtualDomain=00000003.live_hls.zte.
 http://14.204.32.182:6610/00000002/2/G_YNTV-2-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VCNvlO%2Fmh9HzLUz%2FgBLmuCAV%2FV%2BUD1mI9j1iY6bPllhYK%2FEbuAIEyZiirLnpV8NzBg%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=G_YNTV-2-HD&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3868520250611041148780912&amp;ispcode=27&amp;
 #EXTINF:-1,tvg-id="云南娱乐" tvg-name="云南娱乐" tvg-logo="https://epg.v1.mk/logo/云南娱乐.png" group-title="云南",云南娱乐
 http://14.204.32.182:6610/00000002/2/G_YNTV-3-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VBKFcCwQNSlK9BgW%2F36uiZKb5hdxepv7JwOuDxCihrTnXSp0D04clqdEEnUsgRpoHg%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=G_YNTV-3-HD&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3874120250611041213779803&amp;ispcode=27&amp;
+#EXTINF:-1,tvg-id="云南娱乐" tvg-name="云南娱乐" tvg-logo="https://epg.v1.mk/logo/云南娱乐.png" group-title="云南",云南娱乐
+http://14.204.32.181:6410/00000003/2/H_YULE?virtualDomain=00000003.live_hls.zte.com
 #EXTINF:-1,tvg-id="云南国际" tvg-name="云南国际" tvg-logo="https://epg.v1.mk/logo/云南国际.png" group-title="云南",云南国际
 http://14.204.32.182:6610/00000002/2/G_YNTVGJ/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VITqQA8wBVxZwrmq85BImJ4LqSaHc1o7P8wSZAOYl7%2FU9%2FyJHlQDnh7gaV1E59nj2A%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=G_YNTVGJ&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3864420250611041513781979&amp;ispcode=27&amp;
 #EXTINF:-1,tvg-id="云南影视" tvg-name="云南影视" tvg-logo="https://epg.v1.mk/logo/云南影视.png" group-title="云南",云南影视
 http://14.204.32.183:6610/00000002/2/G_YNTV-5-HD/1000.m3u8?version=1.0&amp;IASHttpSessionId=RR3860620250611041230778137&amp;programid=G_YNTV-5-HD&amp;zte_bandwidth=1000&amp;bandwidth=12477484&amp;ispcode=27&amp;timeformat=local&amp;channel=G_YNTV-5-HD&amp;userid=9087100026829&amp;AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VH%2FdFg4FViNzSg6vYDm8gahdR7yGdalH3hZ5LWp3buURjYzIe4LtRn91rVChSMXEJA%3D%3D&amp;m3u8_level=2&amp;stbid=21000453001352000000185E0B961F6A&amp;virtualDomain=00000002.live_hls.zte.com&amp;ztecid=G_YNTV-5-HD
 #EXTINF:-1,tvg-id="云南影视" tvg-name="云南影视" tvg-logo="https://epg.v1.mk/logo/云南影视.png" group-title="云南",云南影视
 http://14.205.92.91:6610/00000002/2/G_YNTV-5-HD/index.m3u8?AuthInfo=p9pmfDyqegdydPtvD2eovQgTKFi9iDTeW3i56ylH6UkZsZUAknO1EH6ks2ihFtg4cfUpNbJsgasoGv0t16w6u%2FhueeBpiHovQaC3Ye9n5vk%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=G_YNTV-5-HD&amp;IASHttpSessionId=SLB225214220250704040744000003&amp;ispcode=27
+#EXTINF:-1,tvg-id="云南影视" tvg-name="云南影视" tvg-logo="https://epg.v1.mk/logo/云南影视.png" group-title="云南",云南影视
+http://14.204.32.181:6410/00000003/2/H_YINGSHI?virtualDomain=00000003.live_hls.zte.com
 #EXTINF:-1,tvg-id="云南康旅" tvg-name="云南康旅" tvg-logo="https://epg.v1.mk/logo/云南康旅.png" group-title="云南",云南康旅
 http://14.204.32.183:6610/00000002/2/G_YNTV-6-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VLL4RctQGZar3uC%2FOT0izobXlee2gdshSlOs0vQs4e85fJmTWm%2BrJFADBqgraOV%2Fkw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=G_YNTV-6-HD&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3860820250611041411781032&amp;ispcode=27
+#EXTINF:-1,tvg-id="云南少儿" tvg-name="云南少儿" tvg-logo="https://epg.v1.mk/logo/云南少儿.png" group-title="云南",云南少儿
+http://14.204.32.182:6610/00000002/2/G_YNTVSE-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VJiS1d9jBxv3lP8newFplD%2FvR9Bw39%2BYmpSWXgDE%2FYFRf7Ct53kcqyuch5gaVO3ZBg%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=G_YNTVSE-HD&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3871720250611041458779737&amp;ispcode=27&amp;
+#EXTINF:-1,tvg-id="云南少儿" tvg-name="云南少儿" tvg-logo="https://epg.v1.mk/logo/云南少儿.png" group-title="云南",云南少儿
+http://14.204.32.181:6410/00000003/2/H_SHAOER?virtualDomain=00000003.live_hls.zte.com
+#EXTINF:-1,tvg-id="昆明新闻综合" tvg-name="昆明新闻综合" tvg-logo="https://epg.v1.mk/logo/昆明新闻综合.png" group-title="昆明",昆明新闻综合
+http://14.204.32.181:6410/00000003/2/H_KMTV1?virtualDomain=00000003.live_hls.zte.com
+#EXTINF:-1,tvg-id="昆明经济生活" tvg-name="昆明经济生活" tvg-logo="https://epg.v1.mk/logo/昆明经济生活.png" group-title="昆明",昆明经济生活
+http://14.204.32.181:6410/00000003/2/H_KMTV2?virtualDomain=00000003.live_hls.zte.com
+#EXTINF:-1,tvg-id="昆明科学教育" tvg-name="昆明科学教育" tvg-logo="https://epg.v1.mk/logo/昆明科学教育.png" group-title="昆明",昆明科学教育
+http://14.204.32.181:6410/00000003/2/H_KMTV3?virtualDomain=00000003.live_hls.zte.com
+#EXTINF:-1,tvg-id="昆明影视综艺" tvg-name="昆明影视综艺" tvg-logo="https://epg.v1.mk/logo/昆明影视综艺.png" group-title="昆明",昆明影视综艺
+http://14.204.32.181:6410/00000003/2/H_KMTV5?virtualDomain=00000003.live_hls.zte.com
+#EXTINF:-1,tvg-id="昆明春城民生" tvg-name="昆明春城民生" tvg-logo="https://epg.v1.mk/logo/昆明春城民生.png" group-title="昆明",昆明春城民生
+http://14.204.32.181:6410/00000003/2/H_KMTV6?virtualDomain=00000003.live_hls.zte.com
+#EXTINF:-1,tvg-id="昆明教育频道" tvg-name="昆明教育频道" tvg-logo="https://epg.v1.mk/logo/昆明教育频道.png" group-title="昆明",昆明教育频道
+http://14.204.32.181:6410/00000003/2/H_KMJY?virtualDomain=00000003.live_hls.zte.com
 #EXTINF:-1,tvg-id="浙江卫视" tvg-name="浙江卫视" tvg-logo="https://epg.v1.mk/logo/浙江卫视.png" group-title="卫视",浙江卫视
 http://14.204.32.183:6610/00000002/2/ZJWS-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VLb%2Bk%2BtCVVDp7Bij3pU74af0eFQ7u%2F92oEf%2BP2zjOFtC0ZfrSSY6FjdW4Alf1EsrCw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=ZJWS-HD&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3872020250611041633778395&amp;ispcode=27
 #EXTINF:-1,tvg-id="浙江卫视" tvg-name="浙江卫视" tvg-logo="https://epg.v1.mk/logo/浙江卫视.png" group-title="卫视",浙江卫视
@@ -209,15 +223,36 @@ http://14.204.32.194:6410/00000003/2/H_ZJWS?virtualDomain=00000003.live_hls.zte.
 http://14.204.32.182:6610/00000002/2/G_CHONGQING-HD/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VLLroyh4DgLmRvkRKJcqjTt5jPYdz4oFAUZc3wfvphNLZQ59Yf9lxSJNKZey%2F1P7Fg%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=G_CHONGQING-HD&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3863420250611042036774766&amp;ispcode=27&amp;
 #EXTINF:-1,tvg-id="重庆卫视" tvg-name="重庆卫视" tvg-logo="https://epg.v1.mk/logo/重庆卫视.png" group-title="卫视",重庆卫视
 http://14.204.32.194:6410/00000003/2/H_CQWS?virtualDomain=00000003.live_hls.zte.com
-#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/北京卫视4K.png" group-title="4K频道",北京卫视4K
+#EXTINF:-1 tvg-id="CCTV-4K" tvg-name="CCTV-4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/CCTV4K.png" group-title="4K频道",CCTV-4K
+http://14.204.32.194:6410/00000003/2/G_CCTV_4K?virtualDomain=00000003.live_hls.zte.com
+#EXTINF:-1 tvg-id="北京卫视4K" tvg-name="北京卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/北京卫视4K.png" group-title="4K频道",北京卫视4K
 https://migu.188766.xyz/?migutoken=66c34a5215578b2f1c0ef8cd2e7b44ae&id=%E5%8C%97%E4%BA%AC%E5%8D%AB%E8%A7%86&pp=1
-#EXTINF:-1 tvg-id="深圳卫视" tvg-name="深圳卫视" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/深圳卫视4K.png" group-title="4K频道",深圳卫视4K
+#EXTINF:-1,tvg-id="北京卫视4K" tvg-name="北京卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/北京卫视4K.png" group-title="4K频道",北京卫视4K
+http://14.204.32.182:6610/00000002/2/G_BJWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;
+#EXTINF:-1,tvg-id="东方卫视4K" tvg-name="东方卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/东方卫视4K.png" group-title="4K频道",上海卫视4K
+http://14.204.32.182:6610/00000002/2/DFWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;
+#EXTINF:-1,tvg-id="江苏卫视4K" tvg-name="江苏卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/江苏卫视4K.png" group-title="4K频道",江苏卫视4K
+http://14.204.32.182:6610/00000002/2/JSWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;
+#EXTINF:-1,tvg-id="山东卫视4K" tvg-name="山东卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/山东卫视4K.png" group-title="4K频道",山东卫视4K
+http://14.204.32.182:6610/00000002/2/SDWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;
+#EXTINF:-1,tvg-id="湖南卫视4K" tvg-name="湖南卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/湖南卫视4K.png" group-title="4K频道",湖南卫视4K
+http://14.204.32.182:6610/00000002/2/HNWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;
+#EXTINF:-1,tvg-id="四川卫视4K" tvg-name="四川卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/四川卫视4K.png" group-title="4K频道",四川卫视4K
+http://14.204.32.182:6610/00000002/2/SCWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;
+#EXTINF:-1,tvg-id="浙江卫视4K" tvg-name="浙江卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/浙江卫视4K.png" group-title="4K频道",浙江卫视4K
+http://14.204.32.182:6610/00000002/2/ZJWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;
+#EXTINF:-1,tvg-id="深圳卫视4K" tvg-name="深圳卫视4K" tvg-logo="https://epg.v1.mk/logo/深圳卫视.png" group-title="4K频道",深圳卫视4K
+http://14.204.32.182:6610/00000002/2/SZWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;#EXTINF:-1,tvg-id="四川卫视" tvg-name="四川卫视" tvg-logo="https://epg.v1.mk/logo/四川卫视.png" group-title="四川",四川卫视
+#EXTINF:-1 tvg-id="深圳卫视4K" tvg-name="深圳卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/深圳卫视4K.png" group-title="4K频道",深圳卫视4K
 https://migu.188766.xyz/?migutoken=0da8f515243c9d58f6b56ecc4ca10106&id=%E6%B7%B1%E5%9C%B3%E5%8D%AB%E8%A7%86&pp=1
-#EXTINF:-1 tvg-id="广东卫视" tvg-name="广东卫视" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/广东卫视4K.png" group-title="4K频道",广东卫视4K
+#EXTINF:-1 tvg-id="广东卫视4K" tvg-name="广东卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/广东卫视4K.png" group-title="4K频道",广东卫视4K
+http://14.204.32.182:6610/00000002/2/GDWS-4K/index.m3u8?AuthInfo=%2Flu3M2hgmvQRBhId%2B8s4VOTC5V%2FIN1wYrEWLojTCbLVMTkgENPjX4sW9G%2BRfkesXrzkAsMT9MH6IhLLvnoRJTw%3D%3D&amp;version=1.0&amp;virtualDomain=00000002.live_hls.zte.com&amp;programid=BTV-1&amp;stbid=21000453001352000000185E0B961F6A&amp;userid=9087100026829&amp;IASHttpSessionId=RR3881620250611041859774574&amp;ispcode=27&amp;
+#EXTINF:-1 tvg-id="广东卫视4K" tvg-name="广东卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/广东卫视4K.png" group-title="4K频道",广东卫视4K
 http://ikuai.haleeyo.cn:9003/udp/239.77.0.27:5146
-#EXTINF:-1 tvg-id="广东卫视" tvg-name="广东卫视" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/广东卫视4K.png" group-title="4K频道",广东卫视4K
+#EXTINF:-1 tvg-id="广东卫视4K" tvg-name="广东卫视4K" tvg-logo="https://fy.188766.xyz/logo/sln162/iptv-back/logo/广东卫视4K.png" group-title="4K频道",广东卫视4K
 http://vvip.lqcc.xyz:8092/stream/channelid/1248069700?auth=PrI5LXwb51dYilt30TvNYVVAgd4A&profile=pass
 #EXTINF:-1 tvg-id="苏州4K" tvg-name="苏州4K" tvg-logo="https://fy.188766.xyz/logo/fanmingming/live/tv/苏州4K.png" group-title="4K频道",苏州4K
 https://tylive.kan0512.com/norecord/csztv4k_4k.m3u8
 #EXTINF:-1 tvg-id="河北4K" tvg-name="河北4K" tvg-logo="https://fy.188766.xyz/logo/sparkssssssssss/epg/logo/纯享4K.png" group-title="4K频道",河北4K
 https://event.pull.hebtv.com:443/live/live101.m3u8
+
