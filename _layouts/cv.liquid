@@ -1,242 +1,127 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    {% if page.description %}
-      <p class="post-description">{{ page.description }}</p>
-    {% endif %}
-  </header>
+{% unless site.data.resume %}
+  <div class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        {{ page.title }}
+        {% if page.cv_pdf %}
+          <a
+            {% if page.cv_pdf contains '://' %}
+              href="{{ page.cv_pdf }}"
+            {% else %}
+              href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
+            {% endif %}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="float-right"
+          >
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
+        {% endif %}
+      </h1>
+      {% if page.description %}
+        <p class="post-description">{{ page.description }}</p>
+      {% endif %}
+    </header>
 
-  {% comment %} i18n: decide page language and strings {% endcomment %}
-  {% assign page_lang = page.lang | default: site.lang | downcase | default: 'en' %}
-  {% assign is_cn = page_lang == 'zh' or page_lang == 'zh-cn' or page_lang == 'cn' %}
-  {% if is_cn %}
-    {% assign t_open_new = '在新窗口打开' %}
-    {% assign t_pdf_fallback_1 = '无法内嵌显示 PDF。你可以' %}
-    {% assign t_pdf_fallback_link = '点击这里在新窗口打开' %}
-    {% assign t_pdf_fallback_2 = '。' %}
-    {% assign t_mobile_hint = '当前设备可能不支持内嵌 PDF 浏览，请使用以下方式查看：' %}
-    {% assign t_download = '下载 PDF' %}
-    {% assign t_en = 'English' %}
-    {% assign t_cn = '中文' %}
-    {% assign default_lang = 'cn' %}
-  {% else %}
-    {% assign t_open_new = 'Open in new tab' %}
-    {% assign t_pdf_fallback_1 = 'Unable to display the PDF inline. You can' %}
-    {% assign t_pdf_fallback_link = 'click here to open in a new tab' %}
-    {% assign t_pdf_fallback_2 = '.' %}
-    {% assign t_mobile_hint = 'Your device may not support inline PDF. Use options below:' %}
-    {% assign t_download = 'Download PDF' %}
-    {% assign t_en = 'English' %}
-    {% assign t_cn = '中文' %}
-    {% assign default_lang = 'en' %}
-  {% endif %}
-
-  {% comment %} PDF embed with language toggle (default EN). Override via page.cv_pdf_en / page.cv_pdf_cn {% endcomment %}
-  {% assign en_file = page.cv_pdf_en | default: 'ZhangShu_CV_EN.pdf' %}
-  {% assign cn_file = page.cv_pdf_cn | default: 'PDFZhangShu_CV_CN.pdf' %}
-
-  {% if en_file contains '://' %}
-    {% assign en_url = en_file %}
-  {% else %}
-    {% assign en_url = en_file | prepend: 'assets/pdf/' | relative_url %}
-  {% endif %}
-
-  {% if cn_file contains '://' %}
-    {% assign cn_url = cn_file %}
-  {% else %}
-    {% assign cn_url = cn_file | prepend: 'assets/pdf/' | relative_url %}
-  {% endif %}
-
-  {%- comment -%} absolute URLs for direct open {%- endcomment -%}
-  {% assign en_abs_url = en_url | absolute_url %}
-  {% assign cn_abs_url = cn_url | absolute_url %}
-
-  <style>
-    .cv-pdf-controls { display: flex; gap: .5rem; align-items: center; }
-    .cv-pdf-controls .spacer { flex: 1 1 auto; }
-    .cv-pdf-controls .btn { white-space: nowrap; }
-    /* Modern segmented control for language toggle */
-    .segmented-control { display: inline-flex; align-items: center; gap: .25rem; padding: .2rem; border-radius: 999px; border: 1px solid rgba(0,0,0,.12); background: rgba(0,0,0,.04); }
-    .segment { appearance: none; border: 0; background: transparent; border-radius: 999px; padding: .35rem .75rem; font-size: .875rem; font-weight: 600; color: #334155; cursor: pointer; transition: background-color .2s ease, color .2s ease, box-shadow .2s ease; }
-    .segment:hover { background: rgba(0,0,0,.06); }
-    .segment.is-active { background: #0d6efd; color: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 0 0 1px rgba(13,110,253,.2) inset; }
-    @media (prefers-color-scheme: dark) {
-      .segmented-control { border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.06); }
-      .segment { color: #e5e7eb; }
-      .segment:hover { background: rgba(255,255,255,.08); }
-      .segment.is-active { background: #3b82f6; box-shadow: 0 1px 2px rgba(0,0,0,.3), 0 0 0 1px rgba(59,130,246,.25) inset; }
-    }
-    .pdf-viewer object#cv-pdf { width: 100%; height: 78vh; max-height: 1000px; }
-    @media (max-width: 576px) {
-      .pdf-viewer object#cv-pdf { height: 65vh; }
-    }
-    /* PDF icon styling */
-    .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; }
-  .icon-pdf { display: inline-block; font-size: 18px; line-height: 1; }
-  </style>
-  <div class="cv-pdf-controls mt-3">
-    <div class="segmented-control" role="group" aria-label="Language toggle">
-      <button id="btn-cv-en" class="segment is-active" aria-pressed="true" aria-label="{{ t_en }}" title="{{ t_en }}">EN</button>
-      <button id="btn-cv-cn" class="segment" aria-pressed="false" aria-label="{{ t_cn }}" title="{{ t_cn }}">中</button>
-    </div>
-    <span class="spacer"></span>
-    <a href="{{ en_url }}" id="cv-download-link" class="btn btn-sm btn-link icon-btn" target="_blank" rel="noopener noreferrer" aria-label="{{ t_open_new }}" title="{{ t_open_new }}">
-      <i class="fa-solid fa-file-pdf icon-pdf" aria-hidden="true"></i>
-    </a>
+    <article>
+      <div class="cv">
+        {% for entry in site.data.cv %}
+          <a class="anchor" id="{{ entry.title }}"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
+            <div>
+              {% if entry.type == 'list' %}
+                {% include cv/list.liquid %}
+              {% elsif entry.type == 'map' %}
+                {% include cv/map.liquid %}
+              {% elsif entry.type == 'nested_list' %}
+                {% include cv/nested_list.liquid %}
+              {% elsif entry.type == 'time_table' %}
+                {% include cv/time_table.liquid %}
+              {% elsif entry.type == 'list_groups' %}
+                {% include cv/list_groups.liquid %}
+              {% else %}
+                {{ entry.contents }}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </article>
   </div>
-  <div class="pdf-viewer mt-2">
-    <object id="cv-pdf" type="application/pdf">
-      <p>
-        {{ t_pdf_fallback_1 }}
-        <a id="cv-fallback" href="{{ en_url }}" target="_blank" rel="noopener noreferrer">{{ t_pdf_fallback_link }}</a>{{ t_pdf_fallback_2 }}
-      </p>
-    </object>
+{% else %}
+  <div class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        {{ page.title }}
+        {% if page.cv_pdf %}
+          <a
+            {% if page.cv_pdf contains '://' %}
+              href="{{ page.cv_pdf }}"
+            {% else %}
+              href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
+            {% endif %}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="float-right"
+          >
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
+        {% endif %}
+      </h1>
+      {% if page.description %}
+        <p class="post-description">{{ page.description }}</p>
+      {% endif %}
+    </header>
+
+    <article>
+      <div class="cv">
+        {% for data in site.data.resume %}
+          {% if site.jsonresume and site.jsonresume.size > 0 %}
+            {% unless site.jsonresume contains data[0] %}
+              {% continue %}
+            {% endunless %}
+          {% endif %}
+          {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
+          <a class="anchor" id="{{ data[0] }}"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
+            <div>
+              {% case data[0] %}
+                {% when 'basics' %}
+                  {% include resume/basics.liquid %}
+                {% when 'education' %}
+                  {% include resume/education.liquid %}
+                {% when 'work' %}
+                  {% include resume/work.liquid %}
+                {% when 'volunteer' %}
+                  {% include resume/volunteer.liquid %}
+                {% when 'projects' %}
+                  {% include resume/projects.liquid %}
+                {% when 'awards' %}
+                  {% include resume/awards.liquid %}
+                {% when 'skills' %}
+                  {% include resume/skills.liquid %}
+                {% when 'publications' %}
+                  {% include resume/publications.liquid %}
+                {% when 'languages' %}
+                  {% include resume/languages.liquid %}
+                {% when 'interests' %}
+                  {% include resume/interests.liquid %}
+                {% when 'certificates' %}
+                  {% include resume/certificates.liquid %}
+                {% when 'references' %}
+                  {% include resume/references.liquid %}
+                {% else %}
+
+              {% endcase %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </article>
   </div>
-
-  
-
-
-  <div id="cv-mobile-fallback" class="alert alert-info d-none mt-3" role="alert">
-    <div id="cv-mobile-hint" class="mb-2">{{ t_mobile_hint }}</div>
-    <div class="d-flex gap-2 flex-wrap">
-      <a id="cv-mobile-open" href="{{ en_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">{{ t_open_new }}</a>
-      <a id="cv-mobile-download" href="{{ en_url }}" download class="btn btn-sm btn-outline-primary">{{ t_download }}</a>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      var en = "{{ en_url }}";
-      var cn = "{{ cn_url }}";
-  var enAbs = "{{ en_abs_url }}";
-  var cnAbs = "{{ cn_abs_url }}";
-      var viewer = document.getElementById('cv-pdf');
-      var btnEn = document.getElementById('btn-cv-en');
-      var btnCn = document.getElementById('btn-cv-cn');
-      var download = document.getElementById('cv-download-link');
-      var fallback = document.getElementById('cv-fallback');
-      var mobileFallback = document.getElementById('cv-mobile-fallback');
-  var mobileHint = document.getElementById('cv-mobile-hint');
-      var mobileOpen = document.getElementById('cv-mobile-open');
-      var mobileDownload = document.getElementById('cv-mobile-download');
-      var inlineSupported = true; // set later
-
-
-      function isIOS() {
-        var ua = window.navigator.userAgent || '';
-        var iOS = /(iPad|iPhone|iPod)/.test(ua);
-        var iPadOS13Up = (ua.indexOf('Macintosh') > -1) && ('ontouchend' in document);
-        return iOS || iPadOS13Up;
-      }
-
-      function likelyNoInlinePDFSupport() {
-        if (isIOS()) return true;
-        var hasMime = false;
-        try { hasMime = !!(navigator.mimeTypes && navigator.mimeTypes['application/pdf']); } catch (e) { hasMime = false; }
-        return !hasMime;
-      }
-
-      // Heuristic: detect China visitors by timezone or language (no external service)
-      function isCNVisitor() {
-        var tz = '';
-        try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-        var langs = [];
-        try { langs = navigator.languages || [navigator.language]; } catch (e) {}
-        var langStr = (langs || []).join(',').toLowerCase();
-        var tzCN = /asia\/shanghai/i.test(tz);
-        var langCN = /(zh-cn|\bzh\b)/.test(langStr);
-        return tzCN || langCN;
-      }
-
-      // i18n dictionary for runtime text switching
-      var i18n = {
-        en: {
-          open: 'Open in new tab',
-          download: 'Download PDF',
-          hint: 'Your device may not support inline PDF. Use options below:'
-        },
-        cn: {
-          open: '在新窗口打开',
-          download: '下载 PDF',
-          hint: '当前设备可能不支持内嵌 PDF 浏览，请使用以下方式查看：'
-        }
-      };
-
-      function setLang(lang) {
-        var url = (lang === 'cn') ? cn : en;
-        var abs = (lang === 'cn') ? cnAbs : enAbs;
-        if (viewer && inlineSupported) viewer.setAttribute('data', url);
-        if (download) {
-          download.setAttribute('href', url);
-          var label = (lang === 'cn') ? i18n.cn.open : i18n.en.open;
-          download.setAttribute('aria-label', label);
-          download.setAttribute('title', label);
-        }
-        if (fallback) fallback.setAttribute('href', url);
-        if (mobileOpen) {
-          mobileOpen.setAttribute('href', url);
-          mobileOpen.textContent = (lang === 'cn') ? i18n.cn.open : i18n.en.open;
-        }
-        if (mobileDownload) {
-          mobileDownload.setAttribute('href', url);
-          mobileDownload.setAttribute('download', (lang === 'cn') ? 'CV_CN.pdf' : 'CV_EN.pdf');
-          mobileDownload.textContent = (lang === 'cn') ? i18n.cn.download : i18n.en.download;
-        }
-        if (mobileHint) mobileHint.textContent = (lang === 'cn') ? i18n.cn.hint : i18n.en.hint;
-
-        if (btnEn && btnCn) {
-          var enActive = (lang !== 'cn');
-          btnEn.classList.toggle('is-active', enActive);
-          btnEn.setAttribute('aria-pressed', enActive);
-          btnCn.classList.toggle('is-active', !enActive);
-          btnCn.setAttribute('aria-pressed', !enActive);
-        }
-
-        try { localStorage.setItem('cv_lang', lang); } catch (e) {}
-      }
-
-      if (btnEn) btnEn.addEventListener('click', function () { setLang('en'); });
-      if (btnCn) btnCn.addEventListener('click', function () { setLang('cn'); });
-
-  // defer initial setLang until strategy decision below
-
-      // Decide render strategy early to avoid unnecessary network
-      try {
-        var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-        var saveData = !!(conn && conn.saveData);
-        inlineSupported = !likelyNoInlinePDFSupport();
-
-        // Decide initial language
-        var saved = null; try { saved = localStorage.getItem('cv_lang'); } catch (e) {}
-        var initialLang;
-        if (saved === 'cn' || saved === 'en') {
-          initialLang = saved;
-        } else {
-          initialLang = isCNVisitor() ? 'cn' : 'en';
-        }
-
-        if (saveData) {
-          // Respect Save-Data: skip heavy embeds, show open/download only
-          if (viewer && viewer.parentElement) viewer.parentElement.classList.add('d-none');
-          // no alternative viewer
-          if (mobileFallback) mobileFallback.classList.remove('d-none');
-          setLang(initialLang);
-        } else if (inlineSupported) {
-          // Inline supported: show object; set data only once via setLang
-          if (viewer && viewer.parentElement) viewer.parentElement.classList.remove('d-none');
-          // no alternative viewer
-          if (mobileFallback) mobileFallback.classList.add('d-none');
-          setLang(initialLang);
-        } else {
-          // Inline not supported: open chosen language PDF directly
-          var absUrl = (initialLang === 'cn') ? cnAbs : enAbs;
-          try { window.location.href = absUrl; } catch(e) { if (mobileFallback) mobileFallback.classList.remove('d-none'); }
-          return;
-        }
-      } catch (e) {}
-    })();
-  </script>
-</div>
+{% endunless %}
