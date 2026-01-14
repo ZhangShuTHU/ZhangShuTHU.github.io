@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-01-12'
+  last_updated: '2026-01-14'
 papers:
   3dCECpgAAAAJ:0EnyYjriUFMC:
     citations: 0
@@ -9,12 +9,16 @@ papers:
     citations: 151
     title: "Assessing Representative CCUS Layouts for China\u2019s Power Sector toward Carbon Neutrality"
     year: '2021'
+  3dCECpgAAAAJ:5nxA0vEk-isC:
+    citations: 0
+    title: Climate-driven impacts in renewable resources alter green hydrogen supply
+    year: '2026'
   3dCECpgAAAAJ:IjCSPb-OGe4C:
     citations: 1
     title: Modeling the Rapid Development of Electric Vehicles and Energy Storage Technology Under China Carbon Neutral Scenario Based on China-TIMES Model
     year: '2020'
   3dCECpgAAAAJ:LkGwnXOMwfcC:
-    citations: 72
+    citations: 73
     title: Targeting net-zero emissions while advancing other sustainable development goals in China
     year: '2024'
   3dCECpgAAAAJ:UebtZRa9Y70C:
