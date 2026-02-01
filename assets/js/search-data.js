@@ -155,8 +155,8 @@ ninja.data = [{
           window.open("https://www.scopus.com/authid/detail.uri?authorId=57196101151", "_blank");
         },
       },{
-        id: 'social-wechat_qr',
-        title: 'Wechat_qr',
+        id: 'social-wechat_username',
+        title: 'Wechat_username',
         section: 'Socials',
         handler: () => {
           window.open("", "_blank");
