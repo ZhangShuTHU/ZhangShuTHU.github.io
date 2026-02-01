@@ -55,27 +55,94 @@ layout: default
   {% assign cn_abs_url = cn_url | absolute_url %}
 
   <style>
-    .cv-pdf-controls { display: flex; gap: .5rem; align-items: center; }
-    .cv-pdf-controls .spacer { flex: 1 1 auto; }
-    .cv-pdf-controls .btn { white-space: nowrap; }
-    /* Modern segmented control for language toggle */
-    .segmented-control { display: inline-flex; align-items: center; gap: .25rem; padding: .2rem; border-radius: 999px; border: 1px solid rgba(0,0,0,.12); background: rgba(0,0,0,.04); }
-    .segment { appearance: none; border: 0; background: transparent; border-radius: 999px; padding: .35rem .75rem; font-size: .875rem; font-weight: 600; color: #334155; cursor: pointer; transition: background-color .2s ease, color .2s ease, box-shadow .2s ease; }
-    .segment:hover { background: rgba(0,0,0,.06); }
-    .segment.is-active { background: #0d6efd; color: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 0 0 1px rgba(13,110,253,.2) inset; }
-    @media (prefers-color-scheme: dark) {
-      .segmented-control { border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.06); }
-      .segment { color: #e5e7eb; }
-      .segment:hover { background: rgba(255,255,255,.08); }
-      .segment.is-active { background: #3b82f6; box-shadow: 0 1px 2px rgba(0,0,0,.3), 0 0 0 1px rgba(59,130,246,.25) inset; }
+    .cv-pdf-controls {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
     }
-    .pdf-viewer object#cv-pdf { width: 100%; height: 78vh; max-height: 1000px; }
+    .cv-pdf-controls .spacer {
+      flex: 1 1 auto;
+    }
+    .cv-pdf-controls .btn {
+      white-space: nowrap;
+    }
+    /* Modern segmented control for language toggle */
+    .segmented-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      background: rgba(0, 0, 0, 0.04);
+    }
+    .segment {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+    .segment:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+    .segment.is-active {
+      background: #0d6efd;
+      color: #fff;
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(13, 110, 253, 0.2) inset;
+    }
+    @media (prefers-color-scheme: dark) {
+      .segmented-control {
+        border-color: rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .segment {
+        color: #e5e7eb;
+      }
+      .segment:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .segment.is-active {
+        background: #3b82f6;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.3),
+          0 0 0 1px rgba(59, 130, 246, 0.25) inset;
+      }
+    }
+    .pdf-viewer object#cv-pdf {
+      width: 100%;
+      height: 78vh;
+      max-height: 1000px;
+    }
     @media (max-width: 576px) {
-      .pdf-viewer object#cv-pdf { height: 65vh; }
+      .pdf-viewer object#cv-pdf {
+        height: 65vh;
+      }
     }
     /* PDF icon styling */
-    .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; }
-  .icon-pdf { display: inline-block; font-size: 18px; line-height: 1; }
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .icon-pdf {
+      display: inline-block;
+      font-size: 18px;
+      line-height: 1;
+    }
   </style>
   <div class="cv-pdf-controls mt-3">
     <div class="segmented-control" role="group" aria-label="Language toggle">
@@ -83,8 +150,16 @@ layout: default
       <button id="btn-cv-cn" class="segment" aria-pressed="false" aria-label="{{ t_cn }}" title="{{ t_cn }}">中</button>
     </div>
     <span class="spacer"></span>
-    <a href="{{ en_url }}" id="cv-download-link" class="btn btn-sm btn-link icon-btn" target="_blank" rel="noopener noreferrer" aria-label="{{ t_open_new }}" title="{{ t_open_new }}">
-      <i class="fa-solid fa-file-pdf icon-pdf" aria-hidden="true"></i>
+    <a
+      href="{{ en_url }}"
+      id="cv-download-link"
+      class="btn btn-sm btn-link icon-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="{{ t_open_new }}"
+      title="{{ t_open_new }}"
+    >
+     <i class="fa-solid fa-file-pdf icon-pdf" aria-hidden="true"></i>
     </a>
   </div>
   <div class="pdf-viewer mt-2">
@@ -111,15 +186,15 @@ layout: default
     (function () {
       var en = "{{ en_url }}";
       var cn = "{{ cn_url }}";
-  var enAbs = "{{ en_abs_url }}";
-  var cnAbs = "{{ cn_abs_url }}";
+      var enAbs = "{{ en_abs_url }}";
+      var cnAbs = "{{ cn_abs_url }}";
       var viewer = document.getElementById('cv-pdf');
       var btnEn = document.getElementById('btn-cv-en');
       var btnCn = document.getElementById('btn-cv-cn');
       var download = document.getElementById('cv-download-link');
       var fallback = document.getElementById('cv-fallback');
       var mobileFallback = document.getElementById('cv-mobile-fallback');
-  var mobileHint = document.getElementById('cv-mobile-hint');
+      var mobileHint = document.getElementById('cv-mobile-hint');
       var mobileOpen = document.getElementById('cv-mobile-open');
       var mobileDownload = document.getElementById('cv-mobile-download');
       var inlineSupported = true; // set later
@@ -128,7 +203,7 @@ layout: default
       function isIOS() {
         var ua = window.navigator.userAgent || '';
         var iOS = /(iPad|iPhone|iPod)/.test(ua);
-        var iPadOS13Up = (ua.indexOf('Macintosh') > -1) && ('ontouchend' in document);
+        var iPadOS13Up = ua.indexOf('Macintosh') > -1 && 'ontouchend' in document;
         return iOS || iPadOS13Up;
       }
 

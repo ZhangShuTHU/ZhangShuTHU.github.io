@@ -24,5 +24,4 @@ This project proposes to investigate the urban energy transformation in an integ
 
 7. To understand the role of various storage technologies in efficient and resilient operation and planning of urban energy system.8. To provide roadmaps for EU and Chinese metropolitan areas for gradually up-scaling sustainable energy system in an efficient way.
 
-
 More information can be found at [Here](https://jpi-urbaneurope.eu/project/step-up/).
