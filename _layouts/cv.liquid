@@ -1,242 +1,392 @@
 ---
 layout: default
 ---
+{% comment %}
+  Unified CV layout that handles both RenderCV (YAML) and JSONResume (JSON) formats
+  - If page.cv_format is set, it determines which format to render:
+    - 'rendercv': Load and render only RenderCV data (site.data.cv.cv)
+    - 'jsonresume': Load and render only JSONResume data (site.data.resume)
+  - If page.cv_format is not set, the legacy behavior applies:
+    - RenderCV data is in site.data.cv.cv
+    - JSONResume data is in site.data.resume
+    - RenderCV is prioritized if both exist
+  Both formats use the same unified rendering includes for consistent output
+{% endcomment %}
+
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+    <h1 class="post-title">
+      {{ page.title }}
+      {% if page.cv_pdf %}
+        <a
+          {% if page.cv_pdf contains '://' %}
+            href="{{ page.cv_pdf }}"
+          {% else %}
+            href="{{ page.cv_pdf | relative_url }}"
+          {% endif %}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="float-right"
+        >
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
+      {% endif %}
+    </h1>
     {% if page.description %}
       <p class="post-description">{{ page.description }}</p>
     {% endif %}
   </header>
 
-  {% comment %} i18n: decide page language and strings {% endcomment %}
-  {% assign page_lang = page.lang | default: site.lang | downcase | default: 'en' %}
-  {% assign is_cn = page_lang == 'zh' or page_lang == 'zh-cn' or page_lang == 'cn' %}
-  {% if is_cn %}
-    {% assign t_open_new = '在新窗口打开' %}
-    {% assign t_pdf_fallback_1 = '无法内嵌显示 PDF。你可以' %}
-    {% assign t_pdf_fallback_link = '点击这里在新窗口打开' %}
-    {% assign t_pdf_fallback_2 = '。' %}
-    {% assign t_mobile_hint = '当前设备可能不支持内嵌 PDF 浏览，请使用以下方式查看：' %}
-    {% assign t_download = '下载 PDF' %}
-    {% assign t_en = 'English' %}
-    {% assign t_cn = '中文' %}
-    {% assign default_lang = 'cn' %}
-  {% else %}
-    {% assign t_open_new = 'Open in new tab' %}
-    {% assign t_pdf_fallback_1 = 'Unable to display the PDF inline. You can' %}
-    {% assign t_pdf_fallback_link = 'click here to open in a new tab' %}
-    {% assign t_pdf_fallback_2 = '.' %}
-    {% assign t_mobile_hint = 'Your device may not support inline PDF. Use options below:' %}
-    {% assign t_download = 'Download PDF' %}
-    {% assign t_en = 'English' %}
-    {% assign t_cn = '中文' %}
-    {% assign default_lang = 'en' %}
-  {% endif %}
+  <article>
+    <div class="cv">
+      {% comment %} Determine which CV format to render {% endcomment %}
+      {% assign render_rendercv = false %}
+      {% assign render_jsonresume = false %}
 
-  {% comment %} PDF embed with language toggle (default EN). Override via page.cv_pdf_en / page.cv_pdf_cn {% endcomment %}
-  {% assign en_file = page.cv_pdf_en | default: 'ZhangShu_CV_EN.pdf' %}
-  {% assign cn_file = page.cv_pdf_cn | default: 'PDFZhangShu_CV_CN.pdf' %}
+      {% if page.cv_format == 'rendercv' %}
+        {% assign render_rendercv = true %}
+      {% elsif page.cv_format == 'jsonresume' %}
+        {% assign render_jsonresume = true %}
+      {% else %}
+        {% comment %} Legacy behavior: RenderCV takes priority if both exist {% endcomment %}
+        {% if site.data.cv and site.data.cv.cv %}
+          {% assign render_rendercv = true %}
+        {% elsif site.data.resume %}
+          {% assign render_jsonresume = true %}
+        {% endif %}
+      {% endif %}
 
-  {% if en_file contains '://' %}
-    {% assign en_url = en_file %}
-  {% else %}
-    {% assign en_url = en_file | prepend: 'assets/pdf/' | relative_url %}
-  {% endif %}
+      {% if render_rendercv and site.data.cv and site.data.cv.cv %}
+        {% comment %} RenderCV format {% endcomment %}
+        {% assign cv = site.data.cv.cv %}
 
-  {% if cn_file contains '://' %}
-    {% assign cn_url = cn_file %}
-  {% else %}
-    {% assign cn_url = cn_file | prepend: 'assets/pdf/' | relative_url %}
-  {% endif %}
+        <!-- Header/Contact Information -->
+        {% if cv.name or cv.label or cv.location or cv.email or cv.phone or cv.website %}
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Contact Information</h3>
+            <table class="table table-cv table-sm table-borderless">
+              {% if cv.name %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Name</b></td>
+                  <td class="p-1 pl-2 font-weight-light">{{ cv.name }}</td>
+                </tr>
+              {% endif %}
+              {% if cv.label %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Professional Title</b></td>
+                  <td class="p-1 pl-2 font-weight-light">{{ cv.label }}</td>
+                </tr>
+              {% endif %}
+              {% if cv.email %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Email</b></td>
+                  <td class="p-1 pl-2 font-weight-light">{{ cv.email }}</td>
+                </tr>
+              {% endif %}
+              {% if cv.phone %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Phone</b></td>
+                  <td class="p-1 pl-2 font-weight-light">{{ cv.phone }}</td>
+                </tr>
+              {% endif %}
+              {% if cv.address %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Location</b></td>
+                  <td class="p-1 pl-2 font-weight-light">
+                    {% if cv.address.street %}{{ cv.address.street }}, {% endif %}
+                    {% if cv.address.city %}{{ cv.address.city }}, {% endif %}
+                    {% if cv.address.region %}{{ cv.address.region }} {% endif %}
+                    {% if cv.address.postalCode %}{{ cv.address.postalCode }}{% endif %}
+                  </td>
+                </tr>
+              {% endif %}
+              {% if cv.website %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Website</b></td>
+                  <td class="p-1 pl-2 font-weight-light">
+                    <a href="{{ cv.website }}" target="_blank">{{ cv.website }}</a>
+                  </td>
+                </tr>
+              {% endif %}
+            </table>
+          </div>
+        {% endif %}
 
-  {%- comment -%} absolute URLs for direct open {%- endcomment -%}
-  {% assign en_abs_url = en_url | absolute_url %}
-  {% assign cn_abs_url = cn_url | absolute_url %}
+        <!-- Summary -->
+        {% if cv.summary %}
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Professional Summary</h3>
+            <p>{{ cv.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+          </div>
+        {% endif %}
 
-  <style>
-    .cv-pdf-controls { display: flex; gap: .5rem; align-items: center; }
-    .cv-pdf-controls .spacer { flex: 1 1 auto; }
-    .cv-pdf-controls .btn { white-space: nowrap; }
-    /* Modern segmented control for language toggle */
-    .segmented-control { display: inline-flex; align-items: center; gap: .25rem; padding: .2rem; border-radius: 999px; border: 1px solid rgba(0,0,0,.12); background: rgba(0,0,0,.04); }
-    .segment { appearance: none; border: 0; background: transparent; border-radius: 999px; padding: .35rem .75rem; font-size: .875rem; font-weight: 600; color: #334155; cursor: pointer; transition: background-color .2s ease, color .2s ease, box-shadow .2s ease; }
-    .segment:hover { background: rgba(0,0,0,.06); }
-    .segment.is-active { background: #0d6efd; color: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 0 0 1px rgba(13,110,253,.2) inset; }
-    @media (prefers-color-scheme: dark) {
-      .segmented-control { border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.06); }
-      .segment { color: #e5e7eb; }
-      .segment:hover { background: rgba(255,255,255,.08); }
-      .segment.is-active { background: #3b82f6; box-shadow: 0 1px 2px rgba(0,0,0,.3), 0 0 0 1px rgba(59,130,246,.25) inset; }
-    }
-    .pdf-viewer object#cv-pdf { width: 100%; height: 78vh; max-height: 1000px; }
-    @media (max-width: 576px) {
-      .pdf-viewer object#cv-pdf { height: 65vh; }
-    }
-    /* PDF icon styling */
-    .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; }
-  .icon-pdf { display: inline-block; font-size: 18px; line-height: 1; }
-  </style>
-  <div class="cv-pdf-controls mt-3">
-    <div class="segmented-control" role="group" aria-label="Language toggle">
-      <button id="btn-cv-en" class="segment is-active" aria-pressed="true" aria-label="{{ t_en }}" title="{{ t_en }}">EN</button>
-      <button id="btn-cv-cn" class="segment" aria-pressed="false" aria-label="{{ t_cn }}" title="{{ t_cn }}">中</button>
+        <!-- RenderCV Sections - Merge Experience and Volunteer -->
+        {% comment %} First, combine Experience and Volunteer entries {% endcomment %}
+        {% assign empty_array = '' | split: ',' %}
+        {% assign exp = cv.sections.Experience | default: empty_array %}
+        {% assign vol = cv.sections.Volunteer | default: empty_array %}
+        {% assign combined_experience = exp | concat: vol %}
+        {% if combined_experience.size > 0 %}
+          <a class="anchor" id="experience"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Experience</h3>
+            <div>
+              {% assign entries = combined_experience %}
+              {% include cv/experience.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% comment %} Now render all other sections except Experience and Volunteer {% endcomment %}
+        {% for section_pair in cv.sections %}
+          {% assign section_title = section_pair[0] %}
+          {% assign section_entries = section_pair[1] %}
+
+          {% comment %} Skip Experience and Volunteer as we've already processed them combined {% endcomment %}
+          {% if section_title == 'Experience' or section_title == 'Volunteer' %}
+            {% continue %}
+          {% endif %}
+
+          <a class="anchor" id="{{ section_title | slugify }}"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">{{ section_title }}</h3>
+            <div>
+              {% if section_title == 'Education' %}
+                {% assign entries = section_entries %}
+                {% include cv/education.liquid %}
+              {% elsif section_title == 'Awards' or section_title == 'Honors and Awards' %}
+                {% assign entries = section_entries %}
+                {% include cv/awards.liquid %}
+              {% elsif section_title == 'Publications' %}
+                {% assign entries = section_entries %}
+                {% include cv/publications.liquid %}
+              {% elsif section_title == 'Skills' %}
+                {% assign entries = section_entries %}
+                {% include cv/skills.liquid %}
+              {% elsif section_title == 'Languages' %}
+                {% assign entries = section_entries %}
+                {% include cv/languages.liquid %}
+              {% elsif section_title == 'Interests' or section_title == 'Academic Interests' %}
+                {% assign entries = section_entries %}
+                {% include cv/interests.liquid %}
+              {% elsif section_title == 'Certificates' %}
+                {% assign entries = section_entries %}
+                {% include cv/certificates.liquid %}
+              {% elsif section_title == 'Projects' or section_title == 'Open Source Projects' %}
+                {% assign entries = section_entries %}
+                {% include cv/projects.liquid %}
+              {% elsif section_title == 'References' %}
+                {% assign entries = section_entries %}
+                {% include cv/references.liquid %}
+              {% else %}
+                <!-- Generic section -->
+                {% for entry in section_entries %}
+                  {% if entry.bullet %}
+                    <ul class="card-text font-weight-light list-group list-group-flush">
+                      <li class="list-group-item">{{ entry.bullet | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+                    </ul>
+                  {% elsif entry.label %}
+                    <div class="card-text font-weight-light">
+                      <strong>{{ entry.label }}:</strong> {{ entry.details }}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+
+      {% elsif render_jsonresume and site.data.resume %}
+        {% comment %} JSONResume format {% endcomment %}
+
+        <!-- Contact Information -->
+        {% if site.data.resume.basics %}
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Contact Information</h3>
+            {% assign basics = site.data.resume.basics %}
+            <table class="table table-cv table-sm table-borderless">
+              {% if basics.name %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Name</b></td>
+                  <td class="p-1 pl-2 font-weight-light">{{ basics.name }}</td>
+                </tr>
+              {% endif %}
+              {% if basics.label %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Professional Title</b></td>
+                  <td class="p-1 pl-2 font-weight-light">{{ basics.label }}</td>
+                </tr>
+              {% endif %}
+              {% if basics.email %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Email</b></td>
+                  <td class="p-1 pl-2 font-weight-light">{{ basics.email }}</td>
+                </tr>
+              {% endif %}
+              {% if basics.phone %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Phone</b></td>
+                  <td class="p-1 pl-2 font-weight-light">{{ basics.phone }}</td>
+                </tr>
+              {% endif %}
+              {% if basics.location %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Location</b></td>
+                  <td class="p-1 pl-2 font-weight-light">
+                    {% if basics.location.address %}{{ basics.location.address }}, {% endif %}
+                    {% if basics.location.city %}{{ basics.location.city }}, {% endif %}
+                    {% if basics.location.region %}{{ basics.location.region }} {% endif %}
+                    {% if basics.location.postalCode %}{{ basics.location.postalCode }}{% endif %}
+                  </td>
+                </tr>
+              {% endif %}
+              {% if basics.url %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Website</b></td>
+                  <td class="p-1 pl-2 font-weight-light">
+                    <a href="{{ basics.url }}" target="_blank">{{ basics.url }}</a>
+                  </td>
+                </tr>
+              {% endif %}
+            </table>
+          </div>
+        {% endif %}
+
+        <!-- Summary -->
+        {% if site.data.resume.basics.summary %}
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Professional Summary</h3>
+            <p>{{ site.data.resume.basics.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+          </div>
+        {% endif %}
+
+        <!-- JSONResume Sections - Merge work and volunteer into Experience -->
+        {% assign empty_array = '' | split: ',' %}
+        {% assign work = site.data.resume.work | default: empty_array %}
+        {% assign vol = site.data.resume.volunteer | default: empty_array %}
+        {% assign combined_experience = work | concat: vol %}
+        {% if combined_experience.size > 0 %}
+          <a class="anchor" id="experience"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Experience</h3>
+            <div>
+              {% assign entries = combined_experience %}
+              {% include cv/experience.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Education -->
+        {% if site.data.resume.education.size > 0 %}
+          <a class="anchor" id="education"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Education</h3>
+            <div>
+              {% assign entries = site.data.resume.education %}
+              {% include cv/education.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Awards -->
+        {% if site.data.resume.awards.size > 0 %}
+          <a class="anchor" id="awards"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Awards</h3>
+            <div>
+              {% assign entries = site.data.resume.awards %}
+              {% include cv/awards.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Publications -->
+        {% if site.data.resume.publications.size > 0 %}
+          <a class="anchor" id="publications"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Publications</h3>
+            <div>
+              {% assign entries = site.data.resume.publications %}
+              {% include cv/publications.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Skills -->
+        {% if site.data.resume.skills.size > 0 %}
+          <a class="anchor" id="skills"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Skills</h3>
+            <div>
+              {% assign entries = site.data.resume.skills %}
+              {% include cv/skills.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Languages -->
+        {% if site.data.resume.languages.size > 0 %}
+          <a class="anchor" id="languages"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Languages</h3>
+            <div>
+              {% assign entries = site.data.resume.languages %}
+              {% include cv/languages.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Interests -->
+        {% if site.data.resume.interests.size > 0 %}
+          <a class="anchor" id="interests"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Interests</h3>
+            <div>
+              {% assign entries = site.data.resume.interests %}
+              {% include cv/interests.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Certificates -->
+        {% if site.data.resume.certificates.size > 0 %}
+          <a class="anchor" id="certificates"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Certificates</h3>
+            <div>
+              {% assign entries = site.data.resume.certificates %}
+              {% include cv/certificates.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Projects -->
+        {% if site.data.resume.projects.size > 0 %}
+          <a class="anchor" id="projects"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Projects</h3>
+            <div>
+              {% assign entries = site.data.resume.projects %}
+              {% include cv/projects.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- References -->
+        {% if site.data.resume.references.size > 0 %}
+          <a class="anchor" id="references"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">References</h3>
+            <div>
+              {% assign entries = site.data.resume.references %}
+              {% include cv/references.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+      {% else %}
+        <p>No CV data found. Please configure either RenderCV (cv.yml) or JSONResume (resume.json) data.</p>
+      {% endif %}
     </div>
-    <span class="spacer"></span>
-    <a href="{{ en_url }}" id="cv-download-link" class="btn btn-sm btn-link icon-btn" target="_blank" rel="noopener noreferrer" aria-label="{{ t_open_new }}" title="{{ t_open_new }}">
-      <i class="fa-solid fa-file-pdf icon-pdf" aria-hidden="true"></i>
-    </a>
-  </div>
-  <div class="pdf-viewer mt-2">
-    <object id="cv-pdf" type="application/pdf">
-      <p>
-        {{ t_pdf_fallback_1 }}
-        <a id="cv-fallback" href="{{ en_url }}" target="_blank" rel="noopener noreferrer">{{ t_pdf_fallback_link }}</a>{{ t_pdf_fallback_2 }}
-      </p>
-    </object>
-  </div>
-
-  
-
-
-  <div id="cv-mobile-fallback" class="alert alert-info d-none mt-3" role="alert">
-    <div id="cv-mobile-hint" class="mb-2">{{ t_mobile_hint }}</div>
-    <div class="d-flex gap-2 flex-wrap">
-      <a id="cv-mobile-open" href="{{ en_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">{{ t_open_new }}</a>
-      <a id="cv-mobile-download" href="{{ en_url }}" download class="btn btn-sm btn-outline-primary">{{ t_download }}</a>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      var en = "{{ en_url }}";
-      var cn = "{{ cn_url }}";
-  var enAbs = "{{ en_abs_url }}";
-  var cnAbs = "{{ cn_abs_url }}";
-      var viewer = document.getElementById('cv-pdf');
-      var btnEn = document.getElementById('btn-cv-en');
-      var btnCn = document.getElementById('btn-cv-cn');
-      var download = document.getElementById('cv-download-link');
-      var fallback = document.getElementById('cv-fallback');
-      var mobileFallback = document.getElementById('cv-mobile-fallback');
-  var mobileHint = document.getElementById('cv-mobile-hint');
-      var mobileOpen = document.getElementById('cv-mobile-open');
-      var mobileDownload = document.getElementById('cv-mobile-download');
-      var inlineSupported = true; // set later
-
-
-      function isIOS() {
-        var ua = window.navigator.userAgent || '';
-        var iOS = /(iPad|iPhone|iPod)/.test(ua);
-        var iPadOS13Up = (ua.indexOf('Macintosh') > -1) && ('ontouchend' in document);
-        return iOS || iPadOS13Up;
-      }
-
-      function likelyNoInlinePDFSupport() {
-        if (isIOS()) return true;
-        var hasMime = false;
-        try { hasMime = !!(navigator.mimeTypes && navigator.mimeTypes['application/pdf']); } catch (e) { hasMime = false; }
-        return !hasMime;
-      }
-
-      // Heuristic: detect China visitors by timezone or language (no external service)
-      function isCNVisitor() {
-        var tz = '';
-        try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-        var langs = [];
-        try { langs = navigator.languages || [navigator.language]; } catch (e) {}
-        var langStr = (langs || []).join(',').toLowerCase();
-        var tzCN = /asia\/shanghai/i.test(tz);
-        var langCN = /(zh-cn|\bzh\b)/.test(langStr);
-        return tzCN || langCN;
-      }
-
-      // i18n dictionary for runtime text switching
-      var i18n = {
-        en: {
-          open: 'Open in new tab',
-          download: 'Download PDF',
-          hint: 'Your device may not support inline PDF. Use options below:'
-        },
-        cn: {
-          open: '在新窗口打开',
-          download: '下载 PDF',
-          hint: '当前设备可能不支持内嵌 PDF 浏览，请使用以下方式查看：'
-        }
-      };
-
-      function setLang(lang) {
-        var url = (lang === 'cn') ? cn : en;
-        var abs = (lang === 'cn') ? cnAbs : enAbs;
-        if (viewer && inlineSupported) viewer.setAttribute('data', url);
-        if (download) {
-          download.setAttribute('href', url);
-          var label = (lang === 'cn') ? i18n.cn.open : i18n.en.open;
-          download.setAttribute('aria-label', label);
-          download.setAttribute('title', label);
-        }
-        if (fallback) fallback.setAttribute('href', url);
-        if (mobileOpen) {
-          mobileOpen.setAttribute('href', url);
-          mobileOpen.textContent = (lang === 'cn') ? i18n.cn.open : i18n.en.open;
-        }
-        if (mobileDownload) {
-          mobileDownload.setAttribute('href', url);
-          mobileDownload.setAttribute('download', (lang === 'cn') ? 'CV_CN.pdf' : 'CV_EN.pdf');
-          mobileDownload.textContent = (lang === 'cn') ? i18n.cn.download : i18n.en.download;
-        }
-        if (mobileHint) mobileHint.textContent = (lang === 'cn') ? i18n.cn.hint : i18n.en.hint;
-
-        if (btnEn && btnCn) {
-          var enActive = (lang !== 'cn');
-          btnEn.classList.toggle('is-active', enActive);
-          btnEn.setAttribute('aria-pressed', enActive);
-          btnCn.classList.toggle('is-active', !enActive);
-          btnCn.setAttribute('aria-pressed', !enActive);
-        }
-
-        try { localStorage.setItem('cv_lang', lang); } catch (e) {}
-      }
-
-      if (btnEn) btnEn.addEventListener('click', function () { setLang('en'); });
-      if (btnCn) btnCn.addEventListener('click', function () { setLang('cn'); });
-
-  // defer initial setLang until strategy decision below
-
-      // Decide render strategy early to avoid unnecessary network
-      try {
-        var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-        var saveData = !!(conn && conn.saveData);
-        inlineSupported = !likelyNoInlinePDFSupport();
-
-        // Decide initial language
-        var saved = null; try { saved = localStorage.getItem('cv_lang'); } catch (e) {}
-        var initialLang;
-        if (saved === 'cn' || saved === 'en') {
-          initialLang = saved;
-        } else {
-          initialLang = isCNVisitor() ? 'cn' : 'en';
-        }
-
-        if (saveData) {
-          // Respect Save-Data: skip heavy embeds, show open/download only
-          if (viewer && viewer.parentElement) viewer.parentElement.classList.add('d-none');
-          // no alternative viewer
-          if (mobileFallback) mobileFallback.classList.remove('d-none');
-          setLang(initialLang);
-        } else if (inlineSupported) {
-          // Inline supported: show object; set data only once via setLang
-          if (viewer && viewer.parentElement) viewer.parentElement.classList.remove('d-none');
-          // no alternative viewer
-          if (mobileFallback) mobileFallback.classList.add('d-none');
-          setLang(initialLang);
-        } else {
-          // Inline not supported: open chosen language PDF directly
-          var absUrl = (initialLang === 'cn') ? cnAbs : enAbs;
-          try { window.location.href = absUrl; } catch(e) { if (mobileFallback) mobileFallback.classList.remove('d-none'); }
-          return;
-        }
-      } catch (e) {}
-    })();
-  </script>
+  </article>
 </div>
