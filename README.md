@@ -131,7 +131,6 @@ Feel free to add your own page(s) by sending a PR.
 <a href="https://shubhashisroydipta.com/" target="_blank">★</a>
 <a href="https://astanziola.github.io" target="_blank">★</a>
 <a href="https://tinkerer.in" target="_blank">★</a>
-<a href="https://sam-bieberich.github.io/" target="_blank">★</a>
 <a href="https://afraniomelo.github.io/en/" target="_blank">★</a>
 <a href="https://jonaruthardt.github.io" target="_blank">★</a>
 <a href="https://www.zla.app/" target="_blank">★</a>
@@ -177,6 +176,10 @@ Feel free to add your own page(s) by sending a PR.
 <a href="https://zlatanajanovic.com/" target="_blank">★</a>
 <a href="https://mchadolias.github.io/" target="_blank">★</a>
 <a href="https://syanyong.github.io/" target="_blank">★</a>
+<a href="https://jucheval.github.io/" target="_blank">★</a>
+<a href="https://j1yoo.github.io/" target="_blank">★</a>
+<a href="https://zhoji.github.io/" target="_blank">★</a>
+<a href="https://smsnobin77.github.io/" target="_blank">★</a>
 </td>
 </tr>
 <tr>
@@ -191,7 +194,7 @@ Feel free to add your own page(s) by sending a PR.
 <a href="https://inbt.jhu.edu/epidiagnostics/" target="_blank">★</a>
 <a href="https://www.nuesl.org/" target="_blank">★</a>
 <a href="https://big-culture.github.io/" target="_blank">★</a>
-<a href="https://martinbulla.github.io/bullab/" target="_blank">★</a>  
+<a href="https://martinbulla.github.io/bullab/" target="_blank">★</a>
 <a href="https://gpforesteyes.github.io/" target="_blank">★</a>
 </td>
 </tr>
@@ -252,6 +255,9 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
   - [Installing and Deploying](#installing-and-deploying)
   - [Customizing](#customizing)
   - [GitHub Copilot Agents](#github-copilot-agents)
+    - [Customization Agent](#customization-agent)
+    - [Documentation Agent](#documentation-agent)
+  - [Documentation](#documentation)
   - [Features](#features)
     - [Light/Dark Mode](#lightdark-mode)
     - [CV](#cv)
@@ -275,7 +281,8 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
     - [All Contributors](#all-contributors)
   - [Star History](#star-history)
   - [License](#license)
-  <!--te-->
+
+<!--te-->
 
 ## Getting started
 
@@ -317,6 +324,18 @@ See [CONTRIBUTING.md § GitHub Copilot Agents](CONTRIBUTING.md#github-copilot-ag
 
 > **Requirements:** Both agents require a [GitHub Copilot](https://github.com/features/copilot) subscription. For more information about GitHub Copilot and how to use agents, see the [GitHub Copilot documentation](https://docs.github.com/en/copilot).
 
+## Documentation
+
+Comprehensive guides for all aspects of your al-folio website:
+
+- **[Quick Start](QUICKSTART.md)** – Get running in 5 minutes
+- **[Installation & Deployment](INSTALL.md)** – Set up your site on GitHub Pages or other platforms
+- **[Customization Guide](CUSTOMIZE.md)** – Personalize your website (CVs, publications, themes, etc.)
+- **[Troubleshooting](TROUBLESHOOTING.md)** – Fix common issues (deployment, build, styling, content)
+- **[FAQ](FAQ.md)** – Frequently asked questions and solutions
+- **[Analytics](ANALYTICS.md)** – Add website analytics and visitor tracking
+- **[SEO Guide](SEO.md)** – Optimize for search engines and improve discoverability
+
 ## Features
 
 ### Light/Dark Mode
@@ -332,9 +351,12 @@ This template has a built-in light/dark mode. It detects the user preferred colo
 
 ### CV
 
-There are currently 2 different ways of generating the CV page content. The first one is by using a json file located in [assets/json/resume.json](assets/json/resume.json). It is a [known standard](https://jsonresume.org/) for creating a CV programmatically. The second one, currently used as a fallback when the json file is not found, is by using a yml file located in [\_data/cv.yml](_data/cv.yml). This was the original way of creating the CV page content and since it is more human readable than a json file we decided to keep it as an option.
+Your CV can be generated in one of two modern formats:
 
-What this means is, if there is no resume data defined in [\_config.yml](_config.yml) and loaded via a json file, it will load the contents of [\_data/cv.yml](_data/cv.yml) as fallback.
+- **[RenderCV](https://rendercv.com/) Format** (recommended): Edit [`_data/cv.yml`](_data/cv.yml) using the human-readable RenderCV YAML format. This format enables automatic PDF generation via GitHub Actions and provides professional styling options.
+- **[JSONResume](https://jsonresume.org/) Format**: Edit [`assets/json/resume.json`](assets/json/resume.json) using the standardized JSON format. This is compatible with other resume tools and services.
+
+You can use both formats simultaneously and switch which one is rendered on your CV page using the `cv_format` frontmatter variable, or maintain just the one you prefer. The two files are independent data sources: if you choose to keep both, you must update each file separately—there is no automatic synchronization between them.
 
 [![CV Preview](readme_preview/cv.png)](https://alshedivat.github.io/al-folio/cv/)
 
@@ -496,8 +518,8 @@ Our most active contributors are welcome to join the maintainers team. If you ar
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="http://maruan.alshedivat.com"><img src="https://avatars.githubusercontent.com/u/2126561?v=4" width="100px;" alt=""/><br /><sub><b>Maruan</b></sub></a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://rohandebsarkar.github.io"><img src="https://avatars.githubusercontent.com/u/50144004?v=4" width="100px;" alt=""/><br /><sub><b>Rohan Deb Sarkar</b></sub></a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://maruan.alshedivat.com"><img src="https://avatars.githubusercontent.com/u/2126561?v=4" width="100px;" alt=""/><br /><sub><b>Maruan</b></sub></a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://rohandebsarkar.github.io"><img src="https://avatars.githubusercontent.com/u/50144004?v=4" width="100px;" alt=""/><br /><sub><b>Rohan Deb Sarkar</b></sub></a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://amirpourmand.ir"><img src="https://avatars.githubusercontent.com/u/32064808?v=4" width="100px;" alt=""/><br /><sub><b>Amir Pourmand</b></sub></a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://george-gca.github.io/"><img src="https://avatars.githubusercontent.com/u/31376482?v=4" width="100px;" alt=""/><br /><sub><b>George</b></sub></a></td>
     </tr>
