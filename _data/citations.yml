@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-03-17'
+  last_updated: '2026-03-21'
 papers:
   3dCECpgAAAAJ:0EnyYjriUFMC:
     citations: 0
     title: "\u78B3\u4E2D\u548C\u76EE\u6807\u4E0B\u4E2D\u56FDCCUS\u53D1\u5C55\u8FDB\u7A0B\u4E0E\u56FD\u9645\u7ECF\u9A8C\u542F\u793A"
     year: '2026'
   3dCECpgAAAAJ:2osOgNQ5qMEC:
-    citations: 159
+    citations: 160
     title: "Assessing Representative CCUS Layouts for China\u2019s Power Sector toward Carbon Neutrality"
     year: '2021'
   3dCECpgAAAAJ:5nxA0vEk-isC:
@@ -30,7 +30,7 @@ papers:
     title: "China\u2019s energy transition pathway in a carbon neutral vision"
     year: '2022'
   3dCECpgAAAAJ:Y0pCki6q_DkC:
-    citations: 749
+    citations: 751
     title: Assessing the energy transition in China towards carbon neutrality with a probabilistic framework
     year: '2022'
   3dCECpgAAAAJ:YsMSGLbcyi4C:
