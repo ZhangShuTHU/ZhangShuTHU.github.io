@@ -9,6 +9,13 @@ nav_order: 6
 
 ## Goverment-sponsored researches:
 
+{% details 8.NSFC International (Regional) Cooperation and Exchange program，Special Seminar on Climate Change Assessment in Hong Kong and Macao，PI %}
+    Original granter name：国家自然科学基金国际（地区）合作与交流项目
+    Original program name：赴港澳参加“港澳应对气候变化评估专题研讨会”
+    Grant No.：72681260006
+    Period：2026/03-2026/09
+{% enddetails %}
+
 {% details 7.NSFC Young Scientists Fund (C)，Hydrogen Energy and Hydrogen-based Fuel Supply Potential and Development Pathway in China under the Carbon Neutrality Target，PI %}
     Original granter name：国家自然科学基金青年科学基金项目（C类）
     Original program name：碳中和目标下中国氢能及氢基燃料供应潜力和发展路径研究
