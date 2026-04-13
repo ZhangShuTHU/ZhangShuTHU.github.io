@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-03-26'
+  last_updated: '2026-04-11'
 papers:
   3dCECpgAAAAJ:0EnyYjriUFMC:
     citations: 0
     title: "\u78B3\u4E2D\u548C\u76EE\u6807\u4E0B\u4E2D\u56FDCCUS\u53D1\u5C55\u8FDB\u7A0B\u4E0E\u56FD\u9645\u7ECF\u9A8C\u542F\u793A"
     year: '2026'
   3dCECpgAAAAJ:2osOgNQ5qMEC:
-    citations: 160
+    citations: 161
     title: "Assessing Representative CCUS Layouts for China\u2019s Power Sector toward Carbon Neutrality"
     year: '2021'
   3dCECpgAAAAJ:5nxA0vEk-isC:
@@ -18,7 +18,7 @@ papers:
     title: Modeling the Rapid Development of Electric Vehicles and Energy Storage Technology Under China Carbon Neutral Scenario Based on China-TIMES Model
     year: '2020'
   3dCECpgAAAAJ:LkGwnXOMwfcC:
-    citations: 89
+    citations: 92
     title: Targeting net-zero emissions while advancing other sustainable development goals in China
     year: '2024'
   3dCECpgAAAAJ:UebtZRa9Y70C:
@@ -26,11 +26,11 @@ papers:
     title: Sub-technology market share strongly affects critical material constraints in power system transitions
     year: '2025'
   3dCECpgAAAAJ:W7OEmFMy1HYC:
-    citations: 276
+    citations: 280
     title: "China\u2019s energy transition pathway in a carbon neutral vision"
     year: '2022'
   3dCECpgAAAAJ:Y0pCki6q_DkC:
-    citations: 751
+    citations: 757
     title: Assessing the energy transition in China towards carbon neutrality with a probabilistic framework
     year: '2022'
   3dCECpgAAAAJ:YsMSGLbcyi4C:
@@ -46,7 +46,7 @@ papers:
     title: "\u4E2D\u56FD\u7701\u533A\u534F\u540C\u7684\u7535\u529B\u7CFB\u7EDF\u78B3\u4E2D\u548C\u8F6C\u578B\u8DEF\u5F84\u8BC4\u4F30"
     year: '2025'
   3dCECpgAAAAJ:roLk4NBRz8UC:
-    citations: 25
+    citations: 26
     title: Provincial pathways to carbon-neutral energy systems in China considering interprovincial electricity transmission development
     year: '2024'
   3dCECpgAAAAJ:u-x6o8ySG0sC:
@@ -54,6 +54,6 @@ papers:
     title: Load probability density forecasting by transforming and combining quantile forecasts
     year: '2020'
   3dCECpgAAAAJ:ufrVoPGSRksC:
-    citations: 43
+    citations: 44
     title: "China\u2019s multi-sector-shared CCUS networks in a carbon-neutral vision"
     year: '2023'
