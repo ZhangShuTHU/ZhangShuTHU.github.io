@@ -9,7 +9,7 @@ nav_order: 6
 
 ## Goverment-sponsored researches:
 
-{% details 8.MOST National Science and Technology Major Project，New pathways for China's carbonneutrality considering equitable climate responsibility and sustainable development，Member %}
+{% details 9.MOST National Key Research and Development Program，New pathways for China's carbonneutrality considering equitable climate responsibility and sustainable development，Member %}
     Original granter name：国家重点研发计划政府间重点专项
     Original program name：考虑气候责任公平与可持续发展的中国碳中和转型路径研究
     Grant No.：2026YFE0102600
