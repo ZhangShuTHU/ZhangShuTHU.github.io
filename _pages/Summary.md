@@ -9,6 +9,13 @@ nav_order: 6
 
 ## Goverment-sponsored researches:
 
+{% details 8.MOST National Science and Technology Major Project，New pathways for China's carbonneutrality considering equitable climate responsibility and sustainable development，Member %}
+    Original granter name：国家重点研发计划政府间重点专项
+    Original program name：考虑气候责任公平与可持续发展的中国碳中和转型路径研究
+    Grant No.：2026YFE0102600
+    Period：2026/04-2029/03
+{% enddetails %}
+
 {% details 8.NSFC International (Regional) Cooperation and Exchange program，Special Seminar on Climate Change Assessment in Hong Kong and Macao，PI %}
     Original granter name：国家自然科学基金国际（地区）合作与交流项目
     Original program name：赴港澳参加“港澳应对气候变化评估专题研讨会”
