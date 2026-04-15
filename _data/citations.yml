@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-04-11'
+  last_updated: '2026-04-15'
 papers:
   3dCECpgAAAAJ:0EnyYjriUFMC:
     citations: 0
     title: "\u78B3\u4E2D\u548C\u76EE\u6807\u4E0B\u4E2D\u56FDCCUS\u53D1\u5C55\u8FDB\u7A0B\u4E0E\u56FD\u9645\u7ECF\u9A8C\u542F\u793A"
     year: '2026'
   3dCECpgAAAAJ:2osOgNQ5qMEC:
-    citations: 161
+    citations: 162
     title: "Assessing Representative CCUS Layouts for China\u2019s Power Sector toward Carbon Neutrality"
     year: '2021'
   3dCECpgAAAAJ:5nxA0vEk-isC:
@@ -18,19 +18,23 @@ papers:
     title: Modeling the Rapid Development of Electric Vehicles and Energy Storage Technology Under China Carbon Neutral Scenario Based on China-TIMES Model
     year: '2020'
   3dCECpgAAAAJ:LkGwnXOMwfcC:
-    citations: 92
+    citations: 94
     title: Targeting net-zero emissions while advancing other sustainable development goals in China
     year: '2024'
+  3dCECpgAAAAJ:MXK_kJrjxJIC:
+    citations: 0
+    title: Exploring the feasible net-zero transition pathway in China considering energy system flexibility
+    year: '2026'
   3dCECpgAAAAJ:UebtZRa9Y70C:
-    citations: 16
+    citations: 18
     title: Sub-technology market share strongly affects critical material constraints in power system transitions
     year: '2025'
   3dCECpgAAAAJ:W7OEmFMy1HYC:
-    citations: 280
+    citations: 281
     title: "China\u2019s energy transition pathway in a carbon neutral vision"
     year: '2022'
   3dCECpgAAAAJ:Y0pCki6q_DkC:
-    citations: 757
+    citations: 760
     title: Assessing the energy transition in China towards carbon neutrality with a probabilistic framework
     year: '2022'
   3dCECpgAAAAJ:YsMSGLbcyi4C:
@@ -54,6 +58,6 @@ papers:
     title: Load probability density forecasting by transforming and combining quantile forecasts
     year: '2020'
   3dCECpgAAAAJ:ufrVoPGSRksC:
-    citations: 44
+    citations: 45
     title: "China\u2019s multi-sector-shared CCUS networks in a carbon-neutral vision"
     year: '2023'
