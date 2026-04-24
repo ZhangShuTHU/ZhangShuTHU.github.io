@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-04-20'
+  last_updated: '2026-04-24'
 papers:
   3dCECpgAAAAJ:0EnyYjriUFMC:
     citations: 0
     title: "\u78B3\u4E2D\u548C\u76EE\u6807\u4E0B\u4E2D\u56FDCCUS\u53D1\u5C55\u8FDB\u7A0B\u4E0E\u56FD\u9645\u7ECF\u9A8C\u542F\u793A"
     year: '2026'
   3dCECpgAAAAJ:2osOgNQ5qMEC:
-    citations: 163
+    citations: 164
     title: "Assessing Representative CCUS Layouts for China\u2019s Power Sector toward Carbon Neutrality"
     year: '2021'
   3dCECpgAAAAJ:3fE2CSJIrl8C:
@@ -34,15 +34,15 @@ papers:
     title: Sub-technology market share strongly affects critical material constraints in power system transitions
     year: '2025'
   3dCECpgAAAAJ:W7OEmFMy1HYC:
-    citations: 282
+    citations: 285
     title: "China\u2019s energy transition pathway in a carbon neutral vision"
     year: '2022'
   3dCECpgAAAAJ:Y0pCki6q_DkC:
-    citations: 761
+    citations: 764
     title: Assessing the energy transition in China towards carbon neutrality with a probabilistic framework
     year: '2022'
   3dCECpgAAAAJ:YsMSGLbcyi4C:
-    citations: 72
+    citations: 73
     title: 'China''s industrial decarbonization in the context of carbon neutrality: A sub-sectoral analysis based on integrated modelling'
     year: '2022'
   3dCECpgAAAAJ:eQOLeE2rZwMC:
@@ -54,14 +54,14 @@ papers:
     title: "\u4E2D\u56FD\u7701\u533A\u534F\u540C\u7684\u7535\u529B\u7CFB\u7EDF\u78B3\u4E2D\u548C\u8F6C\u578B\u8DEF\u5F84\u8BC4\u4F30"
     year: '2025'
   3dCECpgAAAAJ:roLk4NBRz8UC:
-    citations: 26
+    citations: 27
     title: Provincial pathways to carbon-neutral energy systems in China considering interprovincial electricity transmission development
     year: '2024'
   3dCECpgAAAAJ:u-x6o8ySG0sC:
-    citations: 90
+    citations: 91
     title: Load probability density forecasting by transforming and combining quantile forecasts
     year: '2020'
   3dCECpgAAAAJ:ufrVoPGSRksC:
-    citations: 45
+    citations: 46
     title: "China\u2019s multi-sector-shared CCUS networks in a carbon-neutral vision"
     year: '2023'
