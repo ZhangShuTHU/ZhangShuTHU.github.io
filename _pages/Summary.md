@@ -13,7 +13,7 @@ nav_order: 6
     Original granter name：国家重点研发计划政府间重点专项
     Original program name：考虑气候责任公平与可持续发展的中国碳中和转型路径研究
     Grant No.：2026YFE0102600
-    Period：2026/04-2029/03
+    Period：2026/03-2029/02
 {% enddetails %}
 
 {% details 8.NSFC International (Regional) Cooperation and Exchange program，Special Seminar on Climate Change Assessment in Hong Kong and Macao，PI %}
