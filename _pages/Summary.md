@@ -87,6 +87,13 @@ nav_order: 6
 
 ## Corporate-sponsored researches:
 
+{% details 8.CNNC，Methodological research on voluntary greenhouse gas reduction projects in the nuclear energy industry，Member %}
+    Original granter name：中核集团
+    Original project name：核能温室气体自愿减排项目方法学研究
+    Project PI：Sheng Zhou
+    Period：2026/05-2028/12
+{% enddetails %}
+
 {% details 7.International Joint Mission on Climate Change and Carbon Neutrality，China’s green hydrogen, green ammonia and green methanol fuel development pathways under the carbon neutrality target，PI %}
     Original granter name：气候变化与碳中和国际合作联合行动
     Original project name：碳中和目标下中国绿氢和氨醇燃料发展路径
