@@ -25,6 +25,17 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
+research_focus:
+  - title: Energy transition pathways
+    text: Integrated energy-economy-environment modeling for carbon neutrality pathways, technology choices, and transition costs.
+  - title: Water-energy-food nexus
+    text: Cross-sector assessment of energy, water, food, air quality, and sustainable development trade-offs.
+  - title: Climate and energy policy
+    text: Policy-relevant analysis for low-carbon development, uncertainty, infrastructure, and mitigation strategy design.
+profile_highlights:
+  - Assistant Professor, Tsinghua University
+  - Energy system modeling
+  - Climate policy analysis
 ---
 
 I completed my undergraduate studies at Tsinghua University with a B.Eng. in Electrical Engineering (supervised by Prof. <a href='https://www.eea.tsinghua.edu.cn/en/faculties/cqkang.htm'>Chongqing Kang </a>) and a B. Econ. in Economics. I earned my Ph.D. in Management (supervised by Prof. <a href='http://www.3e.tsinghua.edu.cn/en/article/158'>Wenying Chen </a>) at Tsinghua University. From March 2022 to April 2023, I was a visiting research scholar at the International Institute for Applied Systems Analysis (IIASA) (supervised by Prof. <a href='https://iiasa.ac.at/staff/volker-krey'>Volker Krey </a>).

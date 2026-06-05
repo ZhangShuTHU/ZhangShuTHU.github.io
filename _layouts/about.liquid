@@ -1,32 +1,45 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
+<div class="post academic-home">
+  <header class="academic-hero">
+    <div class="academic-hero__content">
+      <p class="academic-kicker">Energy systems · climate policy · integrated assessment</p>
+      <h1 class="post-title academic-title">
+        {% if site.title == 'blank' %}
+          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+          {{ site.last_name }}
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </h1>
+      <p class="desc academic-subtitle">{{ page.subtitle }}</p>
 
-  <article>
+      {% if page.profile_highlights %}
+        <div class="academic-highlights" aria-label="Profile highlights">
+          {% for highlight in page.profile_highlights %}
+            <span>{{ highlight }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="academic-actions">
+        <a class="academic-action academic-action--primary" href="{{ '/publications/' | relative_url }}">Publications</a>
+        <a class="academic-action" href="{{ '/cv/' | relative_url }}">CV</a>
+        <a class="academic-action" href="https://scholar.google.com/citations?user=3dCECpgAAAAJ">Google Scholar</a>
+      </div>
+    </div>
+
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      <aside class="academic-profile" aria-label="Profile">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
           {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) 320px, (min-width: 576px) 36vw, 92vw{% endcapture %}
           {%
             include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
             cache_bust=true
@@ -35,33 +48,61 @@ layout: default
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
-      </div>
+      </aside>
     {% endif %}
+  </header>
 
-    <div class="clearfix">{{ content }}</div>
+  <article class="academic-main">
+    <section class="academic-section academic-bio" aria-label="Biography">
+      <div class="academic-section__label">Profile</div>
+      <div class="academic-section__body">{{ content }}</div>
+    </section>
+
+    {% if page.research_focus %}
+      <section class="academic-section academic-research" aria-label="Research focus">
+        <div class="academic-section__label">Research Focus</div>
+        <div class="research-focus-grid">
+          {% for focus in page.research_focus %}
+            <article class="research-focus-item">
+              <h2>{{ focus.title }}</h2>
+              <p>{{ focus.text }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
+      <section class="academic-section academic-news" aria-label="News">
+        <div class="academic-section__header">
+          <div class="academic-section__label">News</div>
+          <a href="{{ '/news/' | relative_url }}">View all</a>
+        </div>
+        {% include news.liquid limit=true %}
+      </section>
     {% endif %}
 
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
+      <section class="academic-section" aria-label="Latest posts">
+        <div class="academic-section__header">
+          <div class="academic-section__label">Latest Posts</div>
+          <a href="{{ '/blog/' | relative_url }}">View all</a>
+        </div>
+        {% include latest_posts.liquid %}
+      </section>
     {% endif %}
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
+      <section class="academic-section academic-selected-publications" aria-label="Selected publications">
+        <div class="academic-section__header">
+          <div class="academic-section__label">Selected Publications</div>
+          <a href="{{ '/publications/' | relative_url }}">View all</a>
+        </div>
+        {% include selected_papers.liquid %}
+      </section>
     {% endif %}
 
     <!-- Social -->
