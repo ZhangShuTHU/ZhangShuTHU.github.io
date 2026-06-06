@@ -368,11 +368,45 @@ html[data-theme="dark"] {
     }
 
     .academic-hero {
-      gap: 1.5rem;
+      gap: 1.25rem;
+      padding-top: 1rem;
     }
 
     .academic-profile {
-      max-width: 24rem;
+      max-width: 17.5rem;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 0.5rem;
+
+      .more-info {
+        margin-top: 0.65rem;
+        padding-top: 0.65rem;
+        font-size: 0.74rem;
+      }
+    }
+
+    .academic-title {
+      margin-bottom: 0.75rem;
+      font-size: clamp(2.15rem, 11vw, 2.7rem);
+    }
+
+    .academic-subtitle {
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    .academic-highlights {
+      margin-bottom: 1.1rem;
+    }
+
+    .academic-actions {
+      gap: 0.55rem;
+    }
+
+    .academic-action {
+      min-height: 2.15rem;
+      padding-top: 0.38rem;
+      padding-bottom: 0.38rem;
     }
 
     .academic-highlights {
