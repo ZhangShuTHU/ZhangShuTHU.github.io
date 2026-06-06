@@ -159,11 +159,14 @@
     display: grid;
     gap: clamp(1.8rem, 4vw, 2.6rem);
     width: 100%;
+    min-width: 0;
     padding-top: clamp(1.8rem, 4vw, 2.6rem);
   }
 
   .academic-section {
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
     padding-top: 0.2rem;
   }
 
@@ -207,12 +210,15 @@
   .research-focus-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    min-width: 0;
     border-top: 1px solid var(--global-divider-color);
     border-bottom: 1px solid var(--global-divider-color);
   }
 
   .research-focus-item {
     min-height: 100%;
+    min-width: 0;
     padding: 1rem 1.05rem 1.05rem;
     border-right: 1px solid var(--global-divider-color);
     background: var(--global-bg-color);
@@ -226,6 +232,7 @@
       margin-bottom: 0.55rem;
       font-size: 1rem;
       line-height: 1.28;
+      overflow-wrap: anywhere;
     }
 
     p {
@@ -233,16 +240,22 @@
       color: var(--global-text-color-light);
       font-size: 0.92rem;
       line-height: 1.55;
+      overflow-wrap: anywhere;
     }
   }
 
   .news {
     .table-responsive {
       max-height: clamp(18rem, 34vw, 26rem) !important;
+      width: 100%;
+      max-width: 100%;
       border-top: 1px solid var(--global-divider-color);
+      overflow-x: hidden;
     }
 
     table {
+      width: 100%;
+      table-layout: fixed;
       margin-bottom: 0;
     }
 
@@ -257,6 +270,7 @@
     }
 
     th {
+      width: 8.5rem !important;
       color: var(--global-text-color-light);
       font-size: 0.82rem;
       font-weight: 700;
@@ -266,6 +280,7 @@
 
     td {
       line-height: 1.5;
+      overflow-wrap: anywhere;
     }
 
     .news-title {
@@ -289,11 +304,15 @@
         padding: 1.15rem 0;
 
         > .row {
+          display: flex;
+          width: 100%;
+          max-width: 100%;
           margin-right: 0;
           margin-left: 0;
         }
 
         > .row > [class*="col"] {
+          min-width: 0;
           padding-right: 0;
           padding-left: 0;
         }
@@ -306,17 +325,20 @@
 
         > .row > .abbr + [id] {
           flex: 1 1 0;
+          min-width: 0;
           max-width: none;
         }
 
         .title {
           max-width: 58rem;
           font-size: 1.02rem;
+          overflow-wrap: anywhere;
         }
 
         .author,
         .periodical {
           max-width: 58rem;
+          overflow-wrap: anywhere;
         }
       }
     }
