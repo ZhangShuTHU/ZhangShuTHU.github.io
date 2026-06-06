@@ -33,9 +33,9 @@ research_focus:
   - title: Climate and energy policy
     text: Policy-relevant analysis for low-carbon development, uncertainty, infrastructure, and mitigation strategy design.
 profile_highlights:
-  - Assistant Professor, Tsinghua University
-  - Institute of Energy, Environment and Economy
+  - Integrated assessment modeling
   - IIASA visiting research scholar
+  - Carbon neutrality pathways
 ---
 
 I completed my undergraduate studies at Tsinghua University with a B.Eng. in Electrical Engineering (supervised by Prof. <a href='https://www.eea.tsinghua.edu.cn/en/faculties/cqkang.htm'>Chongqing Kang </a>) and a B. Econ. in Economics. I earned my Ph.D. in Management (supervised by Prof. <a href='http://www.3e.tsinghua.edu.cn/en/article/158'>Wenying Chen </a>) at Tsinghua University. From March 2022 to April 2023, I was a visiting research scholar at the International Institute for Applied Systems Analysis (IIASA) (supervised by Prof. <a href='https://iiasa.ac.at/staff/volker-krey'>Volker Krey </a>).
