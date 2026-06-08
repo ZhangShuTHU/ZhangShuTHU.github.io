@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-06-05'
+  last_updated: '2026-06-08'
 papers:
   3dCECpgAAAAJ:0EnyYjriUFMC:
     citations: 0
@@ -38,11 +38,11 @@ papers:
     title: "China\u2019s energy transition pathway in a carbon neutral vision"
     year: '2022'
   3dCECpgAAAAJ:Y0pCki6q_DkC:
-    citations: 798
+    citations: 797
     title: Assessing the energy transition in China towards carbon neutrality with a probabilistic framework
     year: '2022'
   3dCECpgAAAAJ:YsMSGLbcyi4C:
-    citations: 79
+    citations: 80
     title: 'China''s industrial decarbonization in the context of carbon neutrality: A sub-sectoral analysis based on integrated modelling'
     year: '2022'
   3dCECpgAAAAJ:eQOLeE2rZwMC:
@@ -66,6 +66,6 @@ papers:
     title: Load probability density forecasting by transforming and combining quantile forecasts
     year: '2020'
   3dCECpgAAAAJ:ufrVoPGSRksC:
-    citations: 51
+    citations: 49
     title: "China\u2019s multi-sector-shared CCUS networks in a carbon-neutral vision"
     year: '2023'
