@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-06-12'
+  last_updated: '2026-06-13'
 papers:
   3dCECpgAAAAJ:0EnyYjriUFMC:
     citations: 0
@@ -34,11 +34,11 @@ papers:
     title: Sub-technology market share strongly affects critical material constraints in power system transitions
     year: '2025'
   3dCECpgAAAAJ:W7OEmFMy1HYC:
-    citations: 294
+    citations: 295
     title: "China\u2019s energy transition pathway in a carbon neutral vision"
     year: '2022'
   3dCECpgAAAAJ:Y0pCki6q_DkC:
-    citations: 797
+    citations: 800
     title: Assessing the energy transition in China towards carbon neutrality with a probabilistic framework
     year: '2022'
   3dCECpgAAAAJ:YsMSGLbcyi4C:
@@ -66,6 +66,6 @@ papers:
     title: Load probability density forecasting by transforming and combining quantile forecasts
     year: '2020'
   3dCECpgAAAAJ:ufrVoPGSRksC:
-    citations: 49
+    citations: 51
     title: "China\u2019s multi-sector-shared CCUS networks in a carbon-neutral vision"
     year: '2023'
