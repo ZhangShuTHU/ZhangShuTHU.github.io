@@ -46,10 +46,9 @@
       }
 
       .preview {
-        display: inline-block;
+        display: block;
         width: 100%;
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
+        height: auto;
         border: 1px solid var(--global-divider-color);
       }
 
