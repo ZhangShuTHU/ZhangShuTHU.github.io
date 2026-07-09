@@ -3,6 +3,7 @@ layout: about
 title: 关于/About
 permalink: /
 subtitle: Assistant Professor | <a href='http://www.3e.tsinghua.edu.cn/en/'>Institute of Energy, Environment and Economy</a>, <a href='https://www.tsinghua.edu.cn/en/'>Tsinghua University</a>
+kicker: Energy Systems & Climate Policy
 hero_statement: Modeling energy-system transitions toward carbon neutrality, with attention to climate policy, cross-sector resource constraints, and sustainable development trade-offs.
 
 profile:
