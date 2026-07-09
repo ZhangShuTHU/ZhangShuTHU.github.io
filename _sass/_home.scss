@@ -46,9 +46,20 @@
 
   .academic-subtitle {
     max-width: 43rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.8rem;
     color: var(--global-text-color-light);
     font-size: clamp(0.98rem, 2vw, 1.12rem);
+    line-height: 1.55;
+  }
+
+  .academic-statement {
+    max-width: 44rem;
+    margin-bottom: 1.2rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--academic-accent);
+    color: var(--global-text-color);
+    font-size: clamp(1.05rem, 2.2vw, 1.24rem);
+    font-weight: 650;
     line-height: 1.55;
   }
 
@@ -62,18 +73,17 @@
       display: inline-flex;
       align-items: center;
       min-height: 1.65rem;
-      padding-right: 0.8rem;
-      margin-right: 0.8rem;
-      border-right: 1px solid var(--global-divider-color);
-      color: var(--global-text-color-light);
+      padding: 0.25rem 0.7rem;
+      margin-right: 0.45rem;
+      border: 1px solid color-mix(in srgb, var(--global-divider-color), var(--academic-teal) 22%);
+      border-radius: 999px;
+      color: var(--academic-teal);
       font-size: 0.84rem;
       font-weight: 600;
       line-height: 1.2;
 
       &:last-child {
-        padding-right: 0;
         margin-right: 0;
-        border-right: 0;
       }
     }
   }
@@ -201,9 +211,9 @@
 
   .academic-bio {
     p {
-      max-width: 100%;
+      max-width: 58rem;
       font-size: 1.02rem;
-      line-height: 1.75;
+      line-height: 1.7;
     }
   }
 
@@ -213,16 +223,27 @@
     width: 100%;
     min-width: 0;
     border-top: 1px solid var(--global-divider-color);
-    border-bottom: 1px solid var(--global-divider-color);
   }
 
   .research-focus-item {
+    position: relative;
     min-height: 100%;
     min-width: 0;
-    padding: 1rem 1.05rem 1.05rem;
+    padding: 1.1rem 1.1rem 1.15rem;
     border-right: 1px solid var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
     background: var(--global-bg-color);
     background: color-mix(in srgb, var(--global-bg-color), var(--academic-surface-strong) 72%);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 1.1rem;
+      left: 1.1rem;
+      height: 3px;
+      background: var(--academic-accent);
+      content: "";
+    }
 
     &:last-child {
       border-right: 0;
@@ -232,6 +253,7 @@
       margin-bottom: 0.55rem;
       font-size: 1rem;
       line-height: 1.28;
+      color: var(--global-text-color);
       overflow-wrap: anywhere;
     }
 
@@ -331,7 +353,7 @@
 
         .title {
           max-width: 58rem;
-          font-size: 1.02rem;
+          font-size: 1rem;
           overflow-wrap: anywhere;
         }
 

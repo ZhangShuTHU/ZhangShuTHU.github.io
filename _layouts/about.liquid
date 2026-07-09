@@ -14,6 +14,9 @@ layout: default
         {% endif %}
       </h1>
       <p class="desc academic-subtitle">{{ page.subtitle }}</p>
+      {% if page.hero_statement %}
+        <p class="academic-statement">{{ page.hero_statement }}</p>
+      {% endif %}
 
       {% if page.profile_highlights %}
         <div class="academic-highlights" aria-label="Profile highlights">
@@ -55,7 +58,7 @@ layout: default
   <article class="academic-main">
     <section class="academic-section academic-bio" aria-label="Biography">
       <div class="academic-section__header">
-        <div class="academic-section__label">Academic Profile</div>
+        <div class="academic-section__label">Overview</div>
       </div>
       <div class="academic-section__body">{{ content }}</div>
     </section>
