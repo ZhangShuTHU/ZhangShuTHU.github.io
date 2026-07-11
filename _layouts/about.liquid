@@ -1,128 +1,228 @@
 ---
 layout: default
 ---
-<div class="post academic-home">
-  <header class="academic-hero">
-    <div class="academic-hero__content">
-      {% if page.kicker %}
-        <p class="academic-kicker">{{ page.kicker }}</p>
-      {% endif %}
-      <h1 class="post-title academic-title">
-        {% if site.title == 'blank' %}
-          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-          {{ site.last_name }}
-        {% else %}
-          {{ site.title }}
-        {% endif %}
-      </h1>
-      <p class="desc academic-subtitle">{{ page.subtitle }}</p>
-      {% if page.hero_statement %}
-        <p class="academic-statement">{{ page.hero_statement }}</p>
-      {% endif %}
+{% assign total_citations = 0 %}
+{% for paper in site.data.citations.papers %}
+  {% assign citation_record = paper[1] %}
+  {% assign total_citations = total_citations | plus: citation_record.citations %}
+{% endfor %}
 
-      {% if page.profile_highlights %}
-        <div class="academic-highlights" aria-label="Profile highlights">
-          {% for highlight in page.profile_highlights %}
-            <span>{{ highlight }}</span>
-          {% endfor %}
+<div class="academic-home">
+  <header class="academic-hero" aria-labelledby="academic-home-title">
+    <div class="academic-shell academic-hero__grid">
+      <div class="academic-hero__content">
+        <div class="academic-hero__eyebrow">
+          <span class="academic-signal-dot" aria-hidden="true"></span>
+          <span>{{ page.kicker }}</span>
         </div>
-      {% endif %}
 
-      <div class="academic-actions">
-        <a class="academic-action academic-action--primary" href="{{ '/publications/' | relative_url }}">Publications</a>
-        <a class="academic-action" href="{{ '/cv/' | relative_url }}">CV</a>
-        <a class="academic-action" href="https://scholar.google.com/citations?user=3dCECpgAAAAJ">Google Scholar</a>
+        <h1 id="academic-home-title" class="academic-title">
+          <span class="academic-title__cn">{{ page.name_cn }}</span>
+          <span class="academic-title__en">{{ page.name_en }}</span>
+        </h1>
+
+        <p class="academic-role">{{ page.subtitle }}</p>
+        <p class="academic-statement">{{ page.hero_statement }}</p>
+
+        <div class="academic-actions" role="group" aria-label="Primary links">
+          <a class="academic-action academic-action--primary" href="{{ '/publications/' | relative_url }}">
+            Explore the research
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="academic-action" href="{{ '/cv/' | relative_url }}">View CV</a>
+        </div>
+
+        <nav class="academic-profile-links" aria-label="Academic profiles and contact">
+          <a href="mailto:{{ site.email }}">Email</a>
+          <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}">Google Scholar</a>
+          <a href="https://orcid.org/{{ site.data.socials.orcid_id }}">ORCID</a>
+          <a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}">LinkedIn</a>
+        </nav>
       </div>
-    </div>
 
-    {% if page.profile %}
-      <aside class="academic-profile" aria-label="Profile">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) 320px, (min-width: 576px) 36vw, 92vw{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </aside>
-    {% endif %}
+      {% if page.profile %}
+        <aside class="academic-portrait" aria-label="Portrait and current appointment">
+          <div class="academic-portrait__frame">
+            <div class="academic-portrait__grid" aria-hidden="true"></div>
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% capture portrait_sizes %}(min-width: 960px) 400px, (min-width: 576px) 46vw, 88vw{% endcapture %}
+            {%
+              include figure.liquid loading="eager" path=profile_image_path class="academic-portrait__image" sizes=portrait_sizes
+              alt=page.profile.image_alt width="1569" height="1800" cache_bust=true
+            %}
+          </div>
+          <div class="academic-portrait__caption">
+            <span class="academic-portrait__status" aria-hidden="true"></span>
+            <div>
+              <strong>{{ page.profile.caption }}</strong>
+              <span>{{ page.profile.caption_detail }}</span>
+            </div>
+          </div>
+        </aside>
+      {% endif %}
+    </div>
   </header>
 
-  <article class="academic-main">
-    <section class="academic-section academic-bio" aria-label="Biography">
-      <div class="academic-section__header">
-        <div class="academic-section__label">Overview</div>
+  <section class="academic-proof" aria-labelledby="proof-title">
+    <div class="academic-shell academic-proof__grid">
+      <div class="academic-proof__intro">
+        <p class="academic-section-kicker">Research signal</p>
+        <h2 id="proof-title">Momentum, made visible.</h2>
       </div>
-      <div class="academic-section__body">{{ content }}</div>
-    </section>
 
-    {% if page.research_focus %}
-      <section class="academic-section academic-research" aria-label="Research focus">
-        <div class="academic-section__label">Research Focus</div>
-        <div class="research-focus-grid">
-          {% for focus in page.research_focus %}
-            <article class="research-focus-item">
-              <h2>{{ focus.title }}</h2>
-              <p>{{ focus.text }}</p>
+      {% for proof in page.proof_points %}
+        <a
+          class="academic-proof__item"
+          href="{% if proof.url contains '://' %}{{ proof.url }}{% else %}{{ proof.url | relative_url }}{% endif %}"
+          {% if proof.url contains '://' %}
+            rel="noopener noreferrer"
+          {% endif %}
+        >
+          <strong>
+            {% if proof.metric == 'citations' %}
+              {{ total_citations }}
+            {% else %}
+              {{ proof.value }}
+            {% endif %}
+          </strong>
+          <span>{{ proof.label }}</span>
+          <small>
+            {% if proof.metric == 'citations' %}
+              Updated {{ site.data.citations.metadata.last_updated | date: '%b %Y' }}
+            {% else %}
+              {{ proof.detail }}
+            {% endif %}
+          </small>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="academic-main">
+    <section class="academic-featured" aria-labelledby="featured-title">
+      <div class="academic-shell">
+        <div class="academic-section-heading">
+          <p class="academic-section-kicker">Signature contributions</p>
+          <div>
+            <h2 id="featured-title">Research built for consequential decisions.</h2>
+            <p>{{ page.featured_intro }}</p>
+          </div>
+        </div>
+
+        <div class="academic-work-grid">
+          {% for work in page.featured_work %}
+            <article class="academic-work academic-work--{{ work.tone }}">
+              <div class="academic-work__meta">
+                <span>0{{ forloop.index }}</span>
+                <span>{{ work.journal }} · {{ work.year }}</span>
+              </div>
+              <p class="academic-work__insight">{{ work.insight }}</p>
+              <h3>{{ work.title }}</h3>
+              <p class="academic-work__summary">{{ work.summary }}</p>
+              <div class="academic-work__footer">
+                <span>{{ work.signal }}</span>
+                <a href="{{ work.url }}" rel="noopener noreferrer" aria-label="Read {{ work.title }}"
+                  >Read article <span aria-hidden="true">↗</span></a
+                >
+              </div>
+              <span class="academic-work__index-art" aria-hidden="true">0{{ forloop.index }}</span>
             </article>
           {% endfor %}
         </div>
-      </section>
-    {% endif %}
 
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <section class="academic-section academic-news" aria-label="News">
-        <div class="academic-section__header">
-          <div class="academic-section__label">News</div>
-          <a href="{{ '/news/' | relative_url }}">View all</a>
+        <div class="academic-section-link">
+          <a href="{{ '/publications/' | relative_url }}">Browse all publications <span aria-hidden="true">→</span></a>
         </div>
-        {% include news.liquid limit=true %}
-      </section>
-    {% endif %}
-
-    <!-- Latest posts -->
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <section class="academic-section" aria-label="Latest posts">
-        <div class="academic-section__header">
-          <div class="academic-section__label">Latest Posts</div>
-          <a href="{{ '/blog/' | relative_url }}">View all</a>
-        </div>
-        {% include latest_posts.liquid %}
-      </section>
-    {% endif %}
-
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <section class="academic-section academic-selected-publications" aria-label="Selected publications">
-        <div class="academic-section__header">
-          <div class="academic-section__label">Selected Publications</div>
-          <a href="{{ '/publications/' | relative_url }}">View all</a>
-        </div>
-        {% include selected_papers.liquid %}
-      </section>
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
       </div>
-    {% endif %}
+    </section>
 
-    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
-      {% include newsletter.liquid center=true %}
-    {% endif %}
-  </article>
+    <section class="academic-agenda" aria-labelledby="agenda-title">
+      <div class="academic-shell">
+        <div class="academic-section-heading">
+          <p class="academic-section-kicker">Research agenda</p>
+          <div>
+            <h2 id="agenda-title">From system mechanics to policy choices.</h2>
+            <p>{{ page.research_intro }}</p>
+          </div>
+        </div>
+
+        <div class="academic-agenda__grid">
+          {% for focus in page.research_focus %}
+            <article class="academic-focus">
+              <div class="academic-focus__number" aria-hidden="true">0{{ forloop.index }}</div>
+              <p class="academic-focus__eyebrow">{{ focus.eyebrow }}</p>
+              <h3>{{ focus.title }}</h3>
+              <p>{{ focus.text }}</p>
+              <span>{{ focus.signal }}</span>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="academic-story" aria-labelledby="trajectory-title">
+      <div class="academic-shell academic-story__grid">
+        <div class="academic-trajectory">
+          <div class="academic-section-heading academic-section-heading--stacked">
+            <p class="academic-section-kicker">Trajectory</p>
+            <div>
+              <h2 id="trajectory-title">A fast-moving research programme.</h2>
+              <p>Recent milestones across scholarship, funding, and policy service.</p>
+            </div>
+          </div>
+
+          <ol class="academic-timeline">
+            {% for milestone in page.trajectory %}
+              <li>
+                <time datetime="{{ milestone.year }}">{{ milestone.year }}</time>
+                <div>
+                  <h3>{{ milestone.title }}</h3>
+                  <p>{{ milestone.text }}</p>
+                </div>
+              </li>
+            {% endfor %}
+          </ol>
+        </div>
+
+        <aside class="academic-bio" aria-labelledby="bio-title">
+          <p class="academic-section-kicker">Researcher</p>
+          <h2 id="bio-title">A modeler working at the boundary of evidence and action.</h2>
+          <div class="academic-bio__body">{{ content }}</div>
+          <a href="{{ '/cv/' | relative_url }}">Full curriculum vitae <span aria-hidden="true">→</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="academic-updates" aria-labelledby="updates-title">
+      <div class="academic-shell academic-updates__grid">
+        <div class="academic-news">
+          <div class="academic-section-heading academic-section-heading--compact">
+            <p class="academic-section-kicker">Latest</p>
+            <div>
+              <h2 id="updates-title">Research updates.</h2>
+              <a href="{{ '/news/' | relative_url }}">View all</a>
+            </div>
+          </div>
+          {% if page.announcements and page.announcements.enabled %}
+            {% include news.liquid limit=true %}
+          {% endif %}
+        </div>
+
+        <aside class="academic-connect" aria-labelledby="connect-title">
+          <p class="academic-section-kicker">Connect</p>
+          <h2 id="connect-title">Research collaboration & policy exchange.</h2>
+          <p>{{ page.contact.text }}</p>
+          <a class="academic-connect__email" href="mailto:{{ site.email }}">
+            {{- site.email }}
+            <span aria-hidden="true">↗</span></a
+          >
+          <address>
+            {{ page.contact.institute -}}
+            <br>
+            {{ page.contact.address }}
+          </address>
+        </aside>
+      </div>
+    </section>
+  </div>
 </div>

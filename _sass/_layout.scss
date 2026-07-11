@@ -8,6 +8,9 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  font-family: "IBM Plex Sans", "Noto Sans SC", sans-serif;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
 
   h1,
   h2,

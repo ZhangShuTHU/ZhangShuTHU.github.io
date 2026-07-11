@@ -63,10 +63,7 @@ html {
 .social a,
 .publications ol.bibliography li,
 .news tr,
-.cv .card,
-.academic-action,
-.research-focus-item,
-.academic-profile img {
+.cv .card {
   transition-duration: var(--motion-medium);
   transition-property: background-color, border-color, box-shadow, color, opacity, transform;
   transition-timing-function: var(--motion-ease-out);
@@ -76,13 +73,11 @@ html {
   backdrop-filter: saturate(140%) blur(10px);
 }
 
-.navbar.navbar-light .navbar-nav .nav-item .nav-link,
-.navbar-brand.title {
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
   position: relative;
 }
 
-.navbar.navbar-light .navbar-nav .nav-item .nav-link::after,
-.navbar-brand.title::after {
+.navbar.navbar-light .navbar-nav .nav-item .nav-link::after {
   position: absolute;
   right: 0.5rem;
   bottom: 0.25rem;
@@ -98,15 +93,8 @@ html {
   content: "";
 }
 
-.navbar-brand.title::after {
-  right: 0;
-  bottom: -0.15rem;
-  left: 0;
-}
-
 .navbar.navbar-light .navbar-nav .nav-item .nav-link:hover::after,
-.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link::after,
-.navbar-brand.title:hover::after {
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link::after {
   opacity: 0.55;
   transform: scaleX(1);
 }
@@ -122,13 +110,11 @@ html {
   transform: translate3d(0, -1px, 0);
 }
 
-.btn:hover,
-.academic-action:hover {
+.btn:hover {
   transform: translate3d(0, -1px, 0);
 }
 
 .btn:active,
-.academic-action:active,
 #light-toggle:active,
 #search-toggle:active {
   transform: translate3d(0, 0, 0) scale(0.985);
@@ -140,11 +126,6 @@ html {
   box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.08);
 }
 
-.academic-profile img:hover {
-  transform: translate3d(0, -2px, 0);
-}
-
-.research-focus-item:hover,
 .cv .card:hover {
   transform: translate3d(0, -2px, 0);
   box-shadow: 0 0.65rem 1.45rem rgba(0, 0, 0, 0.06);
@@ -163,15 +144,21 @@ html {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .container[role="main"] > .post,
-  .container[role="main"] > .row {
+  body:not(.academic-landing) .container[role="main"] > .post,
+  body:not(.academic-landing) .container[role="main"] > .row {
     animation: academic-fade-rise var(--motion-slow) var(--motion-ease-soft) both;
   }
 
   .post-header,
   .academic-hero__content,
-  .academic-profile,
-  .academic-section,
+  .academic-portrait,
+  .academic-proof__item,
+  .academic-work,
+  .academic-focus,
+  .academic-timeline li,
+  .academic-bio,
+  .academic-news,
+  .academic-connect,
   .projects .col,
   .publications ol.bibliography > li,
   .news table tr,
@@ -180,7 +167,10 @@ html {
     animation: academic-fade-rise var(--motion-slow) var(--motion-ease-soft) both;
   }
 
-  .academic-profile,
+  .academic-portrait,
+  .academic-work,
+  .academic-bio,
+  .academic-connect,
   .projects .card,
   .cv .card,
   .publication img.preview,
@@ -193,8 +183,11 @@ html {
     animation-delay: 30ms;
   }
 
-  .academic-profile,
-  .academic-section:nth-of-type(1),
+  .academic-portrait,
+  .academic-proof__item:nth-of-type(1),
+  .academic-work:nth-child(1),
+  .academic-focus:nth-child(1),
+  .academic-timeline li:nth-child(1),
   .projects .col:nth-child(1),
   .publications ol.bibliography > li:nth-child(1),
   .news table tr:nth-child(1),
@@ -202,7 +195,11 @@ html {
     animation-delay: calc(var(--motion-stagger) * 1);
   }
 
-  .academic-section:nth-of-type(2),
+  .academic-proof__item:nth-of-type(2),
+  .academic-work:nth-child(2),
+  .academic-focus:nth-child(2),
+  .academic-timeline li:nth-child(2),
+  .academic-bio,
   .projects .col:nth-child(2),
   .publications ol.bibliography > li:nth-child(2),
   .news table tr:nth-child(2),
@@ -210,7 +207,11 @@ html {
     animation-delay: calc(var(--motion-stagger) * 2);
   }
 
-  .academic-section:nth-of-type(3),
+  .academic-proof__item:nth-of-type(3),
+  .academic-work:nth-child(3),
+  .academic-focus:nth-child(3),
+  .academic-timeline li:nth-child(3),
+  .academic-news,
   .projects .col:nth-child(3),
   .publications ol.bibliography > li:nth-child(3),
   .news table tr:nth-child(3),
@@ -218,7 +219,9 @@ html {
     animation-delay: calc(var(--motion-stagger) * 3);
   }
 
-  .academic-section:nth-of-type(4),
+  .academic-proof__item:nth-of-type(4),
+  .academic-timeline li:nth-child(4),
+  .academic-connect,
   .projects .col:nth-child(4),
   .publications ol.bibliography > li:nth-child(4),
   .news table tr:nth-child(4),
@@ -252,6 +255,17 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html.transition,
+  html.transition *,
+  html.transition *::before,
+  html.transition *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
     transition-duration: 0.01ms !important;
   }
 }

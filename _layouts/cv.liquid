@@ -11,7 +11,10 @@ layout: default
 
   {% comment %} i18n: decide page language and strings {% endcomment %}
   {% assign page_lang = page.lang | default: site.lang | downcase | default: 'en' %}
-  {% assign is_cn = page_lang == 'zh' or page_lang == 'zh-cn' or page_lang == 'cn' %}
+  {% assign is_cn = false %}
+  {% if page_lang == 'zh' or page_lang == 'zh-cn' or page_lang == 'cn' %}
+    {% assign is_cn = true %}
+  {% endif %}
   {% if is_cn %}
     {% assign t_open_new = '在新窗口打开' %}
     {% assign t_pdf_fallback_1 = '无法内嵌显示 PDF。你可以' %}

@@ -27,7 +27,7 @@
     integrity="{{ site.third_party_libraries.imagesloaded.integrity.js }}"
     crossorigin="anonymous"
   ></script>
-  <script defer src="{{ '/assets/js/masonry.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
+  <script defer src="{{ '/assets/js/masonry.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
 {% if page.mermaid and page.mermaid.enabled %}
@@ -182,7 +182,7 @@
 <!-- Load Common JS -->
 <script src="{{ '/assets/js/no_defer.js' | relative_url | bust_file_cache }}"></script>
 <script defer src="{{ '/assets/js/common.js' | relative_url | bust_file_cache }}"></script>
-<script defer src="{{ '/assets/js/copy_code.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
+<script defer src="{{ '/assets/js/copy_code.js' | relative_url | bust_file_cache }}"></script>
 
 <!-- Jupyter Open External Links New Tab -->
 <script defer src="{{ '/assets/js/jupyter_new_tab.js' | relative_url | bust_file_cache }}"></script>
@@ -199,7 +199,6 @@
   <!-- MathJax -->
   <script
     defer
-    type="text/javascript"
     id="MathJax-script"
     src="{{ site.third_party_libraries.mathjax.url.js }}"
     integrity="{{ site.third_party_libraries.mathjax.integrity.js }}"
@@ -301,7 +300,7 @@
 
 {% if site.enable_progressbar %}
   <!-- Scrolling Progress Bar -->
-  <script defer src="{{ '/assets/js/progress-bar.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
+  <script defer src="{{ '/assets/js/progress-bar.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
 {% if page.images %}

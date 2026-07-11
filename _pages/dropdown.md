@@ -5,12 +5,12 @@ nav: true
 nav_order: 3
 dropdown: true
 children:
-  - title: 项目列表
+  - title: 项目列表（中文）
     permalink: /SummaryCN/
   - title: divider
-  - title: Summary
+  - title: Project portfolio (EN)
     permalink: /Summary/
   - title: divider
-  - title: Feature
+  - title: Featured projects
     permalink: /projects/
 ---
