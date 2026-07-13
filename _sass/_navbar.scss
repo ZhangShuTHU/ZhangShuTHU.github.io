@@ -308,6 +308,12 @@
     font-size: 0.86rem;
   }
 
+  .navbar button.dropdown-toggle {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+
   .navbar .toggle-container,
   .navbar #search-toggle {
     display: inline-flex;
