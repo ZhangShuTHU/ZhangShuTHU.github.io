@@ -193,7 +193,6 @@ body.academic-landing main.container {
   &:hover {
     border-color: var(--academic-accent);
     color: var(--academic-accent) !important;
-    transform: translateY(-1px);
   }
 }
 
@@ -460,8 +459,6 @@ body.academic-landing main.container {
 
   &:hover {
     border-color: var(--academic-line-strong);
-    box-shadow: 0 16px 42px rgba(17, 24, 39, 0.07);
-    transform: translateY(-2px);
   }
 
   h3 {
@@ -889,6 +886,17 @@ body.academic-landing main.container {
 
   &:hover {
     color: color-mix(in srgb, var(--academic-accent), black 18%) !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .academic-action:hover {
+    transform: translate3d(0, -1px, 0);
+  }
+
+  .academic-work:hover {
+    box-shadow: 0 16px 42px rgba(17, 24, 39, 0.07);
+    transform: translate3d(0, -2px, 0);
   }
 }
 

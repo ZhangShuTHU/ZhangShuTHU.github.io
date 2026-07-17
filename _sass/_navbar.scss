@@ -182,7 +182,7 @@
 
       i::before {
         color: var(--global-text-color);
-        transition-property: all 0.2s ease-in-out;
+        transition: color var(--motion-fast) ease;
       }
 
       &:hover {
@@ -202,7 +202,9 @@
     background-color: var(--global-text-color);
     border-radius: 1px;
     margin-bottom: 4px;
-    transition: all 0.2s;
+    transition:
+      opacity var(--motion-fast) ease,
+      transform var(--motion-medium) var(--motion-ease-out);
   }
 
   .top-bar {

@@ -1,20 +1,22 @@
 /*******************************************************************************
- * Motion system
+ * Motion system — restrained, responsive, and compositor-friendly
  ******************************************************************************/
 
 :root {
+  --motion-press: 100ms;
   --motion-fast: 140ms;
-  --motion-medium: 240ms;
-  --motion-slow: 460ms;
-  --motion-stagger: 70ms;
-  --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --motion-ease-soft: cubic-bezier(0.25, 1, 0.5, 1);
+  --motion-medium: 200ms;
+  --motion-slow: 360ms;
+  --motion-stagger: 45ms;
+  --motion-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --motion-ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 @keyframes academic-fade-rise {
   from {
     opacity: 0;
-    transform: translate3d(0, 12px, 0);
+    transform: translate3d(0, 8px, 0);
   }
 
   to {
@@ -26,7 +28,7 @@
 @keyframes academic-soft-scale {
   from {
     opacity: 0;
-    transform: translate3d(0, 8px, 0) scale(0.985);
+    transform: translate3d(0, 6px, 0) scale(0.97);
   }
 
   to {
@@ -38,7 +40,7 @@
 @keyframes academic-dropdown {
   from {
     opacity: 0;
-    transform: translate3d(0, -6px, 0) scale(0.985);
+    transform: translate3d(0, -4px, 0) scale(0.98);
   }
 
   to {
@@ -57,7 +59,9 @@ html {
 .dropdown-item,
 #light-toggle,
 #search-toggle,
+.navbar-toggler,
 .btn,
+.academic-action,
 .card,
 .hoverable,
 .social a,
@@ -65,12 +69,13 @@ html {
 .news tr,
 .cv .card {
   transition-duration: var(--motion-medium);
-  transition-property: background-color, border-color, box-shadow, color, opacity, transform;
+  transition-property:
+    background-color, border-color, box-shadow, color, opacity, transform;
   transition-timing-function: var(--motion-ease-out);
 }
 
 .navbar {
-  backdrop-filter: saturate(140%) blur(10px);
+  backdrop-filter: saturate(135%) blur(10px);
 }
 
 .navbar.navbar-light .navbar-nav .nav-item .nav-link {
@@ -85,15 +90,14 @@ html {
   height: 1px;
   background: currentcolor;
   opacity: 0;
-  transform: scaleX(0.72);
+  transform: scaleX(0.76);
   transform-origin: center;
   transition:
-    opacity var(--motion-fast) var(--motion-ease-out),
+    opacity var(--motion-fast) ease,
     transform var(--motion-medium) var(--motion-ease-out);
   content: "";
 }
 
-.navbar.navbar-light .navbar-nav .nav-item .nav-link:hover::after,
 .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link::after {
   opacity: 0.55;
   transform: scaleX(1);
@@ -104,35 +108,19 @@ html {
   transform-origin: top right;
 }
 
-#light-toggle:hover,
-#search-toggle:hover,
-.social a:hover {
-  transform: translate3d(0, -1px, 0);
-}
-
-.btn:hover {
-  transform: translate3d(0, -1px, 0);
+.navbar-collapse.collapsing {
+  transition-timing-function: var(--motion-ease-drawer);
+  transition-duration: var(--motion-medium);
 }
 
 .btn:active,
+.academic-action:active,
+.navbar-toggler:active,
 #light-toggle:active,
-#search-toggle:active {
-  transform: translate3d(0, 0, 0) scale(0.985);
-}
-
-.hoverable:hover,
-.projects a:hover .card {
-  transform: translate3d(0, -3px, 0);
-  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.08);
-}
-
-.cv .card:hover {
-  transform: translate3d(0, -2px, 0);
-  box-shadow: 0 0.65rem 1.45rem rgba(0, 0, 0, 0.06);
-}
-
-.publications ol.bibliography li:hover {
-  transform: translate3d(3px, 0, 0);
+#search-toggle:active,
+.academic-brand:active .academic-brand__mark {
+  transform: translate3d(0, 0, 0) scale(0.98);
+  transition-duration: var(--motion-press);
 }
 
 .publications .links .btn:hover {
@@ -143,104 +131,48 @@ html {
   background: color-mix(in srgb, var(--global-theme-color), transparent 94%);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link:hover::after {
+    opacity: 0.55;
+    transform: scaleX(1);
+  }
+
+  #light-toggle:hover,
+  #search-toggle:hover,
+  .social a:hover,
+  .btn:hover {
+    transform: translate3d(0, -1px, 0);
+  }
+
+  .hoverable:hover,
+  .projects a:hover .card {
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 0.65rem 1.5rem rgba(0, 0, 0, 0.07);
+  }
+
+  .cv .card:hover {
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 0.6rem 1.35rem rgba(0, 0, 0, 0.06);
+  }
+
+  .publications ol.bibliography li:hover {
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  body:not(.academic-landing) .container[role="main"] > .post,
-  body:not(.academic-landing) .container[role="main"] > .row {
-    animation: academic-fade-rise var(--motion-slow) var(--motion-ease-soft) both;
-  }
-
-  .post-header,
-  .academic-hero__content,
-  .academic-portrait,
-  .academic-proof__item,
-  .academic-work,
-  .academic-focus,
-  .academic-timeline li,
-  .academic-bio,
-  .academic-news,
-  .academic-connect,
-  .projects .col,
-  .publications ol.bibliography > li,
-  .news table tr,
-  .cv .card,
-  .table-responsive {
-    animation: academic-fade-rise var(--motion-slow) var(--motion-ease-soft) both;
-  }
-
-  .academic-portrait,
-  .academic-work,
-  .academic-bio,
-  .academic-connect,
-  .projects .card,
-  .cv .card,
-  .publication img.preview,
-  .publications img.preview {
-    animation-name: academic-soft-scale;
-  }
-
-  .post-header,
   .academic-hero__content {
-    animation-delay: 30ms;
+    animation: academic-fade-rise var(--motion-slow) var(--motion-ease-out) both;
   }
 
-  .academic-portrait,
-  .academic-proof__item:nth-of-type(1),
-  .academic-work:nth-child(1),
-  .academic-focus:nth-child(1),
-  .academic-timeline li:nth-child(1),
-  .projects .col:nth-child(1),
-  .publications ol.bibliography > li:nth-child(1),
-  .news table tr:nth-child(1),
-  .cv .card:nth-child(1) {
-    animation-delay: calc(var(--motion-stagger) * 1);
+  .academic-portrait {
+    animation: academic-soft-scale var(--motion-slow) var(--motion-ease-out)
+      var(--motion-stagger) both;
   }
 
-  .academic-proof__item:nth-of-type(2),
-  .academic-work:nth-child(2),
-  .academic-focus:nth-child(2),
-  .academic-timeline li:nth-child(2),
-  .academic-bio,
-  .projects .col:nth-child(2),
-  .publications ol.bibliography > li:nth-child(2),
-  .news table tr:nth-child(2),
-  .cv .card:nth-child(2) {
-    animation-delay: calc(var(--motion-stagger) * 2);
-  }
-
-  .academic-proof__item:nth-of-type(3),
-  .academic-work:nth-child(3),
-  .academic-focus:nth-child(3),
-  .academic-timeline li:nth-child(3),
-  .academic-news,
-  .projects .col:nth-child(3),
-  .publications ol.bibliography > li:nth-child(3),
-  .news table tr:nth-child(3),
-  .cv .card:nth-child(3) {
-    animation-delay: calc(var(--motion-stagger) * 3);
-  }
-
-  .academic-proof__item:nth-of-type(4),
-  .academic-timeline li:nth-child(4),
-  .academic-connect,
-  .projects .col:nth-child(4),
-  .publications ol.bibliography > li:nth-child(4),
-  .news table tr:nth-child(4),
-  .cv .card:nth-child(4) {
-    animation-delay: calc(var(--motion-stagger) * 4);
-  }
-
-  .projects .col:nth-child(5),
-  .publications ol.bibliography > li:nth-child(5),
-  .news table tr:nth-child(5),
-  .cv .card:nth-child(5) {
-    animation-delay: calc(var(--motion-stagger) * 5);
-  }
-
-  .projects .col:nth-child(6),
-  .publications ol.bibliography > li:nth-child(6),
-  .news table tr:nth-child(6),
-  .cv .card:nth-child(6) {
-    animation-delay: calc(var(--motion-stagger) * 6);
+  .academic-proof__grid {
+    animation: academic-fade-rise var(--motion-slow) var(--motion-ease-out)
+      calc(var(--motion-stagger) * 2) both;
   }
 }
 
@@ -252,20 +184,44 @@ html {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  html.transition,
-  html.transition *,
-  html.transition *::before,
-  html.transition *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+    animation: none !important;
     scroll-behavior: auto !important;
     transition-delay: 0ms !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 120ms !important;
+    transition-property:
+      background-color, border-color, color, fill, opacity, stroke !important;
+  }
+
+  .btn,
+  .academic-action,
+  .navbar-toggler,
+  #light-toggle,
+  #search-toggle,
+  .academic-brand__mark,
+  .card,
+  .hoverable,
+  .social a,
+  .publications ol.bibliography li,
+  .cv .card {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .navbar {
+    background-color: var(--global-bg-color) !important;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .navbar {
+    background-color: var(--global-bg-color) !important;
+    border-bottom-color: var(--global-text-color);
+    backdrop-filter: none;
+  }
+
+  .dropdown-menu {
+    border-color: var(--global-text-color);
   }
 }
