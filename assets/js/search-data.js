@@ -23,22 +23,22 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "dropdown-项目列表-中文",
-              title: "项目列表（中文）",
+        },{id: "dropdown-项目列表",
+              title: "项目列表",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "/SummaryCN/";
               },
-            },{id: "dropdown-project-portfolio-en",
-              title: "Project portfolio (EN)",
+            },{id: "dropdown-summary",
+              title: "Summary",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "/Summary/";
               },
-            },{id: "dropdown-featured-projects",
-              title: "Featured projects",
+            },{id: "dropdown-feature",
+              title: "Feature",
               description: "",
               section: "Dropdown",
               handler: () => {
