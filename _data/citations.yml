@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-15'
+  last_updated: '2026-08-17'
 papers:
   3dCECpgAAAAJ:0EnyYjriUFMC:
     citations: 0
@@ -30,7 +30,7 @@ papers:
     title: "Probabilistic Scenarios Reveal the Impacts of China\u2019s Energy System Net-Zero Transition on the Water\u2013Energy\u2013Food Nexus"
     year: Unknown Year
   3dCECpgAAAAJ:MXK_kJrjxJIC:
-    citations: 3
+    citations: 4
     title: Exploring the feasible net-zero transition pathway in China considering energy system flexibility
     year: '2026'
   3dCECpgAAAAJ:ULOm3_A8WrAC:
@@ -46,7 +46,7 @@ papers:
     title: "China\u2019s energy transition pathway in a carbon neutral vision"
     year: '2022'
   3dCECpgAAAAJ:Y0pCki6q_DkC:
-    citations: 633
+    citations: 634
     title: Assessing the energy transition in China towards carbon neutrality with a probabilistic framework
     year: '2022'
   3dCECpgAAAAJ:YsMSGLbcyi4C:
@@ -66,9 +66,13 @@ papers:
     title: "\u4E2D\u56FD\u7701\u533A\u534F\u540C\u7684\u7535\u529B\u7CFB\u7EDF\u78B3\u4E2D\u548C\u8F6C\u578B\u8DEF\u5F84\u8BC4\u4F30"
     year: '2025'
   3dCECpgAAAAJ:kNdYIx-mwKoC:
-    citations: 0
+    citations: 1
     title: Building a net-zero power system under future climate conditions with data-driven forecasting and adequacy assessment
     year: '2026'
+  3dCECpgAAAAJ:qxL8FJ1GzNcC:
+    citations: 0
+    title: Hourly consumption-based carbon intensity reveals spatiotemporal patterns and load-carbon mismatch in China's high-renewable power system
+    year: Unknown Year
   3dCECpgAAAAJ:roLk4NBRz8UC:
     citations: 41
     title: Provincial pathways to carbon-neutral energy systems in China considering interprovincial electricity transmission development
