@@ -1,4 +1,4 @@
-FROM ruby:slim
+FROM ruby:4.0.1-slim
 
 # uncomment these if you are having this issue with the build:
 # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)
@@ -62,11 +62,20 @@ WORKDIR /srv/jekyll
 
 # install jekyll and dependencies
 RUN gem install --no-document jekyll bundler
-RUN bundle install --no-cache
+# Optional corporate/proxy CA, supplied only to this build step (never copied into the image).
+RUN --mount=type=secret,id=custom_ca \
+    set -eu; \
+    if [ -f /run/secrets/custom_ca ]; then \
+      cat /etc/ssl/certs/ca-certificates.crt /run/secrets/custom_ca > /tmp/build-ca.pem; \
+      export SSL_CERT_FILE=/tmp/build-ca.pem GIT_SSL_CAINFO=/tmp/build-ca.pem BUNDLE_SSL_CA_CERT=/tmp/build-ca.pem; \
+    fi; \
+    bundle install --no-cache; \
+    rm -f /tmp/build-ca.pem
 
 EXPOSE 8080
 
 COPY bin/entry_point.sh /tmp/entry_point.sh
+RUN chmod +x /tmp/entry_point.sh
 
 # uncomment this if you are having this issue with the build:
 # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)

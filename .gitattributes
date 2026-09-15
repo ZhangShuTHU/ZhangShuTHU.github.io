@@ -1,2 +1,6 @@
 # Force LF line endings, needed for Docker to work on Windows
 *.sh text eol=lf
+*.liquid text eol=lf
+*.css text eol=lf
+assets/js/bibsearch.js text eol=lf
+.al-folio-overrides.yml text eol=lf

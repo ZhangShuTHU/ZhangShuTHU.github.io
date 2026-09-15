@@ -1,81 +1,29 @@
-# Agent Guidelines for al-folio
+# Agent guidelines for Shu Zhang's al-folio v1 site
 
-A simple, clean, and responsive Jekyll theme for academics.
+This is a customized user site. The v1 starter provides configuration and dependency wiring; versioned gems own the runtime. Read [upstream AGENTS.md](https://github.com/alshedivat/al-folio/blob/main/AGENTS.md) and [BOUNDARIES.md](https://github.com/alshedivat/al-folio/blob/main/docs/BOUNDARIES.md) before changing runtime behavior.
 
-## Quick Links by Role
+## Site contract
 
-- **Are you a coding agent?** → Read [`.github/copilot-instructions.md`](.github/copilot-instructions.md) first (tech stack, build, CI/CD, common pitfalls & solutions)
-- **Customizing the site?** → See [`.github/agents/customize.agent.md`](.github/agents/customize.agent.md)
-- **Writing documentation?** → See [`.github/agents/docs.agent.md`](.github/agents/docs.agent.md)
-- **Need setup/deployment help?** → [INSTALL.md](INSTALL.md)
-- **Troubleshooting & FAQ?** → [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
-- **Customization & theming?** → [CUSTOMIZE.md](CUSTOMIZE.md)
-- **Quick 5-min start?** → [QUICKSTART.md](QUICKSTART.md)
+- Preserve `url: https://zhang-shu.top` and an empty `baseurl` together.
+- Keep `theme: al_folio_core`, the `al_folio` API contract, and the plugin lists in `Gemfile` and `_config.yml` aligned. Keep `Gemfile.lock` tracked.
+- Content, data, bibliography, PDFs, and images belong to this site.
+- `_includes/head.liquid` loads `assets/css/site.css`; `_includes/header.liquid` keeps the icon-only search button with v1 navigation handlers.
+- `_layouts/bib.liquid` preserves FrontPage thumbnails, icon links, badge rules, and exact citation-data lookup.
+- `_layouts/cv.liquid` preserves the bilingual PDF viewer and mobile fallback. This site's CV intentionally replaces the stock data-driven CV renderer.
+- `assets/js/bibsearch.js` applies the 300 ms delay through a callback, fixing the core 1.0.15 CSP error. Keep this one-line compatibility fix tracked until the owning plugin incorporates it.
+- Keep `jekyll-minifier.compress_css: false`. The gem already builds its CSS; do not restore the old PurgeCSS stage.
+- Bootstrap compatibility is disabled: the pinned compatibility gem hides desktop navigation. Native v1 handlers support the retained popover marker. Inspect desktop and mobile navigation after plugin updates.
 
-## Essential Commands
+## Upgrade and review
 
-### Local Development (Docker)
+Use [the migration skill](.agents/skills/al-folio-v1-migration/SKILL.md) in a disposable branch. For every retained override, run `bundle exec al-folio upgrade overrides diff PATH`, review the change, then `bundle exec al-folio upgrade overrides accept PATH`. Check in `.al-folio-overrides.yml` with the matching templates.
 
-The recommended approach is using Docker.
+Shared runtime fixes belong in the owning plugin repository. Intentional user-site overrides are valid here; the upstream starter-only style-contract test does not apply to this customized site.
 
-```bash
-# Initial setup & start dev server
-docker compose pull && docker compose up
-# Site runs at http://localhost:8080
+## Validation
 
-# Rebuild after changing dependencies or Dockerfile
-docker compose up --build
+Use Docker (`docker compose up --build`) and inspect http://localhost:8080. Builds go to container-local `/tmp/_site`. Validate home, publications, CV, projects, repositories, news and project details, `/Summary/`, and `/SummaryCN/`; verify navigation, search, publication toggles, image zoom, language switching, and dark mode at desktop and mobile widths.
 
-# Stop containers and free port 8080
-docker compose down
-```
+Run `bundle exec al-folio upgrade audit` and `bundle exec al-folio upgrade overrides audit --fail-on-stale` inside the container. Format changes with Prettier before accepting override checksums. Before committing, run `npx prettier . --write` and the Docker build/visual checks. Stage only intended changes, following [.github/GIT_WORKFLOW.md](.github/GIT_WORKFLOW.md).
 
-### Pre-Commit Checklist
-
-Before every commit, you **must** run these steps:
-
-1.  **Format Code:**
-    ```bash
-    # (First time only)
-    npm install --save-dev prettier @shopify/prettier-plugin-liquid
-    # Format all files
-    npx prettier . --write
-    ```
-2.  **Build Locally & Verify:**
-
-    ```bash
-    # Rebuild the site
-    docker compose up --build
-
-    # Verify by visiting http://localhost:8080.
-    # Check navigation, pages, images, and dark mode.
-    ```
-
-## Critical Configuration
-
-When modifying `_config.yml`, these **must be updated together**:
-
-- **Personal site:** `url: https://username.github.io` + `baseurl:` (empty)
-- **Project site:** `url: https://username.github.io` + `baseurl: /repo-name/`
-- **YAML errors:** Quote strings with special characters: `title: "My: Cool Site"`
-
-## Development Workflow
-
-- **Git & Commits:** For commit message format and Git practices, see [.github/GIT_WORKFLOW.md](.github/GIT_WORKFLOW.md).
-- **Code-Specific Instructions:** Consult the relevant instruction file for your code type.
-
-| File Type                                     | Instruction File                                                                                |
-| --------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Markdown content (`_posts/`, `_pages/`, etc.) | [markdown-content.instructions.md](.github/instructions/markdown-content.instructions.md)       |
-| YAML config (`_config.yml`, `_data/`)         | [yaml-configuration.instructions.md](.github/instructions/yaml-configuration.instructions.md)   |
-| BibTeX (`_bibliography/`)                     | [bibtex-bibliography.instructions.md](.github/instructions/bibtex-bibliography.instructions.md) |
-| Liquid templates (`_includes/`, `_layouts/`)  | [liquid-templates.instructions.md](.github/instructions/liquid-templates.instructions.md)       |
-| JavaScript (`_scripts/`)                      | [javascript-scripts.instructions.md](.github/instructions/javascript-scripts.instructions.md)   |
-
-## Common Issues
-
-For troubleshooting, see:
-
-- [Common Pitfalls & Workarounds](.github/copilot-instructions.md#common-pitfalls--workarounds) in copilot-instructions.md
-- [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for detailed solutions
-- [GitHub Issues](https://github.com/alshedivat/al-folio/issues) to search for your specific problem.
+See [the migration report](docs/migration-v1.html) for the reviewed boundary decisions and validation results.

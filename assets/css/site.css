@@ -1,0 +1,25 @@
+/* Site-specific styling layered after the versioned al-folio core stylesheet. */
+:root {
+  --global-theme-color: #00ab37;
+  --global-hover-color: #00ab37;
+  --global-highlight-color: #009f06;
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #2698ba;
+  --global-hover-color: #2698ba;
+}
+
+.profile .more-info {
+  font-family: inherit;
+}
+
+table:not(.table) td,
+table:not(.table) th {
+  padding: 1px 1rem 1px 0;
+  border-top: 0;
+}
+
+table:not(.table) th {
+  font-weight: bold;
+}
