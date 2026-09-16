@@ -1,25 +1,795 @@
-/* Site-specific styling layered after the versioned al-folio core stylesheet. */
+/* Site-owned presentation layered over al_folio_core. */
 :root {
   --global-theme-color: #00ab37;
   --global-hover-color: #00ab37;
   --global-highlight-color: #009f06;
+  --global-bg-color: #fff;
+  --global-text-color: #263c30;
+  --global-text-color-light: #637369;
+  --site-reading: #fff;
+  --site-ink: #263c30;
+  --site-muted: #637369;
+  --site-line: #dce5de;
+  --site-surface: #f3f7f4;
+  --site-link: #007d2c;
+  --site-banner: #10392b;
+  --site-banner-end: #245539;
+  --site-banner-glow: #6ea07638;
+  --site-banner-text: #f3f8f3;
+  --site-banner-link: #70e193;
+  --site-banner-muted: #c1d6c8;
+  --site-shadow: #0c342017;
+  --site-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html[data-theme="dark"] {
   --global-theme-color: #2698ba;
   --global-hover-color: #2698ba;
+  --global-bg-color: #171e1c;
+  --global-text-color: #e3ece7;
+  --global-text-color-light: #acbcb3;
+  --site-reading: #171e1c;
+  --site-ink: #e3ece7;
+  --site-muted: #acbcb3;
+  --site-line: #35473e;
+  --site-surface: #202c27;
+  --site-link: #71c7df;
+  --site-banner: #092c28;
+  --site-banner-end: #163d35;
+  --site-banner-glow: #3c84913b;
+  --site-banner-link: #80d7e5;
+  --site-banner-muted: #bdd1cb;
+  --site-shadow: #0004;
+}
+
+html {
+  /* Clip decorative viewport bleed, including the scrollbar gutter. */
+  overflow-x: clip;
+}
+
+body {
+  background: var(--site-reading);
+  color: var(--site-ink);
+  font-weight: 400;
+  line-height: 1.75;
+  /* Contain the full-width decorative header without clipping vertical focus. */
+  overflow-x: clip;
+}
+
+body > .container[role="main"] {
+  max-width: 1160px;
+  padding-inline: 26px;
+}
+
+.post a {
+  color: var(--site-link) !important;
+}
+
+.post :is(p, li, summary, .title) {
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+.post :is(.post-title, .card-title) {
+  text-wrap: balance;
+}
+
+.post article :is(p, .author) a:not(.btn) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.post article :is(p, .author) a:not(.btn):hover {
+  text-decoration-line: underline;
+}
+
+:where(a, button, input, summary):focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 4px;
+}
+
+/* Dark navigation remains legible over either color mode's banner. */
+#navbar {
+  opacity: 1;
+  background: var(--site-banner);
+  border-bottom: 1px solid #ffffff12;
+  box-shadow: none;
+  padding-block: 10px;
+  z-index: 1030;
+}
+
+#navbar .container {
+  max-width: 1160px;
+  padding-inline: 26px;
+}
+
+#navbar :is(.nav-link, .navbar-brand, .navbar-brand .font-weight-bold, button),
+#navbar .social :is(a, i, svg) {
+  color: var(--site-banner-text);
+}
+
+#navbar .social svg {
+  fill: currentColor;
+}
+
+/* Core icon pseudo-elements have their own color, rather than inheriting it. */
+#navbar :is(.social i, #light-toggle i, #search-toggle i),
+#navbar :is(.social i, #light-toggle i, #search-toggle i)::before,
+#navbar :is(.social i, #light-toggle i, #search-toggle i)::after {
+  color: var(--site-banner-text) !important;
+}
+
+#navbar .nav-link {
+  font-size: 0.875rem;
+  padding: 10px 12px;
+  border-radius: 3px;
+}
+
+#navbar .nav-item.active > .nav-link {
+  background: linear-gradient(var(--site-banner-link), var(--site-banner-link)) center bottom 5px / calc(100% - 24px) 1px no-repeat;
+}
+
+#navbar :is(.nav-item.active .nav-link, .nav-link:hover, .social a:hover) {
+  color: var(--site-banner-link);
+}
+
+#navbar .navbar-brand.social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+}
+
+#navbar :is(#search-toggle, #light-toggle, .navbar-toggler) {
+  min-width: 32px;
+  min-height: 44px;
+}
+
+#navbar .social a {
+  min-width: 32px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+#navbar :is(.social a, .nav-link, #light-toggle, #search-toggle):hover {
+  background-color: #ffffff0d;
+}
+
+#navbar .icon-bar {
+  background-color: var(--site-banner-text);
+}
+
+#navbar .dropdown-menu {
+  background: var(--site-banner);
+  border: 1px solid #ffffff26;
+  box-shadow: 0 12px 28px var(--site-shadow);
+}
+
+#navbar .dropdown-item {
+  color: var(--site-banner-text);
+  padding: 12px 18px;
+}
+
+#navbar .dropdown-item:is(:hover, :focus, .active) {
+  background: #ffffff12;
+  color: var(--site-banner-link);
+}
+
+#navbar :focus-visible {
+  outline-color: var(--site-banner-link);
+}
+
+/* The decoration is CSS-only: no additional asset requests or moving texture. */
+.post > .post-header {
+  position: relative;
+  isolation: isolate;
+  padding-block: 58px;
+  margin-bottom: 48px;
+  border: 0;
+}
+
+.post > .post-header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -100px auto 0 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse at 94% 95%, var(--site-banner-glow), transparent 65%),
+    repeating-radial-gradient(ellipse at 100% 140%, transparent 0 62px, #c1e8d00a 63px 64px),
+    linear-gradient(115deg, var(--site-banner) 20%, var(--site-banner-end));
+  pointer-events: none;
+}
+
+.post > .post-header .post-title,
+.post > .post-header .post-title .font-weight-bold {
+  color: var(--site-banner-text);
+  font-weight: 600;
+}
+
+.post > .post-header .post-title {
+  font-size: clamp(2rem, 4.4vw, 3.75rem);
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+.post > .post-header :is(.desc, .post-description, .post-meta) {
+  color: var(--site-banner-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 770px;
+  margin: 22px 0 0;
+}
+
+.post > .post-header a {
+  color: var(--site-banner-link) !important;
+}
+
+.post:has(.profile) > .post-header {
+  padding-block: 72px 82px;
+  min-height: 320px;
+}
+
+.post:has(.profile) > .post-header .post-title {
+  font-size: clamp(2.5rem, 5.4vw, 4.75rem);
+}
+
+.post:has(.profile) > .post-header .desc {
+  max-width: 66%;
+}
+
+.profile {
+  width: 26%;
+  margin: -158px 0 28px 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile img {
+  border: 7px solid var(--site-reading);
+  border-radius: 2px !important;
+  box-shadow: 0 14px 36px var(--site-shadow) !important;
 }
 
 .profile .more-info {
   font-family: inherit;
+  font-size: 0.8rem;
+  line-height: 1.85;
+  color: var(--site-muted);
+  padding: 16px 7px 0;
 }
 
-table:not(.table) td,
-table:not(.table) th {
-  padding: 1px 1rem 1px 0;
+.profile .more-info p {
+  display: block;
+  margin-block: 2px;
+  overflow-wrap: anywhere;
+}
+
+.post article > .clearfix > p {
+  font-size: 1.0625rem;
+  line-height: 1.95;
+  margin-bottom: 24px;
+}
+
+.post:has(.profile) article > .clearfix > p:last-child {
+  border-top: 1px solid var(--site-line);
+  padding-top: 24px;
+  margin-top: 28px;
+  font-size: clamp(1.125rem, 1.5vw, 1.3rem);
+  line-height: 1.7;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.post h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--site-ink);
+  margin: 38px 0 22px;
+}
+
+.post:has(.profile) article > h2 {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.post:has(.profile) article > h2::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--site-line);
+}
+
+.news {
+  border-block: 1px solid var(--site-line);
+  padding-block: 10px;
+}
+
+.news :is(td, th) {
+  padding: 12px 14px 12px 0;
+  border: 0;
+  vertical-align: top;
+}
+
+.news th {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--site-muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.news tr:not(:last-child) :is(th, td) {
+  border-bottom: 1px solid var(--site-line);
+}
+
+.news .news-title {
+  text-decoration: none;
+  text-underline-offset: 0.22em;
+}
+
+.news .news-title:hover {
+  text-decoration: underline;
+}
+
+/* Publication controls and cover previews retain their native behavior. */
+.publications ol.bibliography > li {
+  border-bottom: 1px solid var(--site-line);
+  padding-block: 18px 30px;
+  margin-bottom: 20px;
+}
+
+.publications .title {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--site-ink);
+  max-width: 66ch;
+}
+
+.publications .author {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-top: 8px;
+  color: var(--site-muted);
+}
+
+.publications .periodical {
+  font-size: 0.9rem;
+  color: var(--site-muted);
+  margin-top: 6px;
+}
+
+.publications .preview {
+  border: 1px solid var(--site-line);
+  border-radius: 2px !important;
+  box-shadow: 0 4px 16px var(--site-shadow) !important;
+}
+
+.publications .abbr abbr {
+  background: var(--site-banner);
+  color: var(--site-banner-text);
+  border-radius: 2px !important;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  padding-block: 4px;
+}
+
+.publications .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.publications .links .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  margin: 0;
+  border: 1px solid var(--site-line);
+  border-radius: 3px;
+  color: var(--site-link);
+  background: transparent;
+  font-size: 0.8rem;
+}
+
+.publications .links .btn:is(:hover, :focus-visible) {
+  background: var(--site-surface);
+  border-color: var(--site-link);
+}
+
+.publications .links .btn:active {
+  background: var(--site-line);
+}
+
+.publications .badges {
+  margin-top: 12px;
+}
+
+.post .publications h2.bibliography {
+  color: var(--site-muted);
+  text-align: left;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.publications .unloaded {
+  display: none;
+}
+
+input#bibsearch {
+  width: 100%;
+  max-width: 540px;
+  border: 0;
+  border-bottom: 1px solid var(--site-muted);
+  border-radius: 0;
+  background: transparent;
+  color: var(--site-ink);
+  padding: 15px 2px;
+  font-size: 1rem;
+}
+
+input#bibsearch::placeholder {
+  color: var(--site-muted);
+}
+
+input#bibsearch:focus-visible {
+  border-bottom-color: var(--site-link);
+  outline-offset: 6px;
+}
+
+.projects .card {
+  background: var(--site-reading);
+  border: 1px solid var(--site-line);
+  border-bottom: 2px solid var(--site-line);
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.projects .card-body {
+  padding: 22px 20px;
+}
+
+.projects .card > figure {
+  margin: 0;
+  border-bottom: 1px solid var(--site-line);
+  background: #fff;
+}
+
+.projects .card-img-top {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  padding: 16px;
+  border-radius: 0;
+}
+
+.projects .card-body .card-title {
+  margin: 0 0 12px;
+}
+
+.projects a:focus-visible .card {
+  border-color: var(--site-link);
+}
+
+.projects .card-title {
+  font-size: 1.125rem;
+  line-height: 1.55;
+  font-weight: 600;
+  color: var(--site-ink);
+}
+
+.projects .card-text {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--site-muted);
+}
+
+.projects h2.category {
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--site-muted);
+  border-bottom: 1px solid var(--site-line);
+  padding-bottom: 16px;
+}
+
+.post article details {
+  border-bottom: 1px solid var(--site-line);
+  padding: 18px 4px;
+}
+
+.post article details summary {
+  line-height: 1.8;
+  cursor: pointer;
+  color: var(--site-ink);
+}
+
+.post article details summary::marker {
+  color: var(--global-theme-color);
+}
+
+.post article details[open] {
+  padding-bottom: 24px;
+}
+
+.post article details[open] > summary {
+  color: var(--site-link);
+  margin-bottom: 16px;
+}
+
+.post article details summary:hover {
+  color: var(--site-link);
+}
+
+table:not(.table) :is(td, th) {
+  padding: 6px 1rem 6px 0;
   border-top: 0;
 }
 
 table:not(.table) th {
-  font-weight: bold;
+  font-weight: 600;
+}
+
+/* Scope above the CV template's inline styles, in both themes. */
+html .post .cv-pdf-controls .segmented-control {
+  background: var(--site-surface);
+  border: 1px solid var(--site-line);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+html .post .cv-pdf-controls .segment {
+  border-radius: 2px;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--site-ink);
+}
+
+html .post .cv-pdf-controls .segment.is-active {
+  background: var(--site-banner);
+  color: var(--site-banner-text);
+  box-shadow: none;
+}
+
+html .post .cv-pdf-controls .icon-btn {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.pdf-viewer {
+  border: 1px solid var(--site-line);
+  box-shadow: 0 10px 36px var(--site-shadow);
+}
+
+/* A flow footer never obscures papers or PDF controls. */
+footer.fixed-bottom {
+  position: static;
+  margin-top: 64px;
+  border-top: 1px solid var(--site-line);
+  background: var(--site-surface);
+  padding-block: 24px;
+}
+
+footer.fixed-bottom :is(.container, a) {
+  color: var(--site-muted);
+}
+
+@media (min-width: 576px) {
+  .publications .row:has(> .abbr) {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 28px;
+    margin-inline: 0;
+  }
+  .publications .row:has(> .abbr) > :is(.abbr, .col-sm-8) {
+    width: auto;
+    max-width: none;
+    padding-inline: 0;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects .card {
+    transition:
+      transform 220ms var(--site-ease),
+      box-shadow 220ms var(--site-ease);
+  }
+  .projects a:hover .card {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px var(--site-shadow);
+    border-bottom-color: var(--site-link);
+  }
+  #navbar .social a {
+    transition: transform 180ms var(--site-ease);
+  }
+  #navbar .social a:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 991px) {
+  /* Match the native mobile menu classes while allowing bilingual links room. */
+  #navbar .navbar-toggler-main {
+    display: block;
+  }
+  #navbar .navbar-collapse-main {
+    flex-basis: 100%;
+    width: 100%;
+    text-align: left;
+  }
+  #navbar .navbar-collapse-main.show {
+    max-height: 75dvh;
+    overflow-y: auto;
+    padding-block: 12px;
+  }
+  #navbar .navbar-menu-list {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  #navbar .navbar-menu-list .nav-link {
+    min-height: 44px;
+  }
+  #navbar .dropdown-menu {
+    position: static;
+    box-shadow: none;
+  }
+  #navbar .container {
+    flex-wrap: wrap;
+  }
+  .profile {
+    margin: 0 0 24px 30px;
+    width: 30%;
+  }
+  .post:has(.profile) > .post-header {
+    min-height: auto;
+    padding-block: 50px;
+  }
+  .post:has(.profile) > .post-header .desc {
+    max-width: 100%;
+  }
+}
+
+/* Override core's important collapse rule in its owning cascade layer. */
+@layer components {
+  @media (max-width: 991px) {
+    #navbar .navbar-collapse-main:not(.show) {
+      display: none !important;
+    }
+    #navbar .navbar-collapse-main.show {
+      display: block !important;
+    }
+  }
+}
+
+@layer utilities {
+  body > .container[role="main"] {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 575px) {
+  body > .container[role="main"],
+  #navbar .container {
+    padding-inline: 20px;
+  }
+  #navbar .navbar-brand.social {
+    gap: 3px;
+    font-size: 17px;
+    margin-right: 6px;
+  }
+  #navbar {
+    padding-inline: 0;
+  }
+  #navbar .social a {
+    min-width: 29px;
+  }
+  .post > .post-header,
+  .post:has(.profile) > .post-header {
+    padding-block: 36px;
+    margin-bottom: 30px;
+  }
+  .post > .post-header .post-title,
+  .post:has(.profile) > .post-header .post-title {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+    letter-spacing: -0.025em;
+  }
+  .profile {
+    float: none !important;
+    width: 100%;
+    margin: 0 0 26px;
+  }
+  .profile figure {
+    max-width: 240px;
+    margin-inline: auto;
+  }
+  .profile .more-info {
+    text-align: center;
+    padding-block: 12px;
+    font-size: 0.875rem;
+  }
+  .post article > .clearfix > p {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+  .post h2 {
+    font-size: 1.5rem;
+  }
+  .news th {
+    white-space: normal;
+    min-width: 86px;
+  }
+  .publications .title {
+    font-size: 1.0625rem;
+  }
+  .publications .row:has(> .abbr) {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 14px;
+    margin-inline: 0;
+  }
+  .publications .row:has(> .abbr) > :is(.abbr, .col-sm-8) {
+    width: auto;
+    max-width: none;
+    padding-inline: 0;
+  }
+  .publications .row:has(> .abbr) > .col-sm-8 {
+    grid-column: 2;
+    min-width: 0;
+  }
+  .publications .abbr abbr {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+  .publications .links .btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .publications .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .post article details {
+    padding-block: 14px;
+  }
+  footer.fixed-bottom {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  #navbar .navbar-brand.social {
+    gap: 1px;
+  }
+  #navbar .social a {
+    min-width: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post :is(a, button, input),
+  .projects .card,
+  #navbar .social a {
+    transition: none;
+  }
+  .projects a:hover .card,
+  #navbar .social a:hover {
+    transform: none;
+  }
 }
