@@ -1,9 +1,18 @@
----
-applyTo: "assets/js/**/*.js"
----
+# JavaScript Instructions (v1.x)
 
-# Site JavaScript
+Scope: starter JS and related setup scripts
 
-Follow [AGENTS.md](../../AGENTS.md). Feature scripts come from the pinned v1 gems. The local `assets/js/bibsearch.js` is an acknowledged core override with a one-line debounce/CSP fix.
+## Ownership
 
-Use browser callbacks for timers, preserve ES module imports, and test the generated site. Format the file before recording its checksum with the override audit. Shared runtime changes belong in the owning plugin.
+- Starter JS should be limited to orchestration/integration behavior.
+- Feature runtime JS belongs in owning plugin repos.
+
+## Guidance
+
+- Do not copy plugin-owned search/icon/math/image runtime code into starter.
+- Keep starter scripts framework-agnostic and compatible with plugin contracts.
+- Prefer deterministic behavior suitable for integration/visual tests.
+
+## Validation
+
+Use the validated command set in `AGENTS.md`.

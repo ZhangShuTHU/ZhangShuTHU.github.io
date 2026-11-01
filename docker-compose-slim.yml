@@ -1,9 +1,8 @@
 # this file uses prebuilt image in dockerhub
 services:
   jekyll:
-    image: zhangshu-al-folio:v1
-    build: .
-    command: /srv/jekyll/bin/entry_point.sh
+    image: amirpourmand/al-folio:slim
+    #build: .
     ports:
       - 8080:8080
       - 35729:35729
