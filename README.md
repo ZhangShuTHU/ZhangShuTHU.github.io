@@ -21,4 +21,6 @@ npm run lint:prettier
 
 The deployment workflow builds and checks overrides on pull requests, and publishes pushes to `master` or `main`.
 
+Template sync follows `.templatesyncignore` to preserve this site's content, custom layouts, dependency pins, and build settings. Review dependency upgrades and protected wiring manually against the upstream changes. The upgrade contract workflow also checks the configuration and acknowledged overrides when site files change.
+
 See the [migration report](docs/migration-v1.html), [agent guidelines](AGENTS.md), and [upstream v1 documentation](https://github.com/alshedivat/al-folio/tree/main/docs).

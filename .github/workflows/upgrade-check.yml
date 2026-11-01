@@ -1,0 +1,63 @@
+name: Upgrade contract checks
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - "_config.yml"
+      - ".al-folio-overrides.yml"
+      - "_data/**"
+      - "_bibliography/**"
+      - "_pages/**"
+      - "_posts/**"
+      - "_projects/**"
+      - "_news/**"
+      - "_books/**"
+      - "_teachings/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_sass/**"
+      - "assets/**"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - ".github/workflows/upgrade-check.yml"
+  pull_request:
+    branches: [master, main]
+    paths:
+      - "_config.yml"
+      - ".al-folio-overrides.yml"
+      - "_data/**"
+      - "_bibliography/**"
+      - "_pages/**"
+      - "_posts/**"
+      - "_projects/**"
+      - "_news/**"
+      - "_books/**"
+      - "_teachings/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_sass/**"
+      - "assets/**"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - ".github/workflows/upgrade-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  upgrade-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "4.0.1"
+          bundler-cache: true
+      - name: Audit v1 configuration
+        run: bundle exec al-folio upgrade audit
+      - name: Audit reviewed site overrides
+        run: bundle exec al-folio upgrade overrides audit --fail-on-stale
