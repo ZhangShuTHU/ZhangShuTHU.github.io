@@ -536,6 +536,30 @@ input#bibsearch:focus-visible {
   color: var(--site-link);
 }
 
+/* Explicit field rows survive Markdown rendering and HTML minification. */
+.post article .project-metadata {
+  display: grid;
+  grid-template-columns: minmax(8rem, 12rem) minmax(0, 1fr);
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border-inline-start: 2px solid var(--site-line);
+  background: var(--site-surface);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.post article .project-metadata :is(dt, dd) {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.post article .project-metadata dt {
+  color: var(--site-muted);
+  font-weight: 600;
+}
+
 table:not(.table) :is(td, th) {
   padding: 6px 1rem 6px 0;
   border-top: 0;
@@ -767,6 +791,14 @@ footer.fixed-bottom :is(.container, a) {
   }
   .post article details {
     padding-block: 14px;
+  }
+  .post article .project-metadata {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+    padding: 1rem;
+  }
+  .post article .project-metadata dd:not(:last-child) {
+    margin-bottom: 0.75rem;
   }
   footer.fixed-bottom {
     margin-top: 40px;
